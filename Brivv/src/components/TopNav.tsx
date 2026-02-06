@@ -1,10 +1,8 @@
 import logo from "../assets/logo.png";
-import { RiVideoFill } from "react-icons/ri";
-import { FaHouse } from "react-icons/fa6";
-import { RiMessage3Fill } from "react-icons/ri";
 import { RiNotification4Fill } from "react-icons/ri";
 import { RiSearchLine } from "react-icons/ri";
 import { IoIosAdd } from "react-icons/io";
+import { Outlet } from "react-router";
 
 function TopNav() {
   return (
@@ -13,11 +11,11 @@ function TopNav() {
         <ul className="flex items-center gap-4 justify-between">
           <li>
             <ul className="flex ">
-              <li className="w-[150px] inline-flex gap-2 text-2xl text-[rgb(var(--primary))] font-bold items-center">
+              <li className="w-37.5 inline-flex gap-2 text-2xl text-[rgb(var(--primary))] font-bold items-center">
                 <img src={logo} alt="" className="w-[50px]" />
                 {"Brivv"}
               </li>
-              <li className="lg:w-[700px] text-lg font-bold bg-[rgba(var(--primary)/0.2)] text-[rgb(var(--primary))] p-3 rounded-xl focus:outline-0 inline-flex  items-center ">
+              <li className="lg:w-100 text-sm font-bold bg-[rgba(var(--primary)/0.2)] text-[rgb(var(--primary))] p-3 rounded-xl focus:outline-0 inline-flex  items-center ">
                 <RiSearchLine />
                 <input
                   type="text"
@@ -28,12 +26,12 @@ function TopNav() {
             </ul>
           </li>
           <li>
-            <ul className="lg:flex hidden justify-around items-center  text-lg gap-3 font-semibold">
+            <ul className="lg:flex hidden justify-around items-center  text-sm gap-3 font-semibold">
               <li className="">{/* <FaHouse size={30} /> */}buy</li>
 
               <li>{/* <RiMessage3Fill size={30} />{" "} */}rent</li>
               <li>{/* <RiVideoFill size={30} />{" "} */}messages</li>
-              <li>discover</li>
+              <li>Edicationals</li>
               <li>
                 <a className="inline-flex items-center bg-[rgb(var(--primary))] text-white py-2 px-5 rounded-lg font-bold ">
                   add{" "}
@@ -54,6 +52,9 @@ function TopNav() {
             </ul>
           </li>
         </ul>
+      </div>
+      <div>
+        <Outlet/>
       </div>
     </>
   );
