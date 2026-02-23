@@ -27,7 +27,7 @@ const AccountSecurity: React.FC = () => {
       {/* Grid Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Change Password */}
-        <section className="bg-white rounded-2xl p-6 border border-slate-100 dark:border-slate-200">
+        <section className="bg-white rounded-2xl p-6 border border-slate-00 dark:border-slate-300">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 bg-slate-100  rounded-lg">
               <span className="material-icons text-slate-600 dark:text-slate-400">
@@ -45,7 +45,7 @@ const AccountSecurity: React.FC = () => {
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full bg-slate-100 rounded-lg px-4 py-2"
+                className="w-full bg-slate-100 focus:border-green-400 rounded-lg px-4 py-2"
               />
             </div>
 
@@ -84,9 +84,9 @@ const AccountSecurity: React.FC = () => {
         </section>
 
         {/* Two Factor Authentication */}
-        <section className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md">
+        <section className="bg-white rounded-2xl p-6 shadow-md border border-slate-00 dark:border-slate-300">
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+            <div className="p-2 bg-slate-100 rounded-lg">
               <span className="material-icons text-slate-600 dark:text-slate-400">
                 phonelink_lock
               </span>
@@ -113,6 +113,25 @@ const AccountSecurity: React.FC = () => {
                 </p>
               </div>
               <input type="checkbox" className="h-5 w-5 accent-primary" />
+            </div>
+            <div className="p-4 border border-green-200 dark:bg-green-100 rounded-xl mt-4">
+              <div className="flex gap-3">
+                <span className="material-icons text-green-500 text-3xl">info</span>
+
+                <div>
+                  <p className="text-[18px] text-primary font-semibold">
+                    Backup Codes
+                  </p>
+
+                  <p className="text-[13px] text-slate-500 mt-0.5">
+                    You have 10 unused backup codes remaining.
+                  </p>
+
+                  <button className="text-[11px] font-bold text-green-500 mt-2 uppercase tracking-wide">
+                    Download Codes
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
