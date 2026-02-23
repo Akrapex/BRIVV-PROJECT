@@ -6,6 +6,7 @@ import Marketplace from './pages/Marketplace'
 import Profile from './pages/Profile'
 import Dashboard from './pages/Dashnoard'
 import Settings from './Settings'
+import Security from './pages/Security'
 import Education from './Education'
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
         <Route index element={<Dashboard/>}/>
       </Route>
       <Route path='setting' element={<Settings/>}>
-        <Route/>
+        <Route index element={<Security/>}/>
+        <Route path='security' element={<Security/>}/>
       </Route>
     </Routes>
   );
