@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashnoard'
 import Settings from './Settings'
 import Security from './pages/Security'
 import Education from './Education'
+// import PersonalInfo from './pages/PersonalInfo'
 function App() {
 
 
@@ -22,6 +23,8 @@ function App() {
         <Route index element={<Dashboard/>}/>
       </Route>
       <Route path='setting' element={<Settings/>}>
+        {/* <Route index element={<PersonalInfo/>} />
+        <Rout path='Personal Info' element={<PersonalInfo/>} /> */}
         <Route index element={<Security/>}/>
         <Route path='security' element={<Security/>}/>
       </Route>

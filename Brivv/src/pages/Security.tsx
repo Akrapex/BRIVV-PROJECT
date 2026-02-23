@@ -4,9 +4,9 @@ const AccountSecurity: React.FC = () => {
   return (
     <main className=" flex-1 space-y-8 p-6">
       {/* Security Header */}
-      <div className="flex md:items-center p-6 rounded-2xl bg-white border-gray-800 shadow-lg w-250 justify-between gap-6 border border-slate-200 dark:border-slate-800">
+      <div className="flex md:items-center p-6 rounded-2xl bg-white border-gray-800 shadow-lg w-250 justify-between gap-6 border border-slate-100 dark:border-slate-200">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-black ">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-black">
             Account Security
           </h1>
           <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
@@ -14,11 +14,11 @@ const AccountSecurity: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full shadow-sm">
-          <span className="material-icons text-primary text-sm dark:text-green-500">
+        <div className="flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full shadow-sm hover:bg-green-200">
+          <span className="material-icons text-primary text-sm dark:text-green-500 hover:bg-green-800">
             verified_user
           </span>
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider dark:text-green-500">
+          <span className="text-primary text-sm font-semibold uppercase tracking-wider dark:text-green-500 hover:text-white">
             Account Secure
           </span>
         </div>
@@ -27,9 +27,9 @@ const AccountSecurity: React.FC = () => {
       {/* Grid Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Change Password */}
-        <section className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md">
+        <section className="bg-white rounded-2xl p-6 border border-slate-100 dark:border-slate-200">
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+            <div className="p-2 bg-slate-100  rounded-lg">
               <span className="material-icons text-slate-600 dark:text-slate-400">
                 lock_reset
               </span>
@@ -45,7 +45,7 @@ const AccountSecurity: React.FC = () => {
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full bg-slate-50 dark:bg-slate-800 rounded-lg px-4 py-2"
+                className="w-full bg-slate-100 rounded-lg px-4 py-2"
               />
             </div>
 
@@ -56,7 +56,7 @@ const AccountSecurity: React.FC = () => {
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full bg-slate-50 dark:bg-slate-800 rounded-lg px-4 py-2"
+                className="w-full bg-slate-100  rounded-lg px-4 py-2"
               />
               <p className="text-[10px] text-slate-500 mt-1 uppercase">
                 At least 8 characters, one number and one special char
@@ -70,13 +70,13 @@ const AccountSecurity: React.FC = () => {
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full bg-slate-50 dark:bg-slate-800 rounded-lg px-4 py-2"
+                className="w-full bg-slate-100 rounded-lg px-4 py-2"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg shadow-md"
+              className="w-full bg-green-600 hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg shadow-md"
             >
               Update Password
             </button>
