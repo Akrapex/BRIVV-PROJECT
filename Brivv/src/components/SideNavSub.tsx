@@ -9,7 +9,7 @@ import {
 
 export default function SideNavSub() {
   return (
-    <aside className="h-screen w-64 bg-white px-4 py-6 rounded-xl m-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+    <aside className="h-full w-64 bg-white px-4 py-6 rounded-xl m-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
       {/* Header */}
       <div className="mb-8 flex items-center gap-3 px-2">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF3D6]">
