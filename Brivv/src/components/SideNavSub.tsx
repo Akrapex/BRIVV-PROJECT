@@ -9,7 +9,7 @@ import {
 
 export default function SideNavSub() {
   return (
-    <aside className="h-screen w-64 border-r bg-white px-4 py-6">
+    <aside className="h-full w-64 bg-white px-4 py-6 rounded-xl m-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
       {/* Header */}
       <div className="mb-8 flex items-center gap-3 px-2">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF3D6]">
@@ -31,7 +31,7 @@ export default function SideNavSub() {
       </nav>
 
       {/* Footer */}
-      <div className="mt-10 border-t pt-4">
+      <div className="mt-10 p-4 bg-white rounded-lg shadow-[0_8px_20px_rgba(0,0,0,0.06)]">
         <SideItem icon={HiArrowRightOnRectangle} label="Log Out" danger />
       </div>
     </aside>
