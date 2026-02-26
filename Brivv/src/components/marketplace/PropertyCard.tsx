@@ -20,7 +20,7 @@ const PropertyCard = ({ property }: Props) => {
           </span>
         )}
 
-        <button className="absolute top-2 right-3 rounded-full shadow w-5 h-5 invert border border-white">
+        <button className="absolute top-3 right-3 w-7 h-7 rounded-full border  shadow flex items-center justify-center text-white bg-white/20">
           ♡
         </button>
       </div>
