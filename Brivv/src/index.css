@@ -3,3 +3,8 @@
 :root{
     --primary: 76 175 80;
 }
+
+.wrapper {
+  @apply mx-auto container w-full ;
+}
+

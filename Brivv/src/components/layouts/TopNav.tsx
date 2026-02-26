@@ -1,8 +1,8 @@
-import logo from "../assets/logo.png";
+
 import { RiNotification4Fill } from "react-icons/ri";
 import { RiSearchLine } from "react-icons/ri";
 import { IoIosAdd } from "react-icons/io";
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 
 function TopNav() {
   return (
@@ -12,7 +12,7 @@ function TopNav() {
           <li>
             <ul className="flex ">
               <li className="w-37.5 inline-flex gap-2 text-2xl text-[rgb(var(--primary))] font-bold items-center">
-                <img src={logo} alt="" className="w-[50px]" />
+                <img src="/images/logo.png" alt="" className="w-[50px]" />
                 {"Brivv"}
               </li>
               <li className="lg:w-100 text-sm font-bold bg-[rgba(var(--primary)/0.2)] text-[rgb(var(--primary))] p-3 rounded-xl focus:outline-0 inline-flex  items-center ">
@@ -31,7 +31,7 @@ function TopNav() {
 
               <li>{/* <RiMessage3Fill size={30} />{" "} */}rent</li>
               <li>{/* <RiVideoFill size={30} />{" "} */}messages</li>
-              <li>Edicationals</li>
+              <Link to="/loginandregistration">Edicationals</Link>
               <li>
                 <a className="inline-flex items-center bg-[rgb(var(--primary))] text-white py-2 px-5 rounded-lg font-bold ">
                   add{" "}
@@ -54,7 +54,7 @@ function TopNav() {
         </ul>
       </div>
       <div>
-        <Outlet/>
+        <Outlet />
       </div>
     </>
   );
