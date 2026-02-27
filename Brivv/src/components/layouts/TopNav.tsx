@@ -32,6 +32,7 @@ function TopNav() {
               <li>{/* <RiMessage3Fill size={30} />{" "} */}rent</li>
               <li>{/* <RiVideoFill size={30} />{" "} */}messages</li>
               <Link to="/loginandregistration">Edicationals</Link>
+              <Link to="profile">Profile</Link>
               <li>
                 <a className="inline-flex items-center bg-[rgb(var(--primary))] text-white py-2 px-5 rounded-lg font-bold ">
                   add{" "}

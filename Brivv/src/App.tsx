@@ -23,7 +23,7 @@ function App() {
         <Route path='discover' element={<Education />}></Route>
         <Route path='/loginandregistration' element={<LoginAndRegistration/>}></Route>
       </Route>
-      <Route path='profile' element={<Profile/>}>
+      <Route path='/profile' element={<Profile/>}>
         <Route index element={<Dashboard/>}/>
       </Route>
       <Route path='setting' element={<Settings/>}>

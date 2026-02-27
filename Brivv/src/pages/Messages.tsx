@@ -1,3 +1,11 @@
-export default function Messages() {
-  return <h1>Messages page</h1>;
+
+
+const Messages = () => {
+  return (
+    <div>
+      
+    </div>
+  )
 }
+
+export default Messages
