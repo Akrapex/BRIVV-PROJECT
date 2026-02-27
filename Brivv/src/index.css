@@ -8,3 +8,7 @@
   @apply mx-auto container w-full ;
 }
 
+@theme {
+  --color-primary: #6B8E23;
+  --color-secondary: #DB4444;
+}
