@@ -1,22 +1,15 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
 import Buttons from "@/components/Buttons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-// import { TextInput } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Signup() {
+import { SafeAreaView } from "react-native-safe-area-context";
+// import { TextInput } from "react-native";
+
+export default function Second() {
   const [login, setLogin] = useState("login");
 
   return (
@@ -31,7 +24,7 @@ export default function Signup() {
         <View
           style={{ paddingTop: 25, width: "90%", marginHorizontal: "auto" }}
         >
-          <Text style={styles.header}>Create account</Text>
+          <Text style={styles.header}>Sign in</Text>
           <Text style={{ textAlign: "left", color: "gray" }}>
             Join the leading real estate social network
           </Text>
@@ -53,29 +46,6 @@ export default function Signup() {
             marginTop: 40,
           }}
         >
-          <View style={{ margin: 10 }}>
-            <Text style={{ fontSize: 16, fontWeight: 500 }}>{"Full Name"}</Text>
-          </View>
-          <View
-            style={{
-              borderStyle: "solid",
-              borderWidth: 1,
-              borderColor: "#ccc",
-              height: 55,
-              borderRadius: 16,
-            }}
-          >
-            <TextInput
-              placeholder="name@example.com"
-              keyboardType="numeric"
-              style={{
-                fontSize: 16,
-                paddingLeft: 20,
-                verticalAlign: "middle",
-                height: 55,
-              }}
-            />
-          </View>
           <View style={{ margin: 10 }}>
             <Text style={{ fontSize: 16, fontWeight: 500 }}>
               {"Email address"}
@@ -137,7 +107,7 @@ export default function Signup() {
         >
           <Buttons
             path="./"
-            text="Sign up"
+            text="Sign in"
             styles={{
               ...styles.button,
               backgroundColor: "#6B8E23",
@@ -175,18 +145,17 @@ export default function Signup() {
           <Link
             href={"/signup"}
             style={{ textAlign: "center", marginBottom: 20 }}
+            replace
           >
-            <Text>{"Already have an account? "}</Text>
-            <Link href={"/signin"} replace asChild>
-              <Text
-                style={{
-                  textDecorationStyle: "solid",
-                  textDecorationLine: "underline",
-                }}
-              >
-                {"Sign ip"}
-              </Text>
-            </Link>
+            <Text>{"Dont have an account? "}</Text>
+            <Text
+              style={{
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
+              }}
+            >
+              {"Sign up"}
+            </Text>
           </Link>
         </View>
 

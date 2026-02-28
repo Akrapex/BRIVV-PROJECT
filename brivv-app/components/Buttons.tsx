@@ -14,7 +14,7 @@ interface Button {
 export default function ({ text, path, styles, textStyles }: Button) {
   return (
     <Pressable >
-      <Link href={{ pathname: path }}>
+      <Link href={{ pathname: path }} replace >
         <View style={styles}>
           <Text style={textStyles}>{text}</Text>
         </View>

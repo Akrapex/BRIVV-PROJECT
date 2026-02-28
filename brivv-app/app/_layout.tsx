@@ -3,10 +3,11 @@ import { Stack } from "expo-router";
 export default function RootLayout() {
   return (
     <Stack>
+      <Stack.Screen name="(protected)" options={{ headerShown: false }} />
       <Stack.Screen
-        name="index"
+        name="welcome"
         options={{
-          title: "login",
+          title: "get started",
           headerShown: false,
           animation: "slide_from_right",
         }}
@@ -14,8 +15,8 @@ export default function RootLayout() {
       <Stack.Screen
         name="signup"
         options={{
-          title: "Welcome back",
-          headerShown: true,
+          title: "Create account",
+          headerShown: false,
           headerTitleAlign: "center",
           headerTitleStyle: {
             fontSize: 16,
@@ -23,7 +24,18 @@ export default function RootLayout() {
           animation: "slide_from_right",
         }}
       />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="signin"
+        options={{
+          title: "welcome back",
+          headerShown: false,
+          headerTitleAlign: "center",
+          headerTitleStyle: {
+            fontSize: 16,
+          },
+          animation: "slide_from_right",
+        }}
+      />
     </Stack>
   );
 }

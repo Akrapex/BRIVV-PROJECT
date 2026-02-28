@@ -1,0 +1,13 @@
+import SideNavSub from "./components/SideNavSub";
+
+export default function Personal(children) {
+  return (
+    <Settings>
+    <div className="flex flex-row">
+      <SideNavSub />
+      <div>
+        {children}
+      </div>
+    </div>
+    </Settings>  );
+}

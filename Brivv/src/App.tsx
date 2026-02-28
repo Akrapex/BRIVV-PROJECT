@@ -20,7 +20,8 @@ function App() {
       <Route path='profile' element={<Profile/>}>
         <Route index element={<Dashboard/>}/>
       </Route>
-      <Route path='setting' element={<Settings/>}>
+      <Route path='setting' element={<Settings />}>
+        
         <Route/>
       </Route>
     </Routes>
