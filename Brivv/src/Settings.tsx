@@ -6,7 +6,7 @@ export default function Settings() {
     <div className="flex flex-row">
       <SideNavSub />
       <div>
-        <Outlet></Outlet>
+        <Outlet />
       </div>
     </div>
   );
