@@ -10,7 +10,7 @@ const Marketplace = () => {
     <>
       <main className="bg-[#F7F8F6]">
         <HeroSearch />
-        <div className="wrapper  py-10 flex gap-8 ">
+        <div className="wrapper  p-10 flex gap-8 ">
           <FiltersSidebar />
           <div className="flex-1">
             <PropertyGrid />

@@ -2,7 +2,7 @@ import { BiCalendar, BiSearch } from "react-icons/bi";
 
 const  HeroSearch = () =>{
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-20 px-20">
       <div className="  wrapper">
         {/* Heading */}
         <h1 className="text-3xl font-bold text-gray-900">

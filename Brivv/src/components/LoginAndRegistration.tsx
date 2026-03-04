@@ -1,9 +1,8 @@
 import { BsEye } from "react-icons/bs";
 
-
 const LoginAndRegistration = () => {
   return (
-    <div className="wrapper flex my-20">
+    <div className="wrapper flex">
       {/* LEFT SIDE */}
       <div className="hidden lg:flex w-1/2 relative">
         <img
@@ -14,9 +13,9 @@ const LoginAndRegistration = () => {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 p-12 flex flex-col justify-end text-white">
+        <div className="relative z-10 p-12 flex flex-col justify-end text-white ">
           <div className="mb-6 text-2xl font-semibold tracking-tight">
-            ESTATEPRO
+            Brivv - Your Gateway to the World of Real Estate
           </div>
 
           <h1 className="text-4xl font-bold leading-tight mb-4">
@@ -42,7 +41,7 @@ const LoginAndRegistration = () => {
           </div>
 
           {/* Tabs */}
-          <div className="flex space-x-6 border-b">
+          <div className="flex space-x-6">
             <button className="pb-2 text-sm font-medium border-b-2 border-green-600 text-gray-500">
               Login
             </button>
@@ -128,6 +127,6 @@ const LoginAndRegistration = () => {
       </div>
     </div>
   );
-}
+};
 
-export default LoginAndRegistration
+export default LoginAndRegistration;
