@@ -110,7 +110,7 @@ export default function PaymentDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Bank Accounts Section */}
         <section className="lg:col-span-2">
-          <div className="bg-slate-100 rounded-2xl w-190 p-6 shadow-sm border border-slate-200 dark:border-slate-100">
+          <div className="bg-slate-100 rounded-2xl w-165 p-6 shadow-sm border border-slate-200 dark:border-slate-100">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-slate-900 dark:text-slate-950 text-lg font-bold flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary">account_balance</span>
