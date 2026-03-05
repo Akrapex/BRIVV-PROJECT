@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashnoard";
 import Settings from "./Settings";
 import Security from "./pages/Security";
+import Notification from "./pages/Notification";
 import Education from "./Education";
 
 import LoginAndRegistration from "./components/LoginAndRegistration";
@@ -32,6 +33,7 @@ function App() {
         <Rout path='Personal Info' element={<PersonalInfo/>} /> */}
 
         <Route path="/setting/security" element={<Security />} />
+        <Route path="/setting/notification" element={<Notification />}/>
       </Route>
     </Routes>
   );
