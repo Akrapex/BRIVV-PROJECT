@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-white  py-10">
+    <footer className="bg-white  p-10">
       <div className="wrapper mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm text-gray-600">
         <div>
           <img src="/images/Logo-.png" alt="" className="w-[216px]" />

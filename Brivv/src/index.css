@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
-:root{
-    --primary: 76 175 80;
+:root {
+  --primary: 76 175 80;
 }
 
 .wrapper {
+<<<<<<< HEAD
   @apply mx-auto max-w-[1200px] w-full p-2;
+=======
+  @apply mx-auto container w-full;
+>>>>>>> 28abdfa07f319dd6fb97eec52daa97c06c9b6f77
 }
 
 @theme {
-  --color-primary: #6B8E23;
-  --color-secondary: #DB4444;
+  --color-primary: #6b8e23;
+  --color-secondary: #6b8e23;
 }
