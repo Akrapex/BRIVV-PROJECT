@@ -1,4 +1,12 @@
-import React from "react";
+import { MdAddCard } from "react-icons/md";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
+import { CiWallet } from "react-icons/ci";
+import { MdOutlinePayments } from "react-icons/md";
+import { CiCirclePlus } from "react-icons/ci";
+import { TfiCreditCard } from "react-icons/tfi";
+import { AiFillBank } from "react-icons/ai";
+
 
 export default function PaymentDashboard() {
   return (
@@ -14,7 +22,7 @@ export default function PaymentDashboard() {
           </p>
         </div>
         <button className="flex items-center gap-2 bg-green-600 hover:bg-green-800 text-background-dark font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-green-500/20">
-          <span className="material-symbols-outlined">add_card</span>
+          <MdAddCard className="text-3xl text-green-400"  />
           <span>Add New Card</span>
         </button>
       </div>
@@ -23,15 +31,15 @@ export default function PaymentDashboard() {
       <section className="mb-8">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-slate-900 dark:text-slate-800 text-xl font-bold flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">credit_card</span>
+            <TfiCreditCard className="text-3xl text-green-400" />
             Saved Cards
           </h2>
-          <div className="flex gap-6">
+          <div className="flex gap-2">
             <button className="size-8 rounded-full bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-50">
-              <span className="material-symbols-outlined text-sm">arrow_back</span>
+              <FaArrowLeftLong className="text-xl" />
             </button>
             <button className="size-8 rounded-full bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-50">
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              <FaArrowRight className="text-xl" />
             </button>
           </div>
         </div>
@@ -39,9 +47,9 @@ export default function PaymentDashboard() {
         {/* Cards Grid/Carousel */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {/* Card 1 */}
-          <div className="card-gradient-1 bg-green-500 rounded-2xl p-4 w-80 h-48 flex flex-col justify-between text-white shadow-xl relative overflow-hidden group">
+          <div className="card-gradient-1 bg-green-400 rounded-2xl p-4 w-80 h-48 flex flex-col justify-between text-white shadow-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
-              <span className="material-symbols-outlined text-2xl">account_balance_wallet</span>
+              <CiWallet className="text-6xl" />
             </div>
             <div className="flex justify-between items-start">
               <div className="font-bold text-lg">Main Card</div>
@@ -70,7 +78,7 @@ export default function PaymentDashboard() {
           {/* Card 2 */}
           <div className="card-gradient-2 bg-slate-950 rounded-2xl p-6 w-80 h-48 flex flex-col justify-between text-white shadow-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
-              <span className="material-symbols-outlined text-2xl">payments</span>
+              <MdOutlinePayments className="text-6xl" />
             </div>
             <div className="flex justify-between items-start">
               <div className="font-bold text-lg">Business</div>
@@ -99,7 +107,7 @@ export default function PaymentDashboard() {
           {/* Add New Placeholder */}
           <button className="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-6 w-75 h-48 flex flex-col items-center justify-center gap-3 text-slate-500 hover:border-primary hover:text-primary transition-all group">
             <div className="size-12 rounded-full bg-slate-100 dark:bg-slate-100 flex items-center justify-center group-hover:bg-primary/20">
-              <span className="material-symbols-outlined">add</span>
+              <CiCirclePlus className="text-6xl" />
             </div>
             <span className="font-semibold">Add Payment Method</span>
           </button>
@@ -113,7 +121,7 @@ export default function PaymentDashboard() {
           <div className="bg-slate-100 rounded-2xl w-165 p-6 shadow-sm border border-slate-200 dark:border-slate-100">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-slate-900 dark:text-slate-950 text-lg font-bold flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary">account_balance</span>
+                <AiFillBank className="text-green-500 text-3xl" />
                 Direct Utility &amp; Rent Payments
               </h2>
               <a className="text-primary text-sm font-semibold hover:underline" href="#">
