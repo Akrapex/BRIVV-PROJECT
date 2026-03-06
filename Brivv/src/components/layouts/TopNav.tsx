@@ -7,7 +7,7 @@ import { Link, Outlet } from "react-router";
 function TopNav() {
   return (
     <>
-      <div className="bg-white capitalize py-2 shadow px-5 wrapper">
+      <div className="bg-white capitalize py-2 shadow px-5 max-w-[1440px] w-full mx-auto">
         <ul className="flex items-center gap-4 justify-between">
           <li>
             <ul className="flex ">

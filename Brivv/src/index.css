@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-  @apply mx-auto container w-full ;
+  @apply mx-auto max-w-[1200px] w-full p-2;
 }
 
 @theme {
