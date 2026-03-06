@@ -9,6 +9,7 @@ import Settings from "./Settings";
 import Security from "./pages/Security";
 import Notification from "./pages/Notification";
 import Payment from "./pages/Payment";
+import Privacy from "./pages/Privacy";
 import Education from "./Education";
 
 import LoginAndRegistration from "./components/LoginAndRegistration";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/setting/security" element={<Security />} />
         <Route path="/setting/notification" element={<Notification />}/>
         <Route path="/setting/payment" element={<Payment/>}/>
+        <Route path="/setting/privacy" element={<Privacy/>}/>
       </Route>
     </Routes>
   );
