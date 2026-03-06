@@ -5,11 +5,10 @@
 }
 
 .wrapper {
-<<<<<<< HEAD
+
   @apply mx-auto max-w-[1200px] w-full p-2;
-=======
+
   @apply mx-auto container w-full;
->>>>>>> 28abdfa07f319dd6fb97eec52daa97c06c9b6f77
 }
 
 @theme {
