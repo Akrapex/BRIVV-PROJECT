@@ -6,6 +6,7 @@ import Marketplace from "./pages/Marketplace";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashnoard";
 import Settings from "./Settings";
+import PersonalInfo from "./pages/PersonalInfo";
 import Security from "./pages/Security";
 import Notification from "./pages/Notification";
 import Payment from "./pages/Payment";
@@ -31,8 +32,7 @@ function App() {
         <Route index element={<Dashboard />} />
       </Route>
       <Route path="/setting" element={<Settings />}>
-        {/* <Route index element={<PersonalInfo/>} />
-        <Rout path='Personal Info' element={<PersonalInfo/>} /> */}
+        <Route path='/setting/personal-info' element={<PersonalInfo/>} />
 
         <Route path="/setting/security" element={<Security />} />
         <Route path="/setting/notification" element={<Notification />}/>
