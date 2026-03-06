@@ -6,6 +6,13 @@ import { MdOutlinePayments } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
 import { TfiCreditCard } from "react-icons/tfi";
 import { AiFillBank } from "react-icons/ai";
+import { IoEllipsisVerticalSharp } from "react-icons/io5";
+import { MdVerifiedUser } from "react-icons/md";
+import { FaHistory } from "react-icons/fa";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { CiLocationOn } from "react-icons/ci";
+import { MdAutorenew } from "react-icons/md";
+
 
 
 export default function PaymentDashboard() {
@@ -21,8 +28,8 @@ export default function PaymentDashboard() {
             Manage your secure payment sources for property purchases, monthly rent, and education subscriptions.
           </p>
         </div>
-        <button className="flex items-center gap-2 bg-green-600 hover:bg-green-800 text-background-dark font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-green-500/20">
-          <MdAddCard className="text-3xl text-green-400"  />
+        <button className="flex items-center gap-2 bg-green-400 hover:bg-green-600 text-background-dark font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-green-500/20">
+          <MdAddCard className="text-3xl text-green-800"  />
           <span>Add New Card</span>
         </button>
       </div>
@@ -35,19 +42,19 @@ export default function PaymentDashboard() {
             Saved Cards
           </h2>
           <div className="flex gap-2">
-            <button className="size-8 rounded-full bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-50">
+            <button className="size-8 rounded-full bg-white dark:bg-slate-100 border border-slate-200  flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-50">
               <FaArrowLeftLong className="text-xl" />
             </button>
-            <button className="size-8 rounded-full bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-50">
+            <button className="size-8 rounded-full bg-white dark:bg-slate-100 border  flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-50">
               <FaArrowRight className="text-xl" />
             </button>
           </div>
         </div>
 
         {/* Cards Grid/Carousel */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Card 1 */}
-          <div className="card-gradient-1 bg-green-400 rounded-2xl p-4 w-80 h-48 flex flex-col justify-between text-white shadow-xl relative overflow-hidden group">
+          <div className="card-gradient-1 bg-green-400 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl p-4 w-80 h-48 flex flex-col justify-between text-white shadow-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
               <CiWallet className="text-6xl" />
             </div>
@@ -76,7 +83,7 @@ export default function PaymentDashboard() {
           </div>
 
           {/* Card 2 */}
-          <div className="card-gradient-2 bg-slate-950 rounded-2xl p-6 w-80 h-48 flex flex-col justify-between text-white shadow-xl relative overflow-hidden group">
+          <div className="card-gradient-2 bg-slate-950 bg-gradient-to-r from-slate-700 to-slate-950 rounded-2xl p-6 w-80 h-48 flex flex-col justify-between text-white shadow-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
               <MdOutlinePayments className="text-6xl" />
             </div>
@@ -118,7 +125,7 @@ export default function PaymentDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Bank Accounts Section */}
         <section className="lg:col-span-2">
-          <div className="bg-slate-100 rounded-2xl w-165 p-6 shadow-sm border border-slate-200 dark:border-slate-100">
+          <div className="bg-slate-100 rounded-2xl w-165 p-6 shadow-xl border border-slate-200 dark:border-slate-100">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-slate-900 dark:text-slate-950 text-lg font-bold flex items-center gap-2">
                 <AiFillBank className="text-green-500 text-3xl" />
@@ -133,8 +140,8 @@ export default function PaymentDashboard() {
               {/* Bank Row 1 */}
               <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-200 border border-slate-100 ">
                 <div className="flex items-center gap-4">
-                  <div className="size-10 rounded-lg bg-white dark:bg-slate-100 flex items-center justify-center border border-slate-200 dark:border-slate-600">
-                    <span className="material-symbols-outlined text-blue-200">account_balance</span>
+                  <div className="size-10 rounded-lg bg-white dark:bg-slate-100 flex items-center justify-center border border-slate-200 dark:border-slate-200">
+                    <AiFillBank className="text-3xl text-blue-700" />
                   </div>
                   <div>
                     <p className="font-bold text-slate-900 dark:text-slate-950">Chase Personal Checking</p>
@@ -144,7 +151,7 @@ export default function PaymentDashboard() {
                 <div className="flex items-center gap-4">
                   <span className="px-2 py-1 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Verified</span>
                   <button className="text-slate-400 hover:text-slate-600">
-                    <span className="material-symbols-outlined">more_vert</span>
+                    <IoEllipsisVerticalSharp className="text-xl text-slate-500" />
                   </button>
                 </div>
               </div>
@@ -152,8 +159,8 @@ export default function PaymentDashboard() {
               {/* Bank Row 2 */}
               <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-200 border border-slate-100 ">
                 <div className="flex items-center gap-4">
-                  <div className="size-10 rounded-lg bg-white dark:bg-slate-100 flex items-center justify-center border border-slate-200 dark:border-slate-600">
-                    <span className="material-symbols-outlined text-red-600">account_balance</span>
+                  <div className="size-10 rounded-lg bg-white dark:bg-slate-100 flex items-center justify-center border border-slate-200 dark:border-slate-200">
+                    <AiFillBank className="text-3xl text-red-700" />
                   </div>
                   <div>
                     <p className="font-bold text-slate-900 dark:text-slate-950">Wells Fargo Savings</p>
@@ -163,7 +170,7 @@ export default function PaymentDashboard() {
                 <div className="flex items-center gap-4">
                   <span className="px-2 py-1 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Verified</span>
                   <button className="text-slate-400 hover:text-slate-600">
-                    <span className="material-symbols-outlined">more_vert</span>
+                    <IoEllipsisVerticalSharp className="text-xl text-slate-500" />
                   </button>
                 </div>
               </div>
@@ -171,10 +178,10 @@ export default function PaymentDashboard() {
 
             {/* Info Box */}
             <div className="mt-6 flex items-start gap-3 p-4 bg-primary/5 rounded-xl border border-primary/20">
-              <span className="material-symbols-outlined text-primary text-xl">verified_user</span>
+              <MdVerifiedUser className="text-3xl text-green-900" />
               <div>
                 <p className="text-sm font-bold text-slate-900 dark:text-slate-950">Secure Bank Linking</p>
-                <p className="text-xs text-slate-600 dark:text-slate-600 leading-relaxed p-2">
+                <p className="text-[15px] text-slate-600 dark:text-slate-600 leading-relaxed p-2">
                   Your bank credentials are never stored on our servers. We use 256-bit AES encryption to keep your data safe.
                 </p>
               </div>
@@ -187,26 +194,26 @@ export default function PaymentDashboard() {
           <div className="bg-white dark:bg-white rounded-2xl w-75 p-6 shadow-sm border border-slate-200 ">
             <h3 className="text-slate-900 dark:text-slate-950 font-bold mb-4">Quick Links</h3>
             <nav className="flex flex-col gap-2">
-              <a className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-slate-400 group-hover:text-primary">history</span>
-                  <span className="text-sm font-medium">Transaction History</span>
+              <a className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-200 transition-colors group" href="#">
+                <div className="flex items-center gap-5">
+                  <FaHistory className="text-xl text-slate-500" />
+                  <span className="text-[15px] font-medium">Transaction History</span>
                 </div>
-                <span className="material-symbols-outlined text-slate-300 text-sm">arrow_forward_ios</span>
+                <MdKeyboardArrowRight className="text-2xl text-slate-500" />
               </a>
-              <a className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-slate-400 group-hover:text-primary">location_on</span>
-                  <span className="text-sm font-medium">Billing Address</span>
+              <a className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-200 transition-colors group" href="#">
+                <div className="flex items-center gap-5">
+                  <CiLocationOn className="text-2xl text-slate-500" />
+                  <span className="text-[15px] font-medium">Billing Address</span>
                 </div>
-                <span className="material-symbols-outlined text-slate-300 text-sm">arrow_forward_ios</span>
+                <MdKeyboardArrowRight className="text-2xl text-slate-500" />
               </a>
-              <a className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-slate-400 group-hover:text-primary">autorenew</span>
+              <a className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-200 transition-colors group" href="#">
+                <div className="flex items-center gap-5">
+                  <MdAutorenew className="text-2xl text-slate-500" />
                   <span className="text-sm font-medium">Auto-pay Settings</span>
                 </div>
-                <span className="material-symbols-outlined text-slate-300 text-sm">arrow_forward_ios</span>
+                <MdKeyboardArrowRight className="text-2xl text-slate-500" />
               </a>
             </nav>
           </div>

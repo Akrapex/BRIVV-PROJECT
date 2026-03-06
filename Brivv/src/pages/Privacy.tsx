@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { CiCircleInfo } from "react-icons/ci";
+import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
 
 const PrivacyDataControl: React.FC = () => {
   const [visibility, setVisibility] = useState<"public" | "private">("public");
@@ -191,7 +194,7 @@ const PrivacyDataControl: React.FC = () => {
 
           {/* Info box */}
           <div className="bg-background-light dark:bg-green-100 p-4 rounded-lg flex gap-3">
-            <span className="material-symbols-outlined text-primary">info</span>
+            <CiCircleInfo className="text-2xl text-green-600" />
             <p className="text-xs text-[#4c9a59] leading-relaxed">
               Disabling data sharing may limit our ability to provide you with tailored financial services and exclusive property insights.
             </p>
@@ -205,8 +208,8 @@ const PrivacyDataControl: React.FC = () => {
 
         {/* Export Data */}
         <div className="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#e7f3e9] dark:border-green-100 shadow-xl flex flex-col gap-4 w-96">
-          <div className="size-10 bg-primary/20 text-primary rounded-lg flex items-center justify-center">
-            <span className="material-symbols-outlined">download_for_offline</span>
+          <div className="size-10 bg-green-300 text-primary rounded-lg flex items-center justify-center">
+            <MdOutlineDownloadForOffline className="text-3xl text-green-600"/>
           </div>
 
           <div>
@@ -225,8 +228,8 @@ const PrivacyDataControl: React.FC = () => {
 
         {/* Delete Account */}
         <div className="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#e7f3e9] dark:border-green-100 shadow-xl flex flex-col gap-4 w-96">
-          <div className="size-10 bg-red-500/20 text-red-500 rounded-lg flex items-center justify-center">
-            <span className="material-symbols-outlined">delete_forever</span>
+          <div className="size-10 bg-red-300 text-red-500 rounded-lg flex items-center justify-center">
+            <MdDeleteForever className="text-3xl text-red-500" />
           </div>
 
           <div>

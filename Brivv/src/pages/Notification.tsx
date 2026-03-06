@@ -1,3 +1,8 @@
+import { BiBuildingHouse } from "react-icons/bi";
+import { IoIosChatboxes } from "react-icons/io";
+import { IoIosTrendingDown } from "react-icons/io";
+import { IoReceipt } from "react-icons/io5";
+import { MdOutlineBuildCircle } from "react-icons/md";
 
 
 export default function NotificationPreferences() {
@@ -47,9 +52,7 @@ export default function NotificationPreferences() {
               <tr className="border-t border-green-200 hover:bg-[#f8fcf9] transition-colors gap-10">
                 <td className="px-6 py-5 text-sm font-semibold">
                   <div className="flex items-center gap-6 font-bold">
-                    <span className="material-symbols-outlined text-green-400">
-                        home_work
-                    </span>
+                    <BiBuildingHouse className="text-3xl text-green-500"/>
                     New Property Matches
                   </div>
                 </td>
@@ -71,9 +74,7 @@ export default function NotificationPreferences() {
               <tr className="border-t border-[#cfe7d3] hover:bg-[#f8fcf9] transition-colors">
                 <td className="px-6 py-5 text-sm font-semibold">
                   <div className="flex items-center gap-6 font-bold">
-                    <span className="material-symbols-outlined text-green-400 text-xs">
-                      forum
-                    </span>
+                    <IoIosChatboxes className="text-3xl text-green-500"/>
                     Chat Messages
                   </div>
                 </td>
@@ -95,9 +96,7 @@ export default function NotificationPreferences() {
               <tr className="border-t border-[#cfe7d3] hover:bg-[#f8fcf9] transition-colors">
                 <td className="px-6 py-5 text-sm font-semibold">
                   <div className="flex items-center gap-6 font-bold">
-                    <span className="material-symbols-outlined text-green-400 text-xs">
-                      trending_down
-                    </span>
+                    <IoIosTrendingDown className="text-3xl text-green-500"/>
                     Price Drops
                   </div>
                 </td>
@@ -128,9 +127,7 @@ export default function NotificationPreferences() {
       <div className="p-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-xl border border-[#cfe7d3] bg-white p-6">
           <div className="flex gap-4 items-center">
-            <span className="material-symbols-outlined text-xs text-green-400">
-              receipt_long
-            </span>
+            <IoReceipt className="text-2xl text-green-500" />
 
             <div>
               <p className="font-bold text-[20px]">Utility Bill Reminders</p>
@@ -148,9 +145,7 @@ export default function NotificationPreferences() {
       <div className="px-4 pb-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-xl border border-[#cfe7d3] bg-white p-6">
           <div className="flex gap-4 items-center">
-            <span className="material-symbols-outlined text-xs text-green-400">
-              build_circle
-            </span>
+            <MdOutlineBuildCircle className="text-3xl text-green-500 border:bg-green-300 rounded" />
 
             <div>
               <p className="font-bold text-[20px]">Maintenance Updates</p>
