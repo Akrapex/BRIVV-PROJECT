@@ -7,7 +7,7 @@ import { Link, Outlet } from "react-router";
 function TopNav() {
   return (
     <>
-      <div className="bg-white capitalize py-2 shadow px-5 max-w-[1440px] w-full mx-auto">
+      <div className="bg-white capitalize py-2 shadow px-5 wrapper">
         <ul className="flex items-center gap-4 justify-between">
           <li>
             <ul className="flex ">
@@ -30,7 +30,7 @@ function TopNav() {
               <li className="">{/* <FaHouse size={30} /> */}buy</li>
 
               <li>{/* <RiMessage3Fill size={30} />{" "} */}rent</li>
-              <li>{/* <RiVideoFill size={30} />{" "} */}messages</li>
+              <Link to="/messages">messages</Link>
               <Link to="/loginandregistration">Edicationals</Link>
               <Link to="profile">Profile</Link>
               <li>

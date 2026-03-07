@@ -18,15 +18,16 @@ const Amenities = () => {
             key={item}
             className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg w-[184px]"
           >
-            <span className="text-green-600">✔</span>
+            <span className="text-priborder-primary">✔</span>
             {item}
           </div>
         ))}
       </div>
 
-      <button className="mt-4 border border-green-600 text-green-600 px-4 py-2 rounded-lg">
+      <button className="mt-4 border border-primary text-primary  px-4 py-2 rounded-lg text-base font-bold">
         Show all 24 amenities
       </button>
+      
     </div>
   );
 };
