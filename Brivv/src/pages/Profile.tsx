@@ -11,12 +11,6 @@ export default function Profile() {
     <Herosection/>
     <ModernOakVilla/>
     <Footer/>
-      {/* <div className="flex flex-row">
-        <SideNav />
-        <div>
-          <Outlet />
-        </div>
-      </div> */}
     </>
   );
 }

@@ -3,7 +3,7 @@
 const Herosection = () => {
   return (
     <section className="wrapper">
-      <div className=" flex items-center gapy-6 text-lg font-medium py-10">
+      <div className=" flex items-center gap-6 text-lg font-medium py-10">
         <p className="text-primary">Real Estate /</p>
         <p className="text-primary">Vilias</p>
         <p>Modern Oak Vlla</p>
