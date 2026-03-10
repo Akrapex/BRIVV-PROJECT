@@ -15,7 +15,7 @@ function TopNav() {
                 to="/"
                 className="w-37.5 inline-flex gap-2 text-2xl text-[rgb(var(--primary))] font-bold items-center"
               >
-                <img src="/images/logo.png" alt="" className="w-[50px]" />
+                <img src="/images/logo.png" alt="" className="w-12.5" />
                 {"Brivv"}
               </Link>
               <li className="lg:w-100 text-sm font-bold bg-[rgba(var(--primary)/0.2)] text-[rgb(var(--primary))] p-3 rounded-xl focus:outline-0 inline-flex  items-center ">
@@ -41,7 +41,7 @@ function TopNav() {
               <li>
                 <a className="inline-flex items-center bg-[rgb(var(--primary))] text-white py-2 px-5 rounded-lg font-bold ">
                   add{" "}
-                  <span className="inline-flex items-center justify-center rounded-full ml-1 bg-white text text-black w-[20px] h-[20px]">
+                  <span className="inline-flex items-center justify-center rounded-full ml-1 bg-white text text-black w-5 h-5">
                     <IoIosAdd />
                   </span>
                 </a>

@@ -12,29 +12,29 @@ const Herosection = () => {
         <img
           src="/images/property-details-background.svg"
           alt="herobachround"
-          className="w-[650px]"
+          className="w-162.5"
         />
 
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
           <img
             src="/images/propert-1.svg"
             alt="property"
-            className="w-[310px]"
+            className="w-77.5"
           />
           <img
             src="/images/property-2.svg"
             alt="property"
-            className="w-[310px]"
+            className="w-77.5"
           />
           <img
             src="/images/proper-3.svg"
             alt="property"
-            className="w-[310px]"
+            className="w-77.5"
           />
           <img
             src="/images/property-4.svg"
             alt="property"
-            className="w-[310px]"
+            className="w-77.5"
           />
         </div>
       </div>

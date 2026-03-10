@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 const AgentCard = () => {
   return (
     <section>
-      <div className="bg-white shadow-2xl rounded-xl p-6 space-y-4  w-[320px] h-[386px]">
+      <div className="bg-white shadow-2xl rounded-xl p-6 space-y-4  w-[320px] h-96.5">
         <div className="flex items-center gap-3">
           <img
             src="https://i.pravatar.cc/100"
@@ -40,7 +40,7 @@ const AgentCard = () => {
         <p className="text-lg font-bold  text-white">
           First-Time Buyer's Guide
         </p>
-        <p className="text-sm font-normal text-white w-[254px]">
+        <p className="text-sm font-normal text-white w-63.5">
           Learn about Austin property taxes and financing options for this area.
         </p>
         <button className="text-base font-bold text-primary flex items-center">Read Guide <BsArrowRight/></button>

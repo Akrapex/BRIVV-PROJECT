@@ -4,6 +4,7 @@ import SideNav from "../components/SideNav";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaArrowUp } from "react-icons/fa6";
 import { HiOutlineTrendingUp } from "react-icons/hi";
+import UtilityViewings from "../components/UtilityViewings";
 
 export default function Dashboard() {
   return (
@@ -35,6 +36,9 @@ export default function Dashboard() {
             <DashboardCards text="Reward Points" count={1250} icon={<HiOutlineTrendingUp size={10} />
               } plusSign="+" rate={15} indicator="%" />
           </div>
+
+          <UtilityViewings /> 
+
         </div>
       </section>
     </main>
