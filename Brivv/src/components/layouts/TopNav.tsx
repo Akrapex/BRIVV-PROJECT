@@ -47,7 +47,7 @@ function TopNav() {
               <li>
                 <a
                   href=""
-                  className="inline-block w-[50px] h-[50px] rounded-full border-2 border-[rgb(var(--primary))]"
+                  className="inline-block w-12.5 h-12.5 rounded-full border-2 border-[rgb(var(--primary))]"
                 ></a>
               </li>
             </ul>

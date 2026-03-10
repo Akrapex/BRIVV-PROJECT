@@ -1,3 +1,13 @@
+import ProfileHeader from "../components/ProfileHeader";
+import SideNav from "../components/SideNav";
+
 export default function Dashboard() {
-  return <h1>Dashboard page</h1>;
+  return (
+    <main className="flex bg-[#f7f8f6]">
+      <SideNav />
+      <section className="grow">
+        <ProfileHeader />
+      </section>
+    </main>
+  )
 }
