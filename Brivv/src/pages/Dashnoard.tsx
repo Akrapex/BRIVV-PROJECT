@@ -5,6 +5,7 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { FaArrowUp } from "react-icons/fa6";
 import { HiOutlineTrendingUp } from "react-icons/hi";
 import UtilityViewings from "../components/UtilityViewings";
+import MyListings from "../components/MyListings";
 
 export default function Dashboard() {
   return (
@@ -13,6 +14,7 @@ export default function Dashboard() {
       <section className="grow">
         <ProfileHeader />
 
+        {/* Dashboard Content */}
         <div className="p-7.75">
 
           <div className="flex flex-wrap gap-5 items-center justify-between mb-8">
@@ -39,6 +41,8 @@ export default function Dashboard() {
 
           <UtilityViewings /> 
 
+          {/* My listing */}
+          <MyListings />
         </div>
       </section>
     </main>

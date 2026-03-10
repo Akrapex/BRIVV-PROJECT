@@ -3,7 +3,7 @@ import UpcomingViewings from './UpcomingViewings';
 
 function UtilityViewings() {
   return (
-    <section className="flex gap-6">
+    <section className="flex items-center gap-6">
       <div className="bg-white lg:w-157.25 rounded-xl border border-[#CFDBE7]">
         <div className="p-6 flex justify-between items-center border-b border-[#CFDBE7]">
           <h2 className="text-[18px] font-bold text-[#0D141B]">Utility Spending Overview</h2>

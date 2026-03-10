@@ -3,7 +3,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 function UpcomingViewings() {
   return (
-    <article className="bg-white border border-[#CFDBE7] rounded-xl grow">
+    <article className="bg-white border border-[#CFDBE7] rounded-xl grow overflow-hidden">
         <div className="p-6 border-b border-[#CFDBE7]">
             <h1 className="font-bold text-[18px]">Upcoming Viewings</h1>
         </div>
@@ -50,8 +50,10 @@ function UpcomingViewings() {
 
                 <MdOutlineKeyboardArrowRight size={25} className="ml-auto" />
             </div>
+        </div>
 
-            
+        <div className="p-4 mt-4 bg-[#F8FAFC] cursor-pointer">
+            <h2 className="text-[#6B8E23] text-[14px] font-bold text-center">View Calendar</h2>
         </div>
     </article>
   )

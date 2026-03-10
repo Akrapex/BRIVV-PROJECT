@@ -1,7 +1,7 @@
 const SplashScreen = () => {
   return (
     <div className="min-h-screen bg-[url('/images/slash-screen.svg')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
-      <div className="w-[448px] h-342px] text-center backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-10 shadow-2xl">
+      <div className="w-md h-342px] text-center backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-10 shadow-2xl">
         <img
           src="/images/logo.png"
           alt="logo"
@@ -24,7 +24,7 @@ const SplashScreen = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="mt-2 w-full h-[6px] bg-white/20 rounded-full overflow-hidden">
+        <div className="mt-2 w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
           <div className="h-full w-[74%] bg-emerald-400 my-4"></div>
         </div>
       </div>
