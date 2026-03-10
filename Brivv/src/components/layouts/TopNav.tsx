@@ -11,10 +11,13 @@ function TopNav() {
         <ul className="flex items-center gap-4 justify-between">
           <li>
             <ul className="flex ">
-              <li className="w-37.5 inline-flex gap-2 text-2xl text-[rgb(var(--primary))] font-bold items-center">
+              <Link
+                to="/"
+                className="w-37.5 inline-flex gap-2 text-2xl text-[rgb(var(--primary))] font-bold items-center"
+              >
                 <img src="/images/logo.png" alt="" className="w-[50px]" />
                 {"Brivv"}
-              </li>
+              </Link>
               <li className="lg:w-100 text-sm font-bold bg-[rgba(var(--primary)/0.2)] text-[rgb(var(--primary))] p-3 rounded-xl focus:outline-0 inline-flex  items-center ">
                 <RiSearchLine />
                 <input
@@ -29,7 +32,9 @@ function TopNav() {
             <ul className="lg:flex hidden justify-around items-center  text-sm gap-3 font-semibold">
               <li className="">{/* <FaHouse size={30} /> */}buy</li>
 
-              <li>{/* <RiMessage3Fill size={30} />{" "} */}rent</li>
+              <Link to="/splasgscreen">
+                {/* <RiMessage3Fill size={30} />{" "} */}rent
+              </Link>
               <Link to="/messages">messages</Link>
               <Link to="/loginandregistration">Edicationals</Link>
               <Link to="profile">Profile</Link>

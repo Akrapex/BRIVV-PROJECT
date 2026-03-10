@@ -14,6 +14,7 @@ import Privacy from "./pages/Privacy";
 import Education from "./Education";
 
 import LoginAndRegistration from "./components/LoginAndRegistration";
+import SplashScreen from "./pages/splashScreen";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
@@ -23,21 +24,19 @@ function App() {
         <Route index element={<Marketplace />}></Route>
         <Route path="/messages" element={<Messages />}></Route>
         <Route path="/discover" element={<Education />}></Route>
+        <Route path="/splasgscreen" element={<SplashScreen />}></Route>
       </Route>
-      <Route
-        path="/login"
-        element={<LoginAndRegistration />}
-      ></Route>
+      <Route path="/login" element={<LoginAndRegistration />}></Route>
       <Route path="/profile" element={<Profile />}>
         <Route index element={<Dashboard />} />
       </Route>
       <Route path="/setting" element={<Settings />}>
-        <Route path='/setting/personal-info' element={<PersonalInfo/>} />
+        <Route path="/setting/personal-info" element={<PersonalInfo />} />
 
         <Route path="/setting/security" element={<Security />} />
-        <Route path="/setting/notification" element={<Notification />}/>
-        <Route path="/setting/payment" element={<Payment/>}/>
-        <Route path="/setting/privacy" element={<Privacy/>}/>
+        <Route path="/setting/notification" element={<Notification />} />
+        <Route path="/setting/payment" element={<Payment />} />
+        <Route path="/setting/privacy" element={<Privacy />} />
       </Route>
     </Routes>
   );
