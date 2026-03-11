@@ -11,7 +11,7 @@ const PropertyCard = ({ property }: Props) => {
         <img
           src={property.image}
           alt={property.title}
-          className="h-[324px] w-full object-cover"
+          className="h-81 w-full object-cover"
         />
 
         {property.tag && (
@@ -25,7 +25,7 @@ const PropertyCard = ({ property }: Props) => {
         </button>
       </div>
 
-      <div className="p-4 w-[197px] h-[205px] space-y-4">
+      <div className="p-4 w-49.25 h-51.25 space-y-4">
         <h4 className="text-2xl font-bold text-[#6B8E23]">{property.price}</h4>
         <p className="text-lg font-bold">{property.title}</p>
         <p className="text-sm text-[#64748B] mb-3 ">{property.location}</p>

@@ -1,22 +1,21 @@
 
-import TopNav from "../components/layouts/TopNav";
-import Footer from "../components/propertyDetailsProfile/Footer";
-import Herosection from "../components/propertyDetailsProfile/Herosection";
-import ModernOakVilla from "../components/propertyDetailsProfile/ModernOakVilla";
+// import TopNav from "../components/layouts/TopNav";
+// import SideNav from "../components/SideNav";
+// import Footer from "../components/propertyDetailsProfile/Footer";
+// import Herosection from "../components/propertyDetailsProfile/Herosection";
+// import ModernOakVilla from "../components/propertyDetailsProfile/ModernOakVilla";
+
+import Dashboard from "./Dashnoard";
 
 export default function Profile() {
   return (
     <>
-    <TopNav/>
-    <Herosection/>
-    <ModernOakVilla/>
-    <Footer/>
-      {/* <div className="flex flex-row">
-        <SideNav />
-        <div>
-          <Outlet />
-        </div>
-      </div> */}
+    <Dashboard />
+    {/* <TopNav/>
+    <SideNav /> */}
+    {/* <Herosection/> */}
+    {/* <ModernOakVilla/> */}
+    {/* <Footer/> */}
     </>
   );
 }

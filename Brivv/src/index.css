@@ -6,7 +6,7 @@
 
 .wrapper {
 
-  @apply mx-auto max-w-[1200px] w-full p-2;
+  @apply mx-auto container w-full p-2;
 
   @apply mx-auto container w-full;
 }
@@ -14,4 +14,6 @@
 @theme {
   --color-primary: #6b8e23;
   --color-secondary: #6b8e23;
+   --color-tertiary:  #E2E8F0;
+
 }
