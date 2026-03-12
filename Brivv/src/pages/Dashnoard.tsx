@@ -9,7 +9,7 @@ import MyListings from "../components/MyListings";
 
 export default function Dashboard() {
   return (
-    <main className="flex bg-[#f7f8f6]">
+    <main className="relative flex bg-[#f7f8f6]">
       <SideNav />
       <section className="grow">
         <ProfileHeader />

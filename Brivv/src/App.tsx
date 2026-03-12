@@ -15,6 +15,7 @@ import Education from "./Education";
 
 import LoginAndRegistration from "./components/LoginAndRegistration";
 import SplashScreen from "./pages/splashScreen";
+import Properties from "./Properties";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/profile" element={<Profile />}>
         <Route index element={<Dashboard />} />
       </Route>
+      <Route path="/add-new-property" element={<Properties />} />
       <Route path="/setting" element={<Settings />}>
         <Route path="/setting/personal-info" element={<PersonalInfo />} />
 
