@@ -11,17 +11,19 @@ interface SubText {
   id: number;
   text: string;
   icon?: React.ReactNode;
+  underline?: boolean;
 }
 
 const subTextData: SubText[] = [
   { id: 1, text: "DETAILS", icon: <FaCircleCheck size={12} /> },
   { id: 2, text: "MEDIA", icon: <FaCircleCheck size={12} /> },
   { id: 3, text: "LOCATION", icon: <FaCircleCheck size={12} /> },
-  { id: 4, text: "REVIEW" },
+  { id: 4, text: "REVIEW", underline: true },
 ];
 
 function ProgressBar({ step, title, range }: Props) {
   const [width, setWidth] = useState(0);
+  const completionMax = step === title.length;
 
   useEffect(() => {
     const progress = range;
@@ -49,13 +51,25 @@ function ProgressBar({ step, title, range }: Props) {
       <div
         className={`flex justify-between ${step === title.length ? "text-[#4C9A4C]" : undefined}`}
       >
-        {subTextData.map((data) => (
-          <span
-            className={`flex items-center gap-1 text-[14px] font-semibold ${data.id === step ? "text-[#4C9A4C]" : "text-[#94A3B8]"}`}
-          >
-            {step === title.length && data.icon} {data.text}
-          </span>
-        ))}
+        {subTextData.map((data) => {
+          const isActive = data.id === step;
+          const isCompleted = completionMax;
+
+          const textColor =
+            isActive || isCompleted ? "text-[#4C9A4C]" : "text-[#94A3B8]";
+
+          return (
+            <span
+              key={data.id}
+              className={`${data.underline ? "relative" : ""} flex items-center gap-1 text-[14px] font-semibold ${textColor}`}
+            >
+              {step === title.length && data.icon} {data.text}
+              {data.underline && completionMax && (
+                <span className="block absolute w-full h-0.75 bg-[#6B8E23] -bottom-0.5"></span>
+              )}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
