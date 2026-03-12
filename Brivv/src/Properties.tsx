@@ -1,7 +1,8 @@
 import ProgressBar from "./components/ProgressBar";
 import PropertiesHeader from "./components/PropertiesHeader";
+import StepNavigation from "./components/StepNavigation";
 
-const propertyDataSteps = [
+const propertyDataSteps: string[] = [
   "Basic Information",
   "Media Gallery",
   "Location",
@@ -15,6 +16,7 @@ export default function Properties() {
 
       <main className="px-30 py-4">
         <ProgressBar />
+        <StepNavigation />
       </main>
     </section>
   );
