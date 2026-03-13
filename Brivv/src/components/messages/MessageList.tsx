@@ -29,7 +29,7 @@ const chats = [
 
 const   MessageList = () => {
   return (
-    <div className="w-[380px] h-[836px] bg-white shadow-2xl p-4 flex flex-col rounded-2xl">
+    <div className=" h-[90vh] w-95 bg-white shadow-2xl p-4 flex flex-col rounded-2xl sticky top-10">
       <div className="flex justify-between items-center">
         <h2 className="font-semibold mb-4">Messages</h2>
         <img

@@ -8,7 +8,7 @@ const SplashScreen = () => {
           className="bg-[#39E0794D] w-9 p-5 rounded-xl border border-[#39E0794D] mx-auto text-center"
         />
         <p className="text-[32px] font-bold text-white">
-          Estate<span className="text-yellow-500">Elite</span>
+          BRIVV
         </p>
 
         <p className="text-white/80 leading-5 tracking-[0.35em] uppercase mt-2 text-sm">
