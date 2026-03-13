@@ -19,7 +19,7 @@ function StepNavigation({ currentStep, steps, nextStep, prevStep }: Props) {
         className="flex items-center gap-1 text-[#64748B] py-3 px-6 cursor-pointer font-bold"
       >
         <IoMdArrowBack size={22} /> Back to{" "}
-        {min ? "Dashboard" : "text[step - 2]"}
+        {min ? "Dashboard" : steps[currentStep - 2].title?.split(" ")[0]}
       </button>
 
       {!max && (

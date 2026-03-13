@@ -26,7 +26,7 @@ export default function Properties() {
   const range = (step / steps.length) * 100;
 
   const handleNextStep = () => {
-    setStep((prev) => Math.min(prev + 1, steps.length - 1));
+    setStep((prev) => Math.min(prev + 1, steps.length));
   };
 
   const handlePrevStep = () => {
@@ -46,6 +46,9 @@ export default function Properties() {
 
       <main className="px-30 py-4">
         <ProgressBar currentStep={step} steps={steps} range={range} />
+
+        <div>{steps[step - 1].component}</div>
+
         <StepNavigation
           currentStep={step}
           steps={steps}
