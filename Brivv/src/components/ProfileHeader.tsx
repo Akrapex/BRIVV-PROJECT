@@ -4,7 +4,7 @@ import { GoQuestion } from "react-icons/go";
 
 function ProfileHeader() {
   return (
-    <div className="py-3 px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3]">
+    <div className="sticky top-0 z-10 py-3 px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3]">
         <form className="px-4 flex items-center gap-3 bg-[#E7EDF3] w-fit rounded-lg">
           <AiOutlineSearch color="#4C739A" />
           <input type="text" placeholder="Search properties, guides..." className="py-3 focus:outline-0 w-50 placeholder:text-[#4C739A]" />

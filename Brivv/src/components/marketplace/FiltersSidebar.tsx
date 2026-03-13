@@ -1,4 +1,3 @@
-
 const FiltersSidebar = () => {
   return (
     <aside className="hidden md:block bg-white p-6 rounded-lg shadow-sm w-[288px] h-[90vh] overflow-scroll py-6 sticky top-20">
@@ -97,6 +96,6 @@ const FiltersSidebar = () => {
       </div>
     </aside>
   );
-}
+};
 
-export default FiltersSidebar
+export default FiltersSidebar;

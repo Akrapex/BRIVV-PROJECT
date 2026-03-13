@@ -10,7 +10,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 export default function SideNav() {
   return (
-    <aside className="h-screen w-64 shadow-sm bg-white flex flex-col justify-between">
+    <aside className="sticky top-0 h-screen w-64 shadow-sm bg-white flex flex-col justify-between">
       {/* Logo */}
       <div>
         <div className="flex items-center gap-3 px-6 py-6">
