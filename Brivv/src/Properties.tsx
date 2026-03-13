@@ -1,27 +1,43 @@
-import { useState } from "react";
-import ProgressBar from "./components/ProgressBar";
-import PropertiesHeader from "./components/PropertiesHeader";
-import StepNavigation from "./components/StepNavigation";
+import React, { useState } from "react";
+import ProgressBar from "./components/addNewPropertyComps/ProgressBar";
+import PropertiesHeader from "./components/addNewPropertyComps/PropertiesHeader";
+import StepNavigation from "./components/addNewPropertyComps/StepNavigation";
+import { useNavigate } from "react-router";
+import BasicInfo from "./components/addNewPropertyComps/BasicInfo/BasicInfo";
+import MediaGallery from "./components/addNewPropertyComps/MediaGallery/MediaGallery";
+import Location from "./components/addNewPropertyComps/Location/Location";
+import Review from "./components/addNewPropertyComps/Review/Review";
 
-const propertyDataSteps: string[] = [
-  "Basic Information",
-  "Media Gallery",
-  "Location",
-  "Review",
+export interface Steps {
+  title: string;
+  component: React.ReactElement;
+}
+
+const steps: Steps[] = [
+  { title: "Basic Information", component: <BasicInfo /> },
+  { title: "Media Galley", component: <MediaGallery /> },
+  { title: "Location", component: <Location /> },
+  { title: "Review", component: <Review /> },
 ];
 
 export default function Properties() {
   const [step, setStep] = useState<number>(1);
-  const range = (step / propertyDataSteps.length) * 100;
+  const navigate = useNavigate();
+  const range = (step / steps.length) * 100;
 
   const handleNextStep = () => {
-    if (step === 4) return;
-    setStep((prevStep) => prevStep + 1);
+    setStep((prev) => Math.min(prev + 1, steps.length - 1));
   };
 
   const handlePrevStep = () => {
-    if (step === 1) return;
-    setStep((prevStep) => prevStep - 1);
+    if (step === 1) {
+      navigate("/profile", { replace: true });
+      return;
+    }
+
+    if (step > 1) {
+      setStep((prev) => prev - 1);
+    }
   };
 
   return (
@@ -29,10 +45,10 @@ export default function Properties() {
       <PropertiesHeader />
 
       <main className="px-30 py-4">
-        <ProgressBar step={step} title={propertyDataSteps} range={range} />
+        <ProgressBar currentStep={step} steps={steps} range={range} />
         <StepNavigation
-          step={step}
-          text={propertyDataSteps}
+          currentStep={step}
+          steps={steps}
           nextStep={handleNextStep}
           prevStep={handlePrevStep}
         />

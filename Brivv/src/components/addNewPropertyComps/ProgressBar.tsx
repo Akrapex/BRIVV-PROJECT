@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
+import type { Steps } from "../../Properties";
 
 interface Props {
-  step: number;
-  title: string[];
+  currentStep: number;
+  steps: Steps[];
   range: number;
 }
 
@@ -21,20 +22,20 @@ const subTextData: SubText[] = [
   { id: 4, text: "REVIEW", underline: true },
 ];
 
-function ProgressBar({ step, title, range }: Props) {
+function ProgressBar({ currentStep, steps, range }: Props) {
   const [width, setWidth] = useState(0);
-  const completionMax = step === title.length;
+  const completionMax = currentStep === steps.length;
 
   useEffect(() => {
     const progress = range;
     setWidth(progress);
-  }, [step, range]);
+  }, [currentStep, range]);
 
   return (
     <div className="p-4 bg-white border border-tertiary rounded-xl">
       <div className="flex justify-between mb-3">
         <h1 className="text-[18px] font-bold text-[#0D1B0D]">
-          Step {step} of {title.length}: {title[step - 1]}
+          Step {currentStep} of {steps.length}: {steps[currentStep - 1].title}
         </h1>
         <p className="text-[#6B8E23] text-[14px] font-bold">
           {range}% Completed
@@ -49,10 +50,10 @@ function ProgressBar({ step, title, range }: Props) {
       </div>
 
       <div
-        className={`flex justify-between ${step === title.length ? "text-[#4C9A4C]" : undefined}`}
+        className={`flex justify-between ${currentStep === steps.length ? "text-[#4C9A4C]" : undefined}`}
       >
         {subTextData.map((data) => {
-          const isActive = data.id === step;
+          const isActive = data.id === currentStep;
           const isCompleted = completionMax;
 
           const textColor =
@@ -63,7 +64,7 @@ function ProgressBar({ step, title, range }: Props) {
               key={data.id}
               className={`${data.underline ? "relative" : ""} flex items-center gap-1 text-[14px] font-semibold ${textColor}`}
             >
-              {step === title.length && data.icon} {data.text}
+              {currentStep === steps.length && data.icon} {data.text}
               {data.underline && completionMax && (
                 <span className="block absolute w-full h-0.75 bg-[#6B8E23] -bottom-0.5"></span>
               )}

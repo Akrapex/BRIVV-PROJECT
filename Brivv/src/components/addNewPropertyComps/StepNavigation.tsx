@@ -1,15 +1,16 @@
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
+import type { Steps } from "../../Properties";
 
-interface Steps {
-  step: number;
-  text: string[];
+interface Props {
+  currentStep: number;
+  steps: Steps[];
   nextStep: React.MouseEventHandler<HTMLButtonElement>;
   prevStep: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-function StepNavigation({ step, text, nextStep, prevStep }: Steps) {
-  const max = step === text.length;
-  const min = step === 1;
+function StepNavigation({ currentStep, steps, nextStep, prevStep }: Props) {
+  const max = currentStep === steps.length;
+  const min = currentStep === 1;
 
   return (
     <div className="py-6 mt-6 flex gap-4 border-t border-tertiary">
@@ -17,7 +18,8 @@ function StepNavigation({ step, text, nextStep, prevStep }: Steps) {
         onClick={prevStep}
         className="flex items-center gap-1 text-[#64748B] py-3 px-6 cursor-pointer font-bold"
       >
-        <IoMdArrowBack size={22} /> Back to {min ? "Dashboard" : text[step - 2]}
+        <IoMdArrowBack size={22} /> Back to{" "}
+        {min ? "Dashboard" : "text[step - 2]"}
       </button>
 
       {!max && (
@@ -30,7 +32,9 @@ function StepNavigation({ step, text, nextStep, prevStep }: Steps) {
         onClick={nextStep}
         className={`flex items-center gap-1 ${max ? "text-[#64748B] ml-auto" : "bg-[#6B8E23] text-white"} py-3 px-6 cursor-pointer font-bold rounded-xl`}
       >
-        {step === text.length ? "Discard Draft" : `Next: ${text[step]}`}
+        {currentStep === steps.length
+          ? "Discard Draft"
+          : `Next: ${steps[currentStep].title}`}
         {!max && <IoMdArrowForward size={22} />}
       </button>
     </div>
