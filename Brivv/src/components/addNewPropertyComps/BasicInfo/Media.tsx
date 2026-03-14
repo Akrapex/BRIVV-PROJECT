@@ -33,14 +33,12 @@ function Media() {
   );
 
   return (
-    <>
-      <PropertyCard
-        icon={<FaRegImages size={25} color="#6B8E23" />}
-        headerText="High-Quality Media"
-        badge={badge}
-        component={element}
-      />
-    </>
+    <PropertyCard
+      icon={<FaRegImages size={25} color="#6B8E23" />}
+      headerText="High-Quality Media"
+      badge={badge}
+      component={element}
+    />
   );
 }
 

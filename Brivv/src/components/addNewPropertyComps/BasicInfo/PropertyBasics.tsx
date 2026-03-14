@@ -5,7 +5,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { useState } from "react";
 import ListingForm from "./ListingForm";
 import PropertyCard from "../PropertyCard";
-import SelectionTypeCard from "./SelectionTypeCard";
+import SelectionTypeCard from "../SelectionTypeCard";
 
 interface ListingCategory {
   id: string;
