@@ -1,3 +1,4 @@
+import Media from "./Media";
 import PropertyBasics from "./PropertyBasics";
 
 function BasicInfo() {
@@ -12,6 +13,7 @@ function BasicInfo() {
       </p>
 
       <PropertyBasics />
+      <Media />
     </div>
   );
 }
