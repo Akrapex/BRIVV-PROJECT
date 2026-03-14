@@ -1,6 +1,6 @@
 const ChatPanel = () => {
   return (
-    <div className="flex flex-col bg-white shadow-2xl w-[492px] h-[836px] rounded-2xl">
+    <div className="h-[90vh] flex flex-col grow bg-white shadow-2xl w-123 h-209 rounded-2xl relative">
       {/* Header */}
       <div className="p-4 flex justify-between items-center border-b">
         <div className="flex items-center gap-2">
@@ -74,8 +74,8 @@ const ChatPanel = () => {
       </div>
 
       {/* Input */}
-      <div className="py-10">
-        <div className="p-4  bg-[#F1F5F9] rounded-xl flex items-center gap-3 w-[458px] mx-auto text-center">
+      <div className="py-5 ">
+        <div className="p-4  bg-[#F1F5F9] rounded-xl flex items-center gap-3 w-[95%] mx-auto text-center">
           <div className="flex items-center gap-2">
             <img src="/images/plus-icon.svg" alt="plus-icon" />
             <img src="/images/write-icon.svg" alt="write-icon" />

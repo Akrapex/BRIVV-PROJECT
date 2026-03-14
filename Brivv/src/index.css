@@ -5,15 +5,11 @@
 }
 
 .wrapper {
-
-  @apply mx-auto container w-full p-2;
-
-  @apply mx-auto container w-full;
+  @apply mx-auto container  p-2;
 }
 
 @theme {
   --color-primary: #6b8e23;
   --color-secondary: #6b8e23;
-   --color-tertiary:  #E2E8F0;
-
+  --color-tertiary: #e2e8f0;
 }

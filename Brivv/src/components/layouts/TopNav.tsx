@@ -1,14 +1,23 @@
-
 import { RiNotification4Fill } from "react-icons/ri";
 import { RiSearchLine } from "react-icons/ri";
 import { IoIosAdd } from "react-icons/io";
-import { Link, Outlet } from "react-router";
+import { Link, Outlet, useParams } from "react-router";
+import { useLocation } from "react-router";
 
 function TopNav() {
+  let isVisible = true;
+
+  let path = useLocation();
+  console.log(path.pathname);
+
+  if (path.pathname === "/properties") {
+    isVisible = false;
+  }
+
   return (
     <>
-      <div className="bg-white capitalize py-2 shadow px-5 wrapper">
-        <ul className="flex items-center gap-4 justify-between">
+      <div className="bg-white capitalize py-2 shadow px-5 wrapper fixed z-[100]">
+        <ul className="flex items-center gap-4 px-5 md:px-20 justify-between">
           <li>
             <ul className="flex ">
               <Link
@@ -18,6 +27,7 @@ function TopNav() {
                 <img src="/images/logo.png" alt="" className="w-12.5" />
                 {"Brivv"}
               </Link>
+             {isVisible && (
               <li className="lg:w-100 text-sm font-bold bg-[rgba(var(--primary)/0.2)] text-[rgb(var(--primary))] p-3 rounded-xl focus:outline-0 inline-flex  items-center ">
                 <RiSearchLine />
                 <input
@@ -26,18 +36,16 @@ function TopNav() {
                   className=" pl-3 grow focus:outline-0 "
                 />
               </li>
+             )}
             </ul>
           </li>
           <li>
             <ul className="lg:flex hidden justify-around items-center  text-sm gap-3 font-semibold">
-              <li className="">{/* <FaHouse size={30} /> */}buy</li>
-
-              <Link to="/splasgscreen">
-                {/* <RiMessage3Fill size={30} />{" "} */}rent
+              <Link to="/properties">
+                {/* <RiMessage3Fill size={30} />{" "} */}properties
               </Link>
               <Link to="/messages">messages</Link>
-              <Link to="/loginandregistration">Edicationals</Link>
-              <Link to="profile">Profile</Link>
+              <Link to="profile">Dashboard</Link>
               <li>
                 <a className="inline-flex items-center bg-[rgb(var(--primary))] text-white py-2 px-5 rounded-lg font-bold ">
                   add{" "}

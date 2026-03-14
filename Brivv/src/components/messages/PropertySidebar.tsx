@@ -1,6 +1,6 @@
 const  PropertySidebar = () => {
   return (
-    <div className="   p-4 space-y-6">
+    <div className="space-y-6">
       <div className="bg-white rounded-lg p-4 w-70">
         <h4 className="font-bold text-xs mb-2">Property Stats</h4>
 

@@ -2,7 +2,6 @@ import TopNav from "./components/layouts/TopNav";
 import { Routes, Route } from "react-router";
 import Messages from "./pages/Messages";
 import Marketplace from "./pages/Marketplace";
-// import Discover from './pages/Discover'
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashnoard";
 import Settings from "./Settings";
@@ -21,20 +20,19 @@ import Properties from "./Properties";
 function App() {
   return (
     <Routes>
+      <Route index element={<SplashScreen />} />
       <Route path="/" element={<TopNav />}>
-        <Route index element={<Marketplace />}></Route>
-        <Route path="/messages" element={<Messages />}></Route>
-        <Route path="/discover" element={<Education />}></Route>
-        <Route path="/splasgscreen" element={<SplashScreen />}></Route>
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/discover" element={<Education />} />
+        <Route path="/properties" element={<Marketplace />} />
       </Route>
-      <Route path="/login" element={<LoginAndRegistration />}></Route>
+      <Route path="/login" element={<LoginAndRegistration />} />
       <Route path="/profile" element={<Profile />}>
         <Route index element={<Dashboard />} />
       </Route>
       <Route path="/add-new-property" element={<Properties />} />
       <Route path="/setting" element={<Settings />}>
         <Route path="/setting/personal-info" element={<PersonalInfo />} />
-
         <Route path="/setting/security" element={<Security />} />
         <Route path="/setting/notification" element={<Notification />} />
         <Route path="/setting/payment" element={<Payment />} />

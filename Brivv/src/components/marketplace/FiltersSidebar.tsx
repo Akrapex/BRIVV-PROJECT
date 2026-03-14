@@ -1,6 +1,6 @@
 const FiltersSidebar = () => {
   return (
-    <aside className="bg-white p-6 rounded-lg shadow-sm w-[288px] h-200 py-6 sticky top-10">
+    <aside className="hidden md:block bg-white p-6 rounded-lg shadow-sm w-[288px] h-[90vh] overflow-scroll py-6 sticky top-20">
       <h3 className="font-semibold mb-4">Advanced Filters</h3>
 
       <div className="mb-6">
