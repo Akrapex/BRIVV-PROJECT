@@ -2,16 +2,16 @@ import { BsEye } from "react-icons/bs";
 
 const LoginAndRegistration = () => {
   return (
-    <div className="wrapper flex">
+    <div className=" flex">
       {/* LEFT SIDE */}
-      <div className="hidden lg:flex w-1/2 relative">
+      <div className="hidden lg:flex w-3/5 grow-0  shrink-0 h-screen relative group">
         <img
           src="/images/estate-image.png"
           alt="Estate"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 p-12 flex flex-col justify-end text-white ">
           <div className="mb-6 text-2xl font-semibold tracking-tight">
