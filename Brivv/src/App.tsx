@@ -13,7 +13,7 @@ import Privacy from "./pages/Privacy";
 import Education from "./Education";
 
 import LoginAndRegistration from "./components/LoginAndRegistration";
-import SplashScreen from "./pages/splashScreen";
+import SplashScreen from "./pages/SplashScreen";
 import Properties from "./Properties";
 
 // import PersonalInfo from './pages/PersonalInfo'
