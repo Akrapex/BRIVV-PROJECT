@@ -1,8 +1,10 @@
 import { RiNotification4Fill } from "react-icons/ri";
 import { RiSearchLine } from "react-icons/ri";
-import { IoIosAdd } from "react-icons/io";
+import { IoIosAdd, IoMdNotificationsOutline } from "react-icons/io";
 import { Link, Outlet, useParams } from "react-router";
 import { useLocation } from "react-router";
+import { GoQuestion } from "react-icons/go";
+import { AiOutlineSearch } from "react-icons/ai";
 
 function TopNav() {
   let isVisible = true;
@@ -16,56 +18,30 @@ function TopNav() {
 
   return (
     <>
-      <div className="bg-white capitalize py-2 shadow px-5 wrapper fixed z-[100]">
-        <ul className="flex items-center gap-4 px-5 md:px-20 justify-between">
-          <li>
-            <ul className="flex ">
-              <Link
-                to="/"
-                className="w-37.5 inline-flex gap-2 text-2xl text-[rgb(var(--primary))] font-bold items-center"
-              >
-                <img src="/images/logo.png" alt="" className="w-12.5" />
-                {"Brivv"}
-              </Link>
-             {isVisible && (
-              <li className="lg:w-100 text-sm font-bold bg-[rgba(var(--primary)/0.2)] text-[rgb(var(--primary))] p-3 rounded-xl focus:outline-0 inline-flex  items-center ">
-                <RiSearchLine />
-                <input
-                  type="text"
-                  placeholder="Search Location, Zip code, Title..."
-                  className=" pl-3 grow focus:outline-0 "
-                />
-              </li>
-             )}
-            </ul>
-          </li>
-          <li>
-            <ul className="lg:flex hidden justify-around items-center  text-sm gap-3 font-semibold">
-              <Link to="/properties">
-                {/* <RiMessage3Fill size={30} />{" "} */}properties
-              </Link>
-              <Link to="/messages">messages</Link>
-              <Link to="profile">Dashboard</Link>
-              <li>
-                <a className="inline-flex items-center bg-[rgb(var(--primary))] text-white py-2 px-5 rounded-lg font-bold ">
-                  add{" "}
-                  <span className="inline-flex items-center justify-center rounded-full ml-1 bg-white text text-black w-5 h-5">
-                    <IoIosAdd />
-                  </span>
-                </a>
-              </li>
-              <li className="text ">
-                <RiNotification4Fill size={20} />
-              </li>
-              <li>
-                <a
-                  href=""
-                  className="inline-block w-12.5 h-12.5 rounded-full border-2 border-[rgb(var(--primary))]"
-                ></a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+      <div className="sticky top-0 z-10 py-3 px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3]">
+        <form className="px-4 flex items-center gap-3 bg-[#E7EDF3] w-fit rounded-lg">
+          <AiOutlineSearch color="#4C739A" />
+          <input
+            type="text"
+            placeholder="Search properties, guides..."
+            className="py-3 focus:outline-0 w-50 placeholder:text-[#4C739A]"
+          />
+        </form>
+
+        <div className="flex items-center gap-4">
+          <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
+            <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
+            <IoMdNotificationsOutline size={22} />
+          </span>
+
+          <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
+            <GoQuestion size={22} />
+          </span>
+
+          <span className="relative flex items-center justify-center w-10 h-10  cursor-pointer rounded-full overflow-hidden">
+            <img src="https://i.pravatar.cc/40" className="w-full h-full" />
+          </span>
+        </div>
       </div>
       <div>
         <Outlet />
