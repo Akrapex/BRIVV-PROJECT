@@ -5,7 +5,7 @@ import StepNavigation from "./components/addNewPropertyComps/StepNavigation";
 import { useNavigate } from "react-router";
 import BasicInfo from "./components/addNewPropertyComps/BasicInfo/BasicInfo";
 import MediaGallery from "./components/addNewPropertyComps/MediaGallery/MediaGallery";
-import Location from "./components/addNewPropertyComps/Location/Location";
+import Features from "./components/addNewPropertyComps/Features/Features";
 import Review from "./components/addNewPropertyComps/Review/Review";
 
 export interface Steps {
@@ -16,7 +16,7 @@ export interface Steps {
 const steps: Steps[] = [
   { title: "Basic Information", component: <BasicInfo /> },
   { title: "Media Galley", component: <MediaGallery /> },
-  { title: "Location", component: <Location /> },
+  { title: "Features & Amenities", component: <Features /> },
   { title: "Review", component: <Review /> },
 ];
 

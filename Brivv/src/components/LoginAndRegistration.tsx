@@ -23,8 +23,8 @@ const LoginAndRegistration = () => {
           </h1>
 
           <p className="text-gray-200 max-w-md text-sm">
-            Join over 2 milloin users findung thier dream homes and expanding
-            thier property investment portfolio
+            Join over 2 milloin users finding their dream homes and expanding
+            their property investment portfolio
           </p>
         </div>
       </div>
@@ -35,7 +35,7 @@ const LoginAndRegistration = () => {
           <div>
             <h2 className="text-3xl font-bold text-gray-900">Welcome back</h2>
             <p className="text-sm  text-[#4c739a] dark:text-slate-400 font-normal mt-2">
-              The most trusted platform for buying, renting and propert
+              The most trusted platform for buying, renting and property
               education.
             </p>
           </div>

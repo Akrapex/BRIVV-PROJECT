@@ -18,7 +18,7 @@ interface SubText {
 const subTextData: SubText[] = [
   { id: 1, text: "DETAILS", icon: <FaCircleCheck size={12} /> },
   { id: 2, text: "MEDIA", icon: <FaCircleCheck size={12} /> },
-  { id: 3, text: "LOCATION", icon: <FaCircleCheck size={12} /> },
+  { id: 3, text: "FEATURES", icon: <FaCircleCheck size={12} /> },
   { id: 4, text: "REVIEW", underline: true },
 ];
 

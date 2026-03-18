@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
   --primary: 76 175 80;
 }
@@ -13,4 +12,20 @@
   --color-primary: #6b8e23;
   --color-secondary: #6b8e23;
   --color-tertiary: #e2e8f0;
+}
+
+.button {
+  @apply bg-[#6b8e23] text-white transition-all duration-300 flex items-center justify-center gap-1 py-3 px-6 cursor-pointer font-bold rounded-xl shadow-xl;
+}
+
+.button-transparent {
+  @apply text-[#0D1B0D] text-[16px] font-bold border border-[#E2E8F0] transition-all duration-300 flex items-center justify-center gap-1 py-3 px-6 cursor-pointer rounded-xl;
+}
+
+.button:hover {
+  @apply bg-[#516d1a];
+}
+
+.button-transparent:hover {
+  @apply bg-[#6b8e23] text-white;
 }

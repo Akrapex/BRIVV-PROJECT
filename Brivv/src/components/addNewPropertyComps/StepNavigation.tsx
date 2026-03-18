@@ -30,7 +30,7 @@ function StepNavigation({ currentStep, steps, nextStep, prevStep }: Props) {
 
       <button
         onClick={nextStep}
-        className={`flex items-center gap-1 ${max ? "text-[#64748B] ml-auto" : "bg-[#6B8E23] text-white"} py-3 px-6 cursor-pointer font-bold rounded-xl`}
+        className={`${max ? "text-[#64748B] ml-auto" : "button"} ${currentStep === steps.length ? "" : "shadow-lg"}`}
       >
         {currentStep === steps.length
           ? "Discard Draft"
