@@ -6,7 +6,7 @@ import MapSection from "./MapSection";
 const ModernOakVilla = () => {
   return (
     <div className="wrapper">
-      <div className="flex gap-110 items-center">
+      <div className="flex justify-between items-start">
         <div>
           <div className="mt-6">
             <h2 className="text-5xl font-bold">Modern Oak Villa</h2>

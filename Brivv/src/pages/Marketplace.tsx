@@ -8,7 +8,7 @@ import PropertyGrid from "../components/marketplace/PropertGrid";
 const Marketplace = () => {
   return (
     <>
-      <main className="bg-[#F7F8F6] pt-18">
+      <main className="bg-[#F7F8F6]">
         <HeroSearch />
         <div className="mx-auto md:w-[90%] p-10 flex gap-8 ">
           <FiltersSidebar />
