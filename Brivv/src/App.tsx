@@ -12,9 +12,10 @@ import Payment from "./pages/Payment";
 import Privacy from "./pages/Privacy";
 import Education from "./Education";
 
-import LoginAndRegistration from "./components/LoginAndRegistration";
+import LoginAndRegistration from "./pages/AuthPage";
 import SplashScreen from "./pages/SplashScreen";
 import Properties from "./Properties";
+import AuthPage from "./pages/AuthPage";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <Route path="/discover" element={<Education />} />
         <Route path="/properties" element={<Marketplace />} />
       </Route>
-      <Route path="/login" element={<LoginAndRegistration />} />
+      <Route path="/login" element={<AuthPage />} />
       <Route path="/profile" element={<Profile />}>
         <Route index element={<Dashboard />} />
       </Route>
