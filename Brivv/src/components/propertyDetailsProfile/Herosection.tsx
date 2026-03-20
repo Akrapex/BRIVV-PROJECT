@@ -8,33 +8,33 @@ const Herosection = () => {
         <p className="text-primary">Vilias</p>
         <p>Modern Oak Vlla</p>
       </div>
-      <div className="flex items-start gap-16">
+      <div className="flex h-auto items-start gap-16">
         <img
           src="/images/property-details-background.svg"
           alt="herobachround"
-          className="w-162.5"
+          className=""
         />
 
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
           <img
             src="/images/propert-1.svg"
             alt="property"
-            className="w-77.5"
+            className=""
           />
           <img
             src="/images/property-2.svg"
             alt="property"
-            className="w-77.5"
+            className=""
           />
           <img
             src="/images/proper-3.svg"
             alt="property"
-            className="w-77.5"
+            className=""
           />
           <img
             src="/images/property-4.svg"
             alt="property"
-            className="w-77.5"
+            className=""
           />
         </div>
       </div>

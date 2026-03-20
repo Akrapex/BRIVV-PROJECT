@@ -1,8 +1,9 @@
-import { BiCalendar, BiSearch } from "react-icons/bi";
+import {  BiSearch } from "react-icons/bi";
+import { RxCaretDown } from "react-icons/rx";
 
 const  HeroSearch = () =>{
   return (
-    <section className="bg-white pb-20 pt-5 md:px-20 px-10">
+    <section className="bg-white pt-5 md:px-20 px-10">
       <div className="  wrapper">
         {/* Heading */}
         <h1 className="text-3xl font-bold text-gray-900">
@@ -16,7 +17,7 @@ const  HeroSearch = () =>{
         {/* Search Bar */}
         <div className="flex items-center mt-6 bg-gray-100 rounded-lg px-2">
           <div className="flex items-center gap-3 px-4 flex-1">
-            <BiSearch className="text-gray-400" size={20} />
+            <BiSearch className="text-gray-400 hidden md:block" size={20} />
             <input
               type="text"
               placeholder="Search by city, neighborhood, or ZIP"
@@ -24,43 +25,17 @@ const  HeroSearch = () =>{
             />
           </div>
 
-          <button className="bg-primary text-white px-8 py-4 font-bold text-base rounded-lg">
-            Search
+          <button className="bg-primary text-white p-4 md:px-8 md:py-4 font-bold text-base rounded-full md:rounded-lg">
+           <span className="hidden md:inline-block">Search</span><BiSearch className="text-white md:hidden" size={20} />
           </button>
         </div>
 
         {/* Filters */}
-        <div className="md:hidden">
-          <p className="text-sm text-gray-500 mt-4">Popular Filters:</p>
-          <div className="flex items-center gap-3 mt-2">
-            <span className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm">
-              Apartments
-            </span>
-            <span className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm">
-              Houses
-            </span>
-            <span className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm">
-              Townhomes
-            </span>
+        <div className="m-4 flex items-center space-x-3">
+          <div className="flex items-center space-x-2 px-4 py-2 bg-gray-200 w-fit my-4 rounded-xl">
+            <span className="">Sort by</span> <RxCaretDown size={26} />{" "}
           </div>
-        </div>
-        <div className="md:flex gap-3 mt-4 hidden ">
-          <select className="bg-gray-100 px-4 py-2 rounded-md text-gray-700">
-            <option>Price Range</option>
-          </select>
-
-          <select className="bg-gray-100 px-4 py-2 rounded-md text-gray-700">
-            <option>Property Type</option>
-          </select>
-
-          <select className="bg-gray-100 px-4 py-2 rounded-md text-gray-700">
-            <option>Bedrooms</option>
-          </select>
-
-          <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-md text-gray-700">
-            Move-in Date
-            <BiCalendar size={16} />
-          </div>
+          <span>Showing Result for:</span>
         </div>
       </div>
     </section>

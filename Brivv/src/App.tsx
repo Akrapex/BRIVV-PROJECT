@@ -10,7 +10,7 @@ import Security from "./pages/Security";
 import Notification from "./pages/Notification";
 import Payment from "./pages/Payment";
 import Privacy from "./pages/Privacy";
-import Education from "./Education";
+import PropertyDetails from "./pages/PropertyProfile"
 
 import LoginAndRegistration from "./pages/AuthPage";
 import SplashScreen from "./pages/SplashScreen";
@@ -24,7 +24,7 @@ function App() {
       <Route index element={<SplashScreen />} />
       <Route path="/" element={<TopNav />}>
         <Route path="/messages" element={<Messages />} />
-        <Route path="/discover" element={<Education />} />
+        <Route path="/discover" element={<PropertyDetails />} />
         <Route path="/properties" element={<Marketplace />} />
       </Route>
       <Route path="/login" element={<AuthPage />} />
