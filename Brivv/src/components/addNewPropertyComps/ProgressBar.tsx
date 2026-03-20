@@ -38,7 +38,7 @@ function ProgressBar({ currentStep, steps, range }: Props) {
           Step {currentStep} of {steps.length}: {steps[currentStep - 1].title}
         </h1>
         <p className="text-[#6B8E23] text-[14px] font-bold">
-          {range}% Completed
+          {range}% Complete
         </p>
       </div>
       {/* Progress */}
