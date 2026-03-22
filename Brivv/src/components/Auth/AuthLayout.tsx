@@ -1,4 +1,6 @@
-const AuthLayout = ({ children }: { children: React.ReactNode }) => {
+import { Outlet } from "react-router";
+
+const AuthLayout = () => {
   return (
     <div className="flex h-screen relative">
       {/* LEFT SIDE */}
@@ -26,8 +28,10 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="flex flex-1 items-center justify-center bg-gray-50 px-6 py-12">
-        <div className="w-full max-w-md space-y-6">{children}</div>
+      <div className="flex flex-1 items-center justify-center bg-gray-50 px-6 py-12 overflow-auto">
+        <div className="w-full max-w-md space-y-6">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

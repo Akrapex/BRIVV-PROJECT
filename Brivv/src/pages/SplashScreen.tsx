@@ -1,26 +1,22 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-
-
 const SplashScreen = () => {
-  
   let [navigateTo, setNavigateTo] = useState(false);
 
   let navigator = useNavigate();
 
   function navigateScreen() {
-    setNavigateTo(true)
-    navigator("/properties")
-    return null
+    setNavigateTo(true);
+    navigator("/properties");
+    return null;
   }
-
 
   useEffect(() => {
     setTimeout(navigateScreen, 3000);
-  },[])
+  }, []);
 
-  if(navigateTo) return navigateScreen
+  if (navigateTo) navigateScreen;
 
   return (
     <div className="min-h-screen bg-[url('/images/slash-screen.svg')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
@@ -30,9 +26,7 @@ const SplashScreen = () => {
           alt="logo"
           className="bg-[#39E0794D] w-9 p-5 rounded-xl border border-[#39E0794D] mx-auto text-center"
         />
-        <p className="text-[32px] font-bold text-white">
-          BRIVV
-        </p>
+        <p className="text-[32px] font-bold text-white">BRIVV</p>
 
         <p className="text-white/80 leading-5 tracking-[0.35em] uppercase mt-2 text-sm">
           Buy • Rent • Lease • Learn

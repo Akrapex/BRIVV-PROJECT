@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TopNav from "./components/layouts/TopNav";
 import { Routes, Route } from "react-router";
 import Messages from "./pages/Messages";
@@ -10,15 +11,17 @@ import Security from "./pages/Security";
 import Notification from "./pages/Notification";
 import Payment from "./pages/Payment";
 import Privacy from "./pages/Privacy";
-import PropertyDetails from "./pages/PropertyProfile"
+import PropertyDetails from "./pages/PropertyProfile";
 
-import LoginAndRegistration from "./pages/AuthPage";
 import SplashScreen from "./pages/SplashScreen";
 import Properties from "./Properties";
 import AuthPage from "./pages/AuthPage";
+import ConfirmEmail from "./components/Auth/ConfirmEmail";
+import AuthLayout from "./components/Auth/AuthLayout";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
+  const [active, setActive] = useState<"login" | "register">("login");
   return (
     <Routes>
       <Route index element={<SplashScreen />} />
@@ -27,7 +30,13 @@ function App() {
         <Route path="/discover" element={<PropertyDetails />} />
         <Route path="/properties" element={<Marketplace />} />
       </Route>
-      <Route path="/login" element={<AuthPage />} />
+      <Route path="/auth" element={<AuthLayout />}>
+        <Route
+          index
+          element={<AuthPage active={active} setActive={setActive} />}
+        />
+        <Route path="confirm-email" element={<ConfirmEmail />} />
+      </Route>
       <Route path="/profile" element={<Profile />}>
         <Route index element={<Dashboard />} />
       </Route>
