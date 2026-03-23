@@ -16,7 +16,7 @@ const LoginForm = () => {
   });
   const navigate = useNavigate();
 
-  const { loading, signInUser } = useAuth();
+  const { session, loading, signInUser } = useAuth();
 
   // HANDLE INPUT CHANGE
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +40,7 @@ const LoginForm = () => {
       return;
     }
 
-    alert("There was a problem signing in.");
+    alert(result.message);
   };
 
   return (

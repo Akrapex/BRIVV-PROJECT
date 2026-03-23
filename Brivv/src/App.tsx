@@ -18,6 +18,7 @@ import AuthPage from "./pages/AuthPage";
 import ConfirmEmail from "./components/Auth/ConfirmEmail";
 import AuthLayout from "./components/Auth/AuthLayout";
 import DashboardLayout from "./components/layouts/DashboardLayout";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
@@ -37,9 +38,18 @@ function App() {
         />
         <Route path="confirm-email" element={<ConfirmEmail />} />
       </Route>
-      <Route path="/dashboard" element={<DashboardLayout />}>
+
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout />
+          </ProtectedRoute>
+        }
+      >
         <Route index element={<Dashboard />} />
       </Route>
+
       <Route path="/add-new-property" element={<Properties />} />
       <Route path="/setting" element={<Settings />}>
         <Route path="/setting/personal-info" element={<PersonalInfo />} />

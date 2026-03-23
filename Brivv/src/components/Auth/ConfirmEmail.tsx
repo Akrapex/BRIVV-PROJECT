@@ -11,12 +11,11 @@ const ConfirmEmail = () => {
   const userMail = location.state?.email;
 
   const { session, user } = useAuth();
-  const isAuthenticated = session?.user?.user_metadata.email_verified;
-
-  if (!userMail) navigate("/auth");
+  const isAuthenticated = !!user?.email_confirmed_at;
 
   useEffect(() => {
-    if (user?.user_metadata.email_verified && isAuthenticated) {
+    if (!userMail) navigate("/auth");
+    if (session?.user && isAuthenticated) {
       navigate("/properties");
     }
     console.log(session?.user?.user_metadata.email_verified);

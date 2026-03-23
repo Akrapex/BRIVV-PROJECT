@@ -19,7 +19,7 @@ const RegisterForm = () => {
 
   const navigate = useNavigate();
 
-  const { loading, signUpUser } = useAuth();
+  const { session, loading, signUpUser } = useAuth();
 
   // HANDLE INPUT CHANGE
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -42,6 +42,7 @@ const RegisterForm = () => {
       navigate("confirm-email", { state: { email } });
     } else {
       console.log(result.message);
+      console.log(session?.user);
     }
   };
 
