@@ -31,7 +31,7 @@ export default function Properties() {
 
   const handlePrevStep = () => {
     if (step === 1) {
-      navigate("/profile", { replace: true });
+      navigate("/dashboard", { replace: true });
       return;
     }
 

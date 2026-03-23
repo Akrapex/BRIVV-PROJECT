@@ -3,8 +3,7 @@ import TopNav from "./components/layouts/TopNav";
 import { Routes, Route } from "react-router";
 import Messages from "./pages/Messages";
 import Marketplace from "./pages/Marketplace";
-import Profile from "./pages/Profile";
-import Dashboard from "./pages/Dashnoard";
+import Dashboard from "./pages/Dashboard";
 import Settings from "./Settings";
 import PersonalInfo from "./pages/PersonalInfo";
 import Security from "./pages/Security";
@@ -18,6 +17,7 @@ import Properties from "./Properties";
 import AuthPage from "./pages/AuthPage";
 import ConfirmEmail from "./components/Auth/ConfirmEmail";
 import AuthLayout from "./components/Auth/AuthLayout";
+import DashboardLayout from "./components/layouts/DashboardLayout";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
@@ -37,7 +37,7 @@ function App() {
         />
         <Route path="confirm-email" element={<ConfirmEmail />} />
       </Route>
-      <Route path="/profile" element={<Profile />}>
+      <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
       </Route>
       <Route path="/add-new-property" element={<Properties />} />

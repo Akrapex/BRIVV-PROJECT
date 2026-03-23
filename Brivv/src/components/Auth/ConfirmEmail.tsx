@@ -11,15 +11,15 @@ const ConfirmEmail = () => {
   const userMail = location.state?.email;
 
   const { session } = useAuth();
+  const isAuthenticated = session?.user?.user_metadata.email_verified;
 
   if (!userMail) navigate("/auth");
 
   useEffect(() => {
-    if (session?.user) {
-      navigate("/profile");
-    } else {
-      navigate("/auth");
+    if (session?.user && isAuthenticated) {
+      navigate("/properties");
     }
+    console.log(session?.user?.user_metadata.email_verified);
   }, [session, navigate]);
 
   const handleGoToInbox = () => {
@@ -28,7 +28,12 @@ const ConfirmEmail = () => {
     let url = "https://mail.google.com";
 
     if (domain.includes("gmail")) {
-      url = "https://mail.google.com";
+      window.location.href =
+        "intent://mail.google.com/#Intent;scheme=https;package=com.google.android.gm;end";
+
+      setTimeout(() => {
+        window.open("https://mail.google.com", "_blank");
+      }, 500);
     } else if (domain.includes("yahoo")) {
       url = "https://mail.yahoo.com";
     } else if (domain.includes("outlook") || domain.includes("hotmail")) {
@@ -79,7 +84,7 @@ const ConfirmEmail = () => {
           onClick={handleResend}
           className="text-[#4E6400] font-semibold cursor-pointer"
         >
-          {resending ? "Resending" : "Resend link"}
+          {resending ? "Resending..." : "Resend link"}
         </h3>
       </div>
     </section>

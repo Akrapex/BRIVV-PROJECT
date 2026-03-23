@@ -33,7 +33,7 @@ function TopNav() {
 
         <div className="flex items-center gap-4">
           <div className="md:flex items-center hidden space-x-3">
-            <Link to={"/properties"}>Properties</Link>
+            <Link to={"/dashboard"}>Dashboard</Link>
             <Link to={"/messages"}>message</Link>
             {/* <Link to={"/dashboard"}>listing</Link> */}
             <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
@@ -50,7 +50,7 @@ function TopNav() {
             </span>
           </div>
           <div>
-            <CiMenuFries className="md:hidden"/>
+            <CiMenuFries className="md:hidden" />
           </div>
         </div>
       </div>

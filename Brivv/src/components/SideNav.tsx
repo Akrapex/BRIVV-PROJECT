@@ -7,8 +7,12 @@ import {
   HiSquares2X2,
 } from "react-icons/hi2";
 import { IoArrowBack } from "react-icons/io5";
+import { useAuth } from "../Contexts/AuthContext";
 
 export default function SideNav() {
+  const { user } = useAuth();
+  const userName = user?.user_metadata?.full_name;
+
   return (
     <aside className="sticky top-0 h-screen w-64 shadow-sm bg-white flex flex-col justify-between">
       {/* Logo */}
@@ -26,10 +30,10 @@ export default function SideNav() {
 
         {/* Navigation */}
         <nav className="mt-4 space-y-1 px-3">
-          <NavItem icon={HiHome} label="Dashboard" active/>
+          <NavItem icon={HiHome} label="Dashboard" active />
           <NavItem icon={HiBuildingOffice2} label="Properties" />
           <NavItem icon={HiBookOpen} label="Education" />
-          <NavItem icon={HiBolt} label="Utilities"  />
+          <NavItem icon={HiBolt} label="Utilities" />
           <NavItem icon={HiCog6Tooth} label="Settings" />
         </nav>
       </div>
@@ -42,7 +46,7 @@ export default function SideNav() {
           className="h-10 w-10 rounded-full"
         />
         <div>
-          <p className="text-sm font-medium text-slate-900">Alex Johnson</p>
+          <p className="text-sm font-medium text-slate-900">{userName}</p>
           <p className="text-xs text-slate-500">Unit 402, B-Block</p>
         </div>
       </div>

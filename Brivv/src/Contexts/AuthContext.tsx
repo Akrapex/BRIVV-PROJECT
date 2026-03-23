@@ -24,6 +24,7 @@ interface AuthContextType {
     password: string,
   ) => Promise<AuthResponse>;
   signInUser: (email: string, password: string) => Promise<any>;
+  signOutUser: () => Promise<AuthResponse>;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -41,6 +42,25 @@ export const AuthContextProvider = ({
     throw new Error("Supabase client is not initialized");
   }
 
+  useEffect(() => {
+    const getSession = async () => {
+      const { data } = await supabase.auth.getSession();
+      setSession(data.session);
+    };
+    getSession();
+
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setSession(session);
+        setUser(session?.user ?? null);
+      },
+    );
+
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
+  }, []);
+
   const signUpUser = async (
     fullName: string,
     email: string,
@@ -55,6 +75,7 @@ export const AuthContextProvider = ({
       });
 
       if (error) {
+        setLoading(false);
         return { success: false, message: error.message };
       }
 
@@ -82,41 +103,56 @@ export const AuthContextProvider = ({
   const signInUser = async (email: string, password: string) => {
     try {
       setLoading(true);
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
-      console.log(session?.user?.user_metadata.email_verified, error);
-      console.log(session?.user.user_metadata?.full_name);
+      if (error) {
+        setLoading(false);
+        return {
+          success: false,
+          message: error.message,
+        };
+      }
       setLoading(false);
+      return {
+        success: true,
+        message: "Signed in successfully!",
+      };
     } catch (error) {
       console.log("An error occured while signing in.");
     }
   };
 
-  useEffect(() => {
-    const getSession = async () => {
-      const { data } = await supabase.auth.getSession();
-      setSession(data.session);
-    };
-    getSession();
+  const signOutUser = async () => {
+    const { error } = await supabase.auth.signOut();
 
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-      },
-    );
+    if (error) {
+      console.log(error.message);
+      return {
+        success: false,
+        message: error.message,
+      };
+    }
 
-    return () => {
-      authListener.subscription.unsubscribe();
+    return {
+      success: true,
+      message: "Signed out successfully!",
     };
-  }, []);
+  };
 
   return (
     <AuthContext.Provider
-      value={{ user, session, setSession, loading, signUpUser, signInUser }}
+      value={{
+        user,
+        session,
+        setSession,
+        loading,
+        signUpUser,
+        signInUser,
+        signOutUser,
+      }}
     >
       {children}
     </AuthContext.Provider>

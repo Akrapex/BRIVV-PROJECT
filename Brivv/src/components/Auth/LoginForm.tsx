@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type SubmitEvent } from "react";
 import { BsEye } from "react-icons/bs";
 import { useAuth } from "../../Contexts/AuthContext";
+import { useNavigate } from "react-router";
 
 interface LoginData {
   email: string;
@@ -13,6 +14,7 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const { loading, signInUser } = useAuth();
 
@@ -27,11 +29,18 @@ const LoginForm = () => {
   };
 
   // HANDLE SUBMIT (just to access data)
-  const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const { email, password } = formData;
-    signInUser(email, password);
+    const result = await signInUser(email, password);
+
+    if (result.success) {
+      navigate("/properties");
+      return;
+    }
+
+    alert("There was a problem signing in.");
   };
 
   return (
