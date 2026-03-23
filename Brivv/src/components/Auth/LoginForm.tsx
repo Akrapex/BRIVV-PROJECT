@@ -16,7 +16,7 @@ const LoginForm = () => {
   });
   const navigate = useNavigate();
 
-  const { session, loading, signInUser } = useAuth();
+  const { loading, signInUser } = useAuth();
 
   // HANDLE INPUT CHANGE
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

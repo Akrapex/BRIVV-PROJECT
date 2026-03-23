@@ -18,7 +18,6 @@ const ConfirmEmail = () => {
     if (session?.user && isAuthenticated) {
       navigate("/properties");
     }
-    console.log(session?.user?.user_metadata.email_verified);
   }, [session, navigate]);
 
   const handleGoToInbox = () => {
