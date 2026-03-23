@@ -10,13 +10,13 @@ const ConfirmEmail = () => {
   const navigate = useNavigate();
   const userMail = location.state?.email;
 
-  const { session } = useAuth();
+  const { session, user } = useAuth();
   const isAuthenticated = session?.user?.user_metadata.email_verified;
 
   if (!userMail) navigate("/auth");
 
   useEffect(() => {
-    if (session?.user && isAuthenticated) {
+    if (user?.user_metadata.email_verified && isAuthenticated) {
       navigate("/properties");
     }
     console.log(session?.user?.user_metadata.email_verified);
