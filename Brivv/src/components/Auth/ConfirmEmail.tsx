@@ -58,7 +58,7 @@ const ConfirmEmail = () => {
   };
 
   return (
-    <section className="bg-[#fafaed] flex justify-center items-center">
+    <section className="flex justify-center items-center">
       <div className="flex flex-col text-center items-center gap-3">
         <span className="w-20 h-20 bg-white flex items-center justify-center rounded-full">
           <MdOutlineMarkEmailRead size={35} color="#516d1a" />

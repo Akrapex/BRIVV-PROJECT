@@ -17,6 +17,7 @@ interface AuthContextType {
   user: User | null;
   session: Session | null;
   setSession: React.Dispatch<SetStateAction<Session | null>>;
+  sessionLoader: boolean;
   loading: boolean;
   signUpUser: (
     fullName: string,
@@ -37,15 +38,25 @@ export const AuthContextProvider = ({
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [sessionLoader, setSessionLoader] = useState(true);
 
   if (!supabase) {
     throw new Error("Supabase client is not initialized");
   }
 
+  const redirectUrl =
+    import.meta.env.MODE === "development"
+      ? "http://localhost:5174/auth/callback"
+      : "https://brivv.akrapex.com/auth/callback";
+
   useEffect(() => {
     const getSession = async () => {
       const { data } = await supabase.auth.getSession();
+
+      console.log("GET SESSION:", data.session);
+
       setSession(data.session);
+      setSessionLoader(false);
     };
     getSession();
 
@@ -53,6 +64,7 @@ export const AuthContextProvider = ({
       (_event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
+        setSessionLoader(false);
       },
     );
 
@@ -71,7 +83,10 @@ export const AuthContextProvider = ({
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: { data: { full_name: fullName } },
+        options: {
+          data: { full_name: fullName },
+          emailRedirectTo: redirectUrl,
+        },
       });
 
       if (error) {
@@ -152,6 +167,7 @@ export const AuthContextProvider = ({
         signUpUser,
         signInUser,
         signOutUser,
+        sessionLoader,
       }}
     >
       {children}

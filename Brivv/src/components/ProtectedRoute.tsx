@@ -1,20 +1,16 @@
-import { useEffect } from "react";
 import { useAuth } from "../Contexts/AuthContext";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate } from "react-router";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { session } = useAuth();
-  const navigate = useNavigate();
+  const { session, sessionLoader } = useAuth();
 
-  if (session === undefined) return null;
+  if (sessionLoader) return null;
 
-  const isAuthenticated = !!session?.user?.email_confirmed_at;
+  const authenticated = !!session?.user?.email_confirmed_at;
 
-  if (!session?.user) {
-    console.log("Yes, it's not");
+  if (!session?.user || !authenticated) {
     return <Navigate to="/auth" replace />;
   }
-
   return <>{children}</>;
 }
 

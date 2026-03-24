@@ -9,6 +9,10 @@ function ProfileHeader() {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const { signOutUser } = useAuth();
 
+  const handleSignOut = async () => {
+    await signOutUser();
+  };
+
   return (
     <div className="sticky top-0 z-10 py-3 px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3]">
       <form className="px-4 flex items-center gap-3 bg-[#E7EDF3] w-fit rounded-lg">
@@ -44,7 +48,7 @@ function ProfileHeader() {
             Profile
           </p>
           <p
-            onClick={signOutUser}
+            onClick={handleSignOut}
             className="py-2 px-4 text-[14px] hover:bg-[#f7f8f6] flex items-center gap-1 cursor-pointer"
           >
             <CiLogout size={22} /> Log Out

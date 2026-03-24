@@ -19,6 +19,7 @@ import ConfirmEmail from "./components/Auth/ConfirmEmail";
 import AuthLayout from "./components/Auth/AuthLayout";
 import DashboardLayout from "./components/layouts/DashboardLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
+import CallBack from "./components/Auth/CallBack";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
@@ -37,6 +38,7 @@ function App() {
           element={<AuthPage active={active} setActive={setActive} />}
         />
         <Route path="confirm-email" element={<ConfirmEmail />} />
+        <Route path="callback" element={<CallBack />} />
       </Route>
 
       <Route
