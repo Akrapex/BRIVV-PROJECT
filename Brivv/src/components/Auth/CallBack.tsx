@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { TbRosetteDiscountCheck } from "react-icons/tb";
 import { TbCircleDashedCheck } from "react-icons/tb";
 import supabase from "../../../utils/supabaseClient";
+import { useNavigate } from "react-router";
 
 function CallBack() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleAuth = async () => {
@@ -45,7 +47,9 @@ function CallBack() {
                 your dream estate with our bespoke collection of premium
                 properties.
               </p>
-              <button className="button">Go to login</button>
+              <button onClick={() => navigate("/auth")} className="button">
+                Go to login
+              </button>
             </div>
           )}
         </div>
