@@ -49,6 +49,8 @@ export const AuthContextProvider = ({
       ? "http://localhost:5174/auth/callback"
       : "https://brivv.akrapex.com/auth/callback";
 
+  console.log(redirectUrl);
+
   useEffect(() => {
     const getSession = async () => {
       const { data } = await supabase.auth.getSession();

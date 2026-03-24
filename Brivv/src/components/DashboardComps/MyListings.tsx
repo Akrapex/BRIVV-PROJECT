@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import ListingCard from "./ListingCard";
-import { propertyListing } from "./constant/listing";
+import { propertyListing } from "../constant/listing";
 import { IoIosAdd } from "react-icons/io";
 
 const properyToList = propertyListing.slice(0, 2);

@@ -1,10 +1,10 @@
-import DashboardCards from "../components/DashboardCards";
-import ProfileHeader from "../components/ProfileHeader";
+import DashboardCards from "../components/DashboardComps/DashboardCards";
+import ProfileHeader from "../components/DashboardComps/ProfileHeader";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaArrowUp } from "react-icons/fa6";
 import { HiOutlineTrendingUp } from "react-icons/hi";
-import UtilityViewings from "../components/UtilityViewings";
-import MyListings from "../components/MyListings";
+import UtilityViewings from "../components/DashboardComps/UtilityViewings";
+import MyListings from "../components/DashboardComps/MyListings";
 import { useAuth } from "../Contexts/AuthContext";
 
 export default function Dashboard() {

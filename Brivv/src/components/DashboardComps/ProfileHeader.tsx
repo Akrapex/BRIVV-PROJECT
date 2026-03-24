@@ -3,7 +3,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { CiLogout } from "react-icons/ci";
 import { GoQuestion } from "react-icons/go";
 import { useState } from "react";
-import { useAuth } from "../Contexts/AuthContext";
+import { useAuth } from "../../Contexts/AuthContext";
 
 function ProfileHeader() {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);

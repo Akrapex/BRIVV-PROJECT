@@ -20,6 +20,7 @@ import AuthLayout from "./components/Auth/AuthLayout";
 import DashboardLayout from "./components/layouts/DashboardLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import CallBack from "./components/Auth/CallBack";
+import PublicRoute from "./components/PublicRoute";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
@@ -32,7 +33,14 @@ function App() {
         <Route path="/discover" element={<PropertyDetails />} />
         <Route path="/properties" element={<Marketplace />} />
       </Route>
-      <Route path="/auth" element={<AuthLayout />}>
+      <Route
+        path="/auth"
+        element={
+          <PublicRoute>
+            <AuthLayout />
+          </PublicRoute>
+        }
+      >
         <Route
           index
           element={<AuthPage active={active} setActive={setActive} />}
