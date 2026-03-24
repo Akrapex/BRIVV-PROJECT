@@ -10,9 +10,7 @@ function CallBack() {
 
   useEffect(() => {
     const handleAuth = async () => {
-      const { error } = await supabase.auth.exchangeCodeForSession(
-        window.location.href,
-      );
+      const { error } = await supabase.auth.getSession();
 
       if (error) {
         setLoading(false);
