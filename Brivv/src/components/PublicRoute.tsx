@@ -6,6 +6,7 @@ function PublicRoute({ children }: { children: React.ReactNode }) {
 
   if (sessionLoader || session === undefined) return null;
   if (session && session.user) {
+    console.log(session);
     return <Navigate to="/dashboard" replace />;
   }
 

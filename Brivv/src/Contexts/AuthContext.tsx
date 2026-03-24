@@ -7,6 +7,7 @@ import {
 } from "react";
 import supabase from "../../utils/supabaseClient";
 import type { Session, User } from "@supabase/supabase-js";
+import { useLocation } from "react-router";
 
 interface AuthResponse {
   success: boolean;
@@ -44,19 +45,17 @@ export const AuthContextProvider = ({
     throw new Error("Supabase client is not initialized");
   }
 
+  const location = window.location.href;
+  const developmentUrl = location?.split("/")[2];
+
   const redirectUrl =
     import.meta.env.MODE === "development"
-      ? "http://localhost:5174/auth/callback"
+      ? `http://${developmentUrl}/auth/callback`
       : "https://brivv.akrapex.com/auth/callback";
-
-  console.log(redirectUrl);
 
   useEffect(() => {
     const getSession = async () => {
       const { data } = await supabase.auth.getSession();
-
-      console.log("GET SESSION:", data.session);
-
       setSession(data.session);
       setSessionLoader(false);
     };
