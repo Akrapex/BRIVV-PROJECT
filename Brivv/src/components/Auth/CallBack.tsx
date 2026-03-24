@@ -40,7 +40,7 @@ function CallBack() {
 
           {success && (
             <div>
-              <p className="text-[18px] text-[#454839]">
+              <p className="text-[18px] text-[#454839] mb-6">
                 Your account is now fully active. You're ready to start curating
                 your dream estate with our bespoke collection of premium
                 properties.
