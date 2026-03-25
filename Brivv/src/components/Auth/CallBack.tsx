@@ -47,8 +47,8 @@ function CallBack() {
                 your dream estate with our bespoke collection of premium
                 properties.
               </p>
-              <button onClick={() => navigate("/auth")} className="button">
-                Go to login
+              <button onClick={() => navigate("/dashboard")} className="button">
+                Go to dashboard
               </button>
             </div>
           )}

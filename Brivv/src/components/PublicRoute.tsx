@@ -1,12 +1,16 @@
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import { useAuth } from "../Contexts/AuthContext";
 
 function PublicRoute({ children }: { children: React.ReactNode }) {
   const { session, sessionLoader } = useAuth();
+  const location = useLocation();
 
   if (sessionLoader || session === undefined) return null;
+
+  if (location.pathname === "/auth/callback") {
+    return <>{children}</>;
+  }
   if (session && session.user) {
-    console.log(session);
     return <Navigate to="/dashboard" replace />;
   }
 

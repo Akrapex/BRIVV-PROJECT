@@ -3,6 +3,7 @@ import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { useLocation, useNavigate } from "react-router";
 import supabase from "../../../utils/supabaseClient";
 import { useAuth } from "../../Contexts/AuthContext";
+import { redirectUrl } from "../../devEnvironment";
 
 const ConfirmEmail = () => {
   const [resending, setResending] = useState<boolean>(false);
@@ -48,6 +49,9 @@ const ConfirmEmail = () => {
     const { error } = await supabase.auth.resend({
       type: "signup",
       email: userMail,
+      options: {
+        emailRedirectTo: redirectUrl,
+      },
     });
 
     setResending(false);
