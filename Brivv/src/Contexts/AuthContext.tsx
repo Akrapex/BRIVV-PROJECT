@@ -7,7 +7,6 @@ import {
 } from "react";
 import supabase from "../../utils/supabaseClient";
 import type { Session, User } from "@supabase/supabase-js";
-import { useLocation } from "react-router";
 import { redirectUrl } from "../devEnvironment";
 
 interface AuthResponse {

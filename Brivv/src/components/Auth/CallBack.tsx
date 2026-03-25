@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TbRosetteDiscountCheck } from "react-icons/tb";
+import { PiSealCheckFill } from "react-icons/pi";
 import { TbCircleDashedCheck } from "react-icons/tb";
 import supabase from "../../../utils/supabaseClient";
 import { useNavigate } from "react-router";
@@ -32,7 +32,7 @@ function CallBack() {
       ) : (
         <div>
           <span className="flex items-center gap-2 w-fit mb-2 rounded-full py-1 px-3 bg-[#DCE8B2] font-medium text-[#414B22]s">
-            {loading ? <TbCircleDashedCheck /> : <TbRosetteDiscountCheck />}
+            {loading ? <TbCircleDashedCheck /> : <PiSealCheckFill />}
             {loading ? "Verifying email address" : "AUTHENTICATION COMPLETE"}
           </span>
 
