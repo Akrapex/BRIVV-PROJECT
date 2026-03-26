@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router";
 import supabase from "../../../utils/supabaseClient";
 import { useAuth } from "../../Contexts/AuthContext";
 import { redirectUrl } from "../../devEnvironment";
+import { ClipLoader } from "react-spinners";
 
 const ConfirmEmail = () => {
   const [resending, setResending] = useState<boolean>(false);
@@ -86,7 +87,7 @@ const ConfirmEmail = () => {
           onClick={handleResend}
           className="text-[#4E6400] font-semibold cursor-pointer"
         >
-          {resending ? "Resending..." : "Resend link"}
+          {resending ? <ClipLoader size={18} /> : "Resend link"}
         </h3>
       </div>
     </section>

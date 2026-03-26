@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type SubmitEvent } from "react";
 import { BsEye } from "react-icons/bs";
 import { useAuth } from "../../Contexts/AuthContext";
 import { useNavigate } from "react-router";
+import { ClipLoader } from "react-spinners";
 
 interface LoginData {
   email: string;
@@ -91,7 +92,7 @@ const LoginForm = () => {
         type="submit"
         className="w-full rounded-lg bg-green-700 py-3 text-sm font-semibold text-white hover:bg-green-800 transition cursor-pointer"
       >
-        {loading ? "Please wait..." : "Sign in"}
+        {loading ? <ClipLoader size={16} color="#fff" /> : "Sign in"}
       </button>
     </form>
   );
