@@ -16,7 +16,7 @@ function DashboardCards({
   indicator,
 }: Stats) {
   return (
-    <article className="bg-white p-6 w-55 border border-[#CFDBE7] rounded-xl grow transform hover:-translate-y-1 transition-all duration-300">
+    <article className="bg-white p-6 md:w-full w-90 border border-[#CFDBE7] rounded-xl grow transform hover:-translate-y-1 transition-all duration-300 ">
       <p className="font-medium text-[14px] leading-5 text-[#4C739A]">{text}</p>
       <div className="flex justify-between">
         <p className="text-[24px] font-bold leading-8 text-[#0D141B]">
