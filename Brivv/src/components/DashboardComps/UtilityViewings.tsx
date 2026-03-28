@@ -1,5 +1,4 @@
 import sampleImage from "../../assets/Container.png";
-import UpcomingViewings from "./UpcomingViewings";
 
 function UtilityViewings() {
   return (
@@ -42,8 +41,6 @@ function UtilityViewings() {
           </div>
         </div>
       </div>
-
-      <UpcomingViewings />
     </section>
   );
 }

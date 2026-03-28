@@ -7,6 +7,50 @@ import UtilityViewings from "../components/DashboardComps/UtilityViewings";
 import MyListings from "../components/DashboardComps/MyListings";
 import { useAuth } from "../Contexts/AuthContext";
 
+interface OverViewTypes {
+  label: string;
+  count: number;
+  icon?: React.ReactNode;
+  plusSign: string;
+  rate: number;
+  indicator: string;
+}
+
+const overViewData: OverViewTypes[] = [
+  {
+    label: "Saved Properties",
+    count: 0,
+    icon: <FaArrowUp size={10} />,
+    plusSign: "+",
+    rate: 0,
+    indicator: "%",
+  },
+  {
+    label: "Upcoming Viewings",
+    count: 0,
+    icon: <FaArrowUp size={10} />,
+    plusSign: "+",
+    rate: 0,
+    indicator: "%",
+  },
+  {
+    label: "My Listing",
+    count: 0,
+    icon: <FaArrowUp size={10} />,
+    plusSign: "+",
+    rate: 0,
+    indicator: "%",
+  },
+  {
+    label: "Reward Points",
+    count: 0,
+    icon: <HiOutlineTrendingUp size={10} />,
+    plusSign: "+",
+    rate: 0,
+    indicator: "%",
+  },
+];
+
 export default function Dashboard() {
   const { user } = useAuth();
   const userName = user?.user_metadata?.full_name;
@@ -33,29 +77,19 @@ export default function Dashboard() {
         </div>
 
         <div className="mb-8 flex flex-wrap gap-5">
-          <DashboardCards
-            text="Saved Properties"
-            count={12}
-            icon={<FaArrowUp size={10} />}
-            plusSign="+"
-            rate={2}
-          />
-          <DashboardCards text="My Listings" count={3} plusSign="+" rate={0} />
-          <DashboardCards
-            text="Upcoming Viewings"
-            count={5}
-            icon={<FaArrowUp size={10} />}
-            plusSign="+"
-            rate={1}
-          />
-          <DashboardCards
-            text="Reward Points"
-            count={1250}
-            icon={<HiOutlineTrendingUp size={10} />}
-            plusSign="+"
-            rate={15}
-            indicator="%"
-          />
+          {overViewData.map((data, index) => {
+            const showIcon = data.count > 0;
+            return (
+              <DashboardCards
+                key={index}
+                text={data.label}
+                count={data.count}
+                icon={showIcon && data.icon}
+                plusSign={data.plusSign}
+                rate={data.rate}
+              />
+            );
+          })}
         </div>
 
         <UtilityViewings />
