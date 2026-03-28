@@ -13,7 +13,10 @@ const ProfileCard = ({ fullName, email }: UserData) => {
             className="w-full h-full object-cover"
           />
         </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         <button className="absolute bottom-0 right-0 bg-[#7da02b] p-2 rounded-full border-2 border-white text-white">
           <Camera size={14} />
         </button>
