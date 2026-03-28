@@ -14,7 +14,7 @@ function ProfileHeader() {
   };
 
   return (
-    <div className="sticky top-0 z-10 py-3 px-10  lg:flex flex-row justify-between   bg-white border-l border-b border-[#E7EDF3]">
+    <div className="sticky top-0 z-10 py-3 px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3]">
       <form className="px-4 flex items-center gap-3 bg-[#E7EDF3] w-fit rounded-lg">
         <AiOutlineSearch color="#4C739A" />
         <input
@@ -24,7 +24,7 @@ function ProfileHeader() {
         />
       </form>
 
-      <div className="flex lg:pt-0 pt-3 items-center gap-4">
+      <div className="flex items-center gap-4">
         <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
           <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
           <IoMdNotificationsOutline size={22} />
@@ -42,7 +42,7 @@ function ProfileHeader() {
         </span>
 
         <div
-          className={`absolute py-2 ${showDropdown ? "top-18 opacity-100 pointer-events-auto" : "top-20 opacity-0 pointer-events-none"} rounded-lg shadow-lg bg-white border border-[#E7EDF3] w-40 transition-all duration-300`}
+          className={`absolute py-2 ${showDropdown ? "top-18 opacity-100" : "top-20 opacity-0"} rounded-lg shadow-lg bg-white border border-[#E7EDF3] w-40 transition-all duration-300`}
         >
           <p className="py-2 px-4 text-[14px] hover:bg-[#f7f8f6] cursor-pointer">
             Profile
