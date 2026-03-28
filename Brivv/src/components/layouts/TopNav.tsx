@@ -21,16 +21,7 @@ function TopNav() {
         <div className="flex  items-center space-x-4">
           <img src={logo} alt="" className="w-14 " />
           {"Brivv"}
-          {/* <form className="px-4 flex items-center gap-3 bg-[#E7EDF3] w-fit rounded-lg">
-            <AiOutlineSearch color="#4C739A" />
-            <input
-              type="text"
-              placeholder="Search properties, guides..."
-              className="py-3 focus:outline-0 w-50 placeholder:text-[#4C739A]"
-            />
-          </form> */}
         </div>
-
         <div className="flex items-center gap-4">
           <div className="md:flex items-center hidden space-x-3">
             <Link to={"/dashboard"}>Dashboard</Link>
@@ -50,7 +41,7 @@ function TopNav() {
             </span>
           </div>
           <div>
-            <CiMenuFries className="md:hidden" />
+            <CiMenuFries className="md:hidden " />
           </div>
         </div>
       </div>
@@ -62,3 +53,13 @@ function TopNav() {
 }
 
 export default TopNav;
+ {
+   /* <form className="px-4 flex items-center gap-3 bg-[#E7EDF3] w-fit rounded-lg">
+            <AiOutlineSearch color="#4C739A" />
+            <input
+              type="text"
+              placeholder="Search properties, guides..."
+              className="py-3 focus:outline-0 w-50 placeholder:text-[#4C739A]"
+            />
+          </form> */
+ }
