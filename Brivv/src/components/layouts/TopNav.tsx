@@ -2,7 +2,6 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { Link, Outlet, useLocation } from "react-router";
 import { GoQuestion } from "react-icons/go";
 import logo from "/images/logo.png";
-import { CiMenuFries } from "react-icons/ci";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
