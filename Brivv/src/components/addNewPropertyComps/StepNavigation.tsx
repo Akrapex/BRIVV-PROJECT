@@ -13,29 +13,31 @@ function StepNavigation({ currentStep, steps, nextStep, prevStep }: Props) {
   const min = currentStep === 1;
 
   return (
-    <div className="py-6 mt-6 flex gap-4 border-t border-tertiary">
+    <div className="py-4 sm:py-6 mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 border-t border-tertiary">
       <button
         onClick={prevStep}
-        className="flex items-center gap-1 text-[#64748B] py-3 px-6 cursor-pointer font-bold"
+        className="flex items-center gap-1 text-[#64748B] py-2 sm:py-3 px-4 sm:px-6 cursor-pointer font-bold text-[13px] sm:text-[14px]"
       >
-        <IoMdArrowBack size={22} /> Back to{" "}
+        <IoMdArrowBack size={20} /> Back to{" "}
         {min ? "Dashboard" : steps[currentStep - 2].title?.split(" ")[0]}
       </button>
 
       {!max && (
-        <button className="ml-auto text-[#0D1B0D] bg-tertiary py-3 px-6 cursor-pointer font-bold rounded-xl">
+        <button className="sm:ml-auto text-[#0D1B0D] bg-tertiary py-2 sm:py-3 px-4 sm:px-6 cursor-pointer font-bold rounded-xl text-[13px] sm:text-[14px]">
           Save Progress
         </button>
       )}
 
       <button
         onClick={nextStep}
-        className={`${max ? "text-[#64748B] ml-auto" : "button"} ${currentStep === steps.length ? "" : "shadow-lg"}`}
+        className={`${max ? "text-[#64748B] sm:ml-auto" : "button"} ${
+          currentStep === steps.length ? "" : "shadow-lg"
+        } py-2 sm:py-3 px-4 sm:px-6 text-[13px] sm:text-[14px] flex items-center gap-1 justify-center`}
       >
         {currentStep === steps.length
           ? "Discard Draft"
           : `Next: ${steps[currentStep].title}`}
-        {!max && <IoMdArrowForward size={22} />}
+        {!max && <IoMdArrowForward size={20} />}
       </button>
     </div>
   );

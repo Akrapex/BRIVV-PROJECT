@@ -18,7 +18,7 @@ function PropertiesHeader() {
           <img src="/images/logo.png" alt="logo" className="w-16 md:w-18" />
         </Link>
 
-        {/* Right Section */}
+       
         <div className="flex items-center gap-4">
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">

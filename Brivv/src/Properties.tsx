@@ -53,7 +53,7 @@ export default function Properties() {
     <section ref={containerRef} className="bg-[#f7f8f6] min-h-screen">
       <PropertiesHeader />
 
-      <main className="px-30 py-4">
+      <main className="wrapper py-4">
         <ProgressBar currentStep={step} steps={steps} range={range} />
 
         <div>{steps[step - 1].component}</div>

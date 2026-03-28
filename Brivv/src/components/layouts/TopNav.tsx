@@ -1,12 +1,14 @@
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { Link, Outlet } from "react-router";
-import { useLocation } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
 import { GoQuestion } from "react-icons/go";
 import logo from "/images/logo.png";
 import { CiMenuFries } from "react-icons/ci";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 function TopNav() {
   let isVisible = true;
+  const [isOpen, setIsOpen] = useState(false);
 
   let path = useLocation();
   console.log(path.pathname);
@@ -15,18 +17,26 @@ function TopNav() {
     isVisible = false;
   }
 
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <>
-      <div className="sticky top-0 z-300 py-3 md:px-16 px-5 flex items-center justify-between bg-white border-[#E7EDF3]">
-        <div className="flex  items-center space-x-4">
-          <img src={logo} alt="" className="w-14 " />
+      <div className="sticky top-0 z-50 py-3 px-4 md:px-16 flex items-center justify-between bg-white border-[#E7EDF3]">
+        {/* Logo */}
+        <div className="flex items-center space-x-4">
+          <img src={logo} alt="" className="w-12 md:w-14" />
           {"Brivv"}
         </div>
+
+        
         <div className="flex items-center gap-4">
-          <div className="md:flex items-center hidden space-x-3">
+          {/* Desktop Nav  */}
+          <div className="hidden md:flex items-center space-x-3">
             <Link to={"/dashboard"}>Dashboard</Link>
             <Link to={"/messages"}>message</Link>
-            {/* <Link to={"/dashboard"}>listing</Link> */}
+
             <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
               <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
               <IoMdNotificationsOutline size={22} />
@@ -36,15 +46,57 @@ function TopNav() {
               <GoQuestion size={22} />
             </span>
 
-            <span className="relative flex items-center justify-center w-10 h-10  cursor-pointer rounded-full overflow-hidden">
+            <span className="relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full overflow-hidden">
               <img src="https://i.pravatar.cc/40" className="w-full h-full" />
             </span>
           </div>
-          <div>
-            <CiMenuFries className="md:hidden " />
-          </div>
+
+          {/* Mobile Toggle */}
+          <button onClick={toggleMenu} className="lg:hidden">
+            {isOpen ? (
+              <X size={24} color="#6B8E23" />
+            ) : (
+              <Menu size={28} color="#6B8E23" />
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu  */}
+      {isOpen && (
+        <div className="md:hidden px-4 pb-4 bg-white border-t border-[#E7EDF3]">
+          <nav className="flex flex-col items-center justify-center gap-8 text-base font-semibold py-4">
+            <Link to={"/dashboard"} onClick={toggleMenu}>
+              Dashboard
+            </Link>
+
+            <Link to={"/messages"} onClick={toggleMenu}>
+              message
+            </Link>
+
+            
+            <span className="flex items-center gap-2">
+              <IoMdNotificationsOutline size={22} />
+              Notifications
+            </span>
+
+            <span className="flex items-center gap-2">
+              <GoQuestion size={22} />
+              Help
+            </span>
+
+            {/* Profile */}
+            <span className="flex items-center gap-2">
+              <img
+                src="https://i.pravatar.cc/40"
+                className="w-8 h-8 rounded-full"
+              />
+              Profile
+            </span>
+          </nav>
+        </div>
+      )}
+
       <div>
         <Outlet />
       </div>
@@ -53,13 +105,3 @@ function TopNav() {
 }
 
 export default TopNav;
- {
-   /* <form className="px-4 flex items-center gap-3 bg-[#E7EDF3] w-fit rounded-lg">
-            <AiOutlineSearch color="#4C739A" />
-            <input
-              type="text"
-              placeholder="Search properties, guides..."
-              className="py-3 focus:outline-0 w-50 placeholder:text-[#4C739A]"
-            />
-          </form> */
- }
