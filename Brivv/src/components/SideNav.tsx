@@ -14,7 +14,7 @@ export default function SideNav() {
   const userName = user?.user_metadata?.full_name;
 
   return (
-    <aside className="sticky top-0 h-screen w-64 shadow-sm bg-white flex flex-col justify-between">
+    <aside className="sticky top-0 h-screen w-64 shadow-sm bg-white flex flex-col justify-between lg:block hidden">
       {/* Logo */}
       <div>
         <div className="flex items-center gap-3 px-6 py-6">

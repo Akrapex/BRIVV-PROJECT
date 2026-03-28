@@ -12,11 +12,11 @@ const Amenities = () => {
     <div className="space-y-6">
       <h2 className="text-xl font-bold mb-4">Amenities</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-[600px]">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-150">
         {amenities.map((item) => (
           <div
             key={item}
-            className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg w-[184px]"
+            className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg w-46"
           >
             <span className="text-priborder-primary">✔</span>
             {item}

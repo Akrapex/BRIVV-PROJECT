@@ -59,24 +59,24 @@ export default function Dashboard() {
     <>
       <ProfileHeader />
       {/* Dashboard Content */}
-      <div className="p-7.75">
-        <div className="flex flex-wrap gap-5 items-center justify-between mb-8">
+      <div className="lg:p-7.75 p-3">
+        <div className="lg:flex flex-row  gap-5 items-center justify-between mb-8 ">
           <div>
             <h1 className="text-[30px] font-black leading">
               Welcome back, {userName?.split(" ")[0]}
             </h1>
-            <p className="text-[14px] text-[#4C739A]">
+            <p className="md:text-[14px] text-xs text-[#4C739A] ">
               Everything you need to manage your properties in one place.
             </p>
           </div>
 
-          <button className="py-2 px-4 flex items-center gap-2 border border-[#CFDBE7] rounded-lg cursor-pointer">
+          <button className="py-2 px-4 flex items-center gap-2 mt-6 border border-[#CFDBE7] rounded-lg cursor-pointer">
             <MdOutlineFileDownload />
             Export Report
           </button>
         </div>
 
-        <div className="mb-8 flex flex-wrap gap-5">
+        <div className="mb-8  grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 space-y-4 gap-5 ">
           {overViewData.map((data, index) => {
             const showIcon = data.count > 0;
             return (

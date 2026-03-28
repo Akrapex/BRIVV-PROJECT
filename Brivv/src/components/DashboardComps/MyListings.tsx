@@ -10,13 +10,15 @@ function MyListings() {
   return (
     <section>
       <header className="my-6 flex items-center gap-2">
-        <h1 className="text-[24px] font-bold text-[#0D141B]">My Listings</h1>
-        {properyToList.length === 0 && (
-          <p className="text-[12px] py-1 px-2 bg-[#e0e0e0] rounded-md font-semibold text-[#6B8E23]">
-            You don't any listing currently, add new property and they'll appear
-            here.
-          </p>
-        )}
+        <div className="md:flex justify-between gap-10 flex-row ">
+          <h1 className="text-[24px] font-bold text-[#0D141B]">My Listings</h1>
+          {properyToList.length === 0 && (
+            <p className="text-[12px] py-1 px-2 bg-[#e0e0e0] rounded-md font-semibold text-[#6B8E23] lg:my-0 my-2">
+              You don't any listing currently, add new property and they'll
+              appear here.
+            </p>
+          )}
+        </div>
 
         {properyToList.length > 0 && (
           <button className="text-[14px] text-[#6B8E23] font-bold cursor-pointer">
