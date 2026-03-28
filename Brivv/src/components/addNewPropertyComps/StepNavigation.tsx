@@ -1,5 +1,6 @@
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 import type { Steps } from "../../Properties";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 interface Props {
   currentStep: number;
@@ -36,8 +37,14 @@ function StepNavigation({ currentStep, steps, nextStep, prevStep }: Props) {
       >
         {currentStep === steps.length
           ? "Discard Draft"
+          :` Next: ${steps[currentStep].title}`}
+        {currentStep < 3 && <IoMdArrowForward size={22} />}
+        {currentStep === 3 && <FaRegCheckCircle size={20}/>}
+        {/* {currentStep === steps.length
+          ? "Discard Draft"
           : `Next: ${steps[currentStep].title}`}
-        {!max && <IoMdArrowForward size={20} />}
+        {!max && <IoMdArrowForward size={20} />} */}
+        
       </button>
     </div>
   );
