@@ -2,7 +2,7 @@ import { Camera } from "lucide-react";
 import { HiOutlineMail } from "react-icons/hi";
 import type { UserData } from "./PersonalInfo";
 
-const ProfileCard = ({ fullName, email }: UserData) => {
+const ProfileCard = ({ fullName, email, dateJoined }: UserData) => {
   return (
     <div className="bg-white rounded-xl p-6 border border-slate-200 flex items-center gap-6 mb-10">
       <div className="relative">
@@ -28,7 +28,7 @@ const ProfileCard = ({ fullName, email }: UserData) => {
         </div>
         {/* Metadata right under email */}
         <p className="text-xs text-slate-400 font-medium mt-1">
-          Tenant • Joined October 2023
+          Tenant • {dateJoined}
         </p>
 
         {/* Badges Row */}

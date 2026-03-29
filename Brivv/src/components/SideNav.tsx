@@ -1,7 +1,6 @@
 import {
   HiHome,
   HiBuildingOffice2,
-  HiBookOpen,
   HiBolt,
   HiCog6Tooth,
   HiSquares2X2,
@@ -135,7 +134,9 @@ export default function SideNav() {
                           key={item.path}
                           to={item.path}
                           className={({ isActive }) =>
-                            isActive ? activeLink : normalLink
+                            isActive
+                              ? "flex items-center gap-4 px-4 py-3 font-semibold w-full rounded-xl bg-[#6B8E23] hover:bg-[#648523] text-white transition-all duration-300"
+                              : normalLink
                           }
                         >
                           {item.label}

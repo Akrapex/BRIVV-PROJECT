@@ -16,11 +16,18 @@ export interface UserData {
   propertyAlerts?: boolean;
   educationalNewsletter?: boolean;
   billingInvoices?: boolean;
+  dateJoined?: string;
 }
 
 const PersonalInformation = () => {
   const { user } = useAuth();
-  console.log(user);
+  const date = user?.created_at;
+  const dateJoined = date
+    ? new Date(date).toLocaleDateString("en-us", {
+        month: "long",
+        year: "numeric",
+      })
+    : "";
 
   const [formData, setFormData] = useState<UserData>({
     fullName: user?.user_metadata.full_name,
@@ -38,7 +45,11 @@ const PersonalInformation = () => {
         <Header />
 
         {/* Profile Card */}
-        <ProfileCard fullName={formData.fullName} email={formData.email} />
+        <ProfileCard
+          fullName={formData.fullName}
+          email={formData.email}
+          dateJoined={dateJoined}
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
           {/* Contact Details Section */}
