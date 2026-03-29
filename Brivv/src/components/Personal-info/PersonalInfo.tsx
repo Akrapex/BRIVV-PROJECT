@@ -1,14 +1,7 @@
 import { useState } from "react";
-<<<<<<< Updated upstream
 import Header from "./Header";
 import ProfileCard from "./ProfileCard";
 import ContactDetails from "./CardDetails";
-=======
-import { Trash2, CreditCard, Zap, ShieldCheck, Plus, Bell } from "lucide-react";
-import Header from "./Header";
-import ProfileCard from "./ProfileCard";
-import ContactDetails from "./ContactDetails";
->>>>>>> Stashed changes
 import { notificationsData } from "./personalInfoData";
 import NotificationSettings from "./NotificationSettings";
 import PaymentMethods from "./PaymentMethods";
