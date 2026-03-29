@@ -125,10 +125,10 @@ export default function SideNav() {
                 {/* Dropdown */}
                 {data.hasDropDown && (
                   <div
-                    className={`flex pl-6 mt-2 min-0 h-0 overflow-hidden transition-all duration-300 ${collapseMenu ? "max-h-fit min-h-fit h-65" : ""}`}
+                    className={`flex pl-5.75 mt-2 min-0 h-0 overflow-hidden transition-all duration-300 ${collapseMenu ? "max-h-fit min-h-fit h-65" : ""}`}
                   >
                     <span className="block w-0.5 bg-[#CFDBE7]"></span>
-                    <div className="text-[14px] ml-2 space-y-2">
+                    <div className="text-[13px] ml-2.5 space-y-2">
                       {data.subItems?.map((item) => (
                         <NavLink
                           key={item.path}

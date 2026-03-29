@@ -8,6 +8,7 @@ import PaymentMethods from "./PaymentMethods";
 import { paymentMethods } from "./personalInfoData";
 import SecurityNotice from "./SecurityNotice";
 import { useAuth } from "../../Contexts/AuthContext";
+import SettingsFooter from "../SettingsFooter";
 
 export interface UserData {
   fullName: string;
@@ -74,12 +75,7 @@ const PersonalInformation = () => {
         <SecurityNotice />
 
         {/* Footer Copyright */}
-        <div className="text-center py-6 border-t border-slate-100">
-          <p className="text-[10px] text-slate-400 font-medium uppercase tracking-widest">
-            ©{new Date().getFullYear()} Akrapex Real Estate Platform. All rights
-            reserved.
-          </p>
-        </div>
+        <SettingsFooter />
       </div>
     </div>
   );
