@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Download,
-  Trash2,
-  Info,
-  ShieldCheck,
-  Eye,
-  Database,
-  ExternalLink,
-} from "lucide-react";
+import { Trash2, Info, Database } from "lucide-react";
 
 // --- Sub-Components ---
 
@@ -85,7 +77,7 @@ const PrivacyControl = () => {
 
   return (
     <div className="min-h-screen w-full bg-[#f9fafb] p-6 md:p-10 font-sans text-slate-900">
-      <div className="w-full max-w-[1440px] mx-auto space-y-8">
+      <div className="w-full max-w-250 mx-auto space-y-8">
         {/* Page Title Header */}
         <header className="mb-10">
           <h1 className="text-3xl font-extrabold text-slate-900">

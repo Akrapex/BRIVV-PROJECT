@@ -13,7 +13,7 @@ const AccountSecurity = () => {
 
   return (
     <div className="min-h-screen w-full bg-white p-6 md:p-10 font-sans text-slate-900">
-      <div className="w-full mx-auto space-y-8">
+      <div className="w-full max-w-250 mx-auto space-y-8">
         {/* Header Banner */}
         <header className="flex flex-col md:flex-row md:items-center justify-between p-6 border border-slate-200 rounded-2xl bg-white">
           <div>
