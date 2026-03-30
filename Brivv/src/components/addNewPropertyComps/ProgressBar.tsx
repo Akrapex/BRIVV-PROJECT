@@ -32,7 +32,7 @@ function ProgressBar({ currentStep, steps, range }: Props) {
   }, [currentStep, range]);
 
   return (
-    <div className="p-4 bg-white border border-tertiary rounded-xl">
+    <div className="p-4 bg-white border border-tertiary rounded-xl mt-26">
       <div className="flex justify-between mb-3">
         <h1 className="text-[18px] font-bold text-[#0D1B0D]">
           Step {currentStep} of {steps.length}: {steps[currentStep - 1].title}

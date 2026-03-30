@@ -7,7 +7,7 @@ interface Props {
 
 function ListingCard({ properties }: Props) {
   return (
-    <article className="relative grow w-76 rounded-xl overflow-hidden bg-white border border-[#CFDBE7]">
+    <article className="relative grow w-76 rounded-xl overflow-hidden bg-red-600 border border-[#CFDBE7]">
       <span
         className={`absolute top-4 left-4 py-1 px-2 rounded-sm text-[10px] text-white ${properties.status === "LIVE" ? "bg-[#22C55E]" : "bg-[#F59E0B]"}`}
       >

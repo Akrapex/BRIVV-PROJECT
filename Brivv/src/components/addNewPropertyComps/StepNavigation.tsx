@@ -1,5 +1,4 @@
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
-import { FaRegCheckCircle } from "react-icons/fa";
 import type { Steps } from "../../Properties";
 
 interface Props {
@@ -14,7 +13,7 @@ function StepNavigation({ currentStep, steps, nextStep, prevStep }: Props) {
   const min = currentStep === 1;
 
   return (
-    <div className="py-4 sm:py-6 mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 border-t border-tertiary">
+    <div className="py-4 sm:py-6 mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 border-t border-tertiary ">
       <button
         onClick={prevStep}
         className="flex items-center gap-1 text-[#64748B] py-2 sm:py-3 px-4 sm:px-6 cursor-pointer font-bold text-[13px] sm:text-[14px]"
