@@ -11,7 +11,8 @@ function PropertiesHeader() {
   };
 
   return (
-    <header className="w-full bg-white border-b border-tertiary">
+    <header className="w-full bg-white border-b border-tertiary fixed top-0 left-0  z-50">
+      
       <div className="flex items-center justify-between px-4 md:px-8 lg:px-20 py-3">
         <Link to="/">
           <img src="/images/logo.png" alt="logo" className="w-16 md:w-18" />
@@ -45,7 +46,7 @@ function PropertiesHeader() {
       </div>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden px-4 pb-4">
+        <div className="lg:hidden px-4 pb-4 ">
           <nav className="flex justify-center flex-col items-center mx-auto gap-6 text-lg font-semibold">
             {navLink.map((link) => (
               <Link to={link.href} className="text-left py-2 ">

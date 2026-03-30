@@ -22,8 +22,9 @@ function ProfileHeader() {
 
   return (
     <>
+      {/* fixed top-0 left-0 z-50 w-full */}
       {/* Header */}
-      <div className="sticky top-0 z-10 py-3 px-4 md:px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3]">
+      <div className="sticky top-0 z-10 w-full py-3 px-4 md:px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3] ">
         {/* Search (hidden on mobile) */}
         <form className="hidden md:flex px-4 items-center gap-3 bg-[#E7EDF3] rounded-lg">
           <AiOutlineSearch color="#4C739A" />
@@ -36,7 +37,7 @@ function ProfileHeader() {
 
         {/* Right Section */}
         <div className="flex items-center w-full md:w-auto gap-4">
-          <img src={logo} alt="" className="w-14 block lg:hidden" />
+          <img src={logo} alt="" className="w-20 block md:hidden" />
           {/* Desktop Icons */}
           <div className="hidden md:flex items-center gap-4 relative">
             <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
@@ -86,10 +87,9 @@ function ProfileHeader() {
           </button>
         </div>
       </div>
-
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 py-4 bg-white border-b border-[#E7EDF3]">
+        <div className="md:hidden px-4 py-4 bg-white border-b border-[#E7EDF3] ">
           {/* Search */}
           <form className="mb-4 px-4 flex items-center gap-3 bg-[#E7EDF3] rounded-lg">
             <AiOutlineSearch color="#4C739A" />
