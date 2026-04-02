@@ -2,7 +2,7 @@ import sampleImage from "../../assets/Container.png";
 
 function UtilityViewings() {
   return (
-    <section className="flex items-center gap-6">
+    <section className="flex items-center gap-6 lg:px-0 px-2">
       <div className="bg-white md:w-157.25 w-92.5 rounded-xl border border-[#CFDBE7]">
         <div className="p-6 flex justify-between items-center border-b border-[#CFDBE7]">
           <h2 className="text-[18px] font-bold text-[#0D141B]">

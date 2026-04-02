@@ -21,9 +21,9 @@ function TopNav() {
 
   return (
     <>
-      {/* HEADER (same structure style as PropertiesHeader) */}
-      <header className="w-full bg-white border-b border-tertiary sticky top-0 z-50 shadow-2xl">
-        <div className="flex items-center justify-between px-4 md:px-8 lg:px-16 py-3">
+      
+      <header className="w-full bg-white border-b border-tertiary sticky top-0 z-999">
+        <div className="flex items-center justify-between px-4 md:px-8 lg:px-16 py-3 bg-white">
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <img src={logo} alt="" className="w-12 md:w-14" />
@@ -51,7 +51,7 @@ function TopNav() {
               </span>
             </div>
 
-            {/* Mobile Toggle (same pattern as PropertiesHeader) */}
+            {/* Mobile Toggle */}
             <button onClick={toggleMenu} className="lg:hidden">
               {isOpen ? (
                 <X size={24} color="#6B8E23" />
@@ -62,10 +62,10 @@ function TopNav() {
           </div>
         </div>
 
-        {/* MOBILE MENU (PropertiesHeader-style block) */}
+        
         {isOpen && (
-          <div className="lg:hidden px-4 pb-4">
-            <nav className="flex flex-col items-center mx-auto gap-6 text-lg font-semibold py-4">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-tertiary z-999 shadow-lg">
+            <nav className="flex flex-col items-center mx-auto gap-6 text-lg font-semibold py-8 bg-white">
               <Link to={"/dashboard"} onClick={toggleMenu}>
                 Dashboard
               </Link>

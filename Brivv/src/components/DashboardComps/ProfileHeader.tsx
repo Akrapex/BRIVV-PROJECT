@@ -22,12 +22,9 @@ function ProfileHeader() {
 
   return (
     <header className="w-full sticky top-0 z-50 bg-white border-b border-[#E7EDF3]">
-      {/* TOP BAR */}
       <div className="flex items-center justify-between px-4 md:px-8 lg:px-20 py-3">
-        {/* Logo (mobile only) */}
         <img src={logo} alt="logo" className="w-20 block md:hidden" />
 
-        {/* Search (desktop only) */}
         <form className="hidden lg:flex px-4 items-center gap-3 bg-[#E7EDF3] rounded-lg">
           <AiOutlineSearch color="#4C739A" />
           <input
@@ -37,7 +34,6 @@ function ProfileHeader() {
           />
         </form>
 
-        {/* Right section */}
         <div className="flex items-center gap-4 ml-auto">
           {/* Desktop icons */}
           <div className="hidden lg:flex items-center gap-4 relative">
@@ -89,7 +85,7 @@ function ProfileHeader() {
         </div>
       </div>
 
-      {/* MOBILE MENU (same pattern as PropertiesHeader) */}
+      {/* MOBILE MENU ( */}
       {isOpen && (
         <div className="lg:hidden px-4 pb-4 border-t border-[#E7EDF3] bg-white">
           {/* Search */}

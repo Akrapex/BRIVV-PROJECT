@@ -59,8 +59,8 @@ export default function Dashboard() {
     <>
       <ProfileHeader />
       {/* Dashboard Content */}
-      <div className="p-7.75">
-        <div className="flex flex-wrap gap-5 items-center justify-between mb-8">
+      <div className="lg:p-7.75">
+        <div className="flex flex-wrap gap-5 items-center justify-between mb-8 lg:px-0 px-4">
           <div>
             <h1 className="text-[30px] font-black leading">
               Welcome back, {userName?.split(" ")[0]}
@@ -76,7 +76,7 @@ export default function Dashboard() {
           </button>
         </div>
 
-        <div className="mb-8 flex flex-wrap gap-5">
+        <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:px-0 px-4">
           {overViewData.map((data, index) => {
             const showIcon = data.count > 0;
             return (

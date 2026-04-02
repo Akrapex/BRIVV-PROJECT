@@ -7,8 +7,6 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Settings from "./pages/Dashboard/Settings";
 import PersonalInfo from "./components/Personal-info/PersonalInfo";
 import Security from "./pages/Dashboard/Security";
-import Notification from "./pages/Dashboard/NotificationPreferences";
-import Payment from "./pages/Dashboard/PaymentMethods";
 import Privacy from "./pages/Dashboard/Privacy";
 import PropertyDetails from "./pages/PropertyProfile";
 
