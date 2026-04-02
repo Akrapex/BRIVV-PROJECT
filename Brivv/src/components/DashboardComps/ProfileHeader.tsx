@@ -21,12 +21,14 @@ function ProfileHeader() {
   };
 
   return (
-    <>
-      {/* fixed top-0 left-0 z-50 w-full */}
-      {/* Header */}
-      <div className="sticky top-0 z-10 w-full py-3 px-4 md:px-10 flex items-center justify-between bg-white border-l border-b border-[#E7EDF3] ">
-        {/* Search (hidden on mobile) */}
-        <form className="hidden md:flex px-4 items-center gap-3 bg-[#E7EDF3] rounded-lg">
+    <header className="w-full sticky top-0 z-50 bg-white border-b border-[#E7EDF3]">
+      {/* TOP BAR */}
+      <div className="flex items-center justify-between px-4 md:px-8 lg:px-20 py-3">
+        {/* Logo (mobile only) */}
+        <img src={logo} alt="logo" className="w-20 block md:hidden" />
+
+        {/* Search (desktop only) */}
+        <form className="hidden lg:flex px-4 items-center gap-3 bg-[#E7EDF3] rounded-lg">
           <AiOutlineSearch color="#4C739A" />
           <input
             type="text"
@@ -35,17 +37,16 @@ function ProfileHeader() {
           />
         </form>
 
-        {/* Right Section */}
-        <div className="flex items-center w-full md:w-auto gap-4">
-          <img src={logo} alt="" className="w-20 block md:hidden" />
-          {/* Desktop Icons */}
-          <div className="hidden md:flex items-center gap-4 relative">
+        {/* Right section */}
+        <div className="flex items-center gap-4 ml-auto">
+          {/* Desktop icons */}
+          <div className="hidden lg:flex items-center gap-4 relative">
             <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
               <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
               <IoMdNotificationsOutline size={22} />
             </span>
 
-            <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
+            <span className="flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
               <GoQuestion size={22} />
             </span>
 
@@ -77,8 +78,8 @@ function ProfileHeader() {
             </div>
           </div>
 
-          {/* Mobile Toggle (ALWAYS RIGHT) */}
-          <button onClick={toggleMenu} className="md:hidden ml-auto">
+          {/* Mobile Toggle */}
+          <button onClick={toggleMenu} className="lg:hidden">
             {isOpen ? (
               <X size={26} color="#6B8E23" />
             ) : (
@@ -87,11 +88,12 @@ function ProfileHeader() {
           </button>
         </div>
       </div>
-      {/* Mobile Menu */}
+
+      {/* MOBILE MENU (same pattern as PropertiesHeader) */}
       {isOpen && (
-        <div className="md:hidden px-4 py-4 bg-white border-b border-[#E7EDF3] ">
+        <div className="lg:hidden px-4 pb-4 border-t border-[#E7EDF3] bg-white">
           {/* Search */}
-          <form className="mb-4 px-4 flex items-center gap-3 bg-[#E7EDF3] rounded-lg">
+          <form className="mt-4 mb-6 px-4 flex items-center gap-3 bg-[#E7EDF3] rounded-lg">
             <AiOutlineSearch color="#4C739A" />
             <input
               type="text"
@@ -100,7 +102,8 @@ function ProfileHeader() {
             />
           </form>
 
-          <div className="flex flex-col gap-6 items-start">
+          {/* Menu Items */}
+          <nav className="flex flex-col items-center gap-6 text-lg font-semibold">
             <span className="flex items-center gap-2">
               <IoMdNotificationsOutline size={22} />
               Notifications
@@ -118,10 +121,10 @@ function ProfileHeader() {
               <CiLogout size={22} />
               Log Out
             </span>
-          </div>
+          </nav>
         </div>
       )}
-    </>
+    </header>
   );
 }
 

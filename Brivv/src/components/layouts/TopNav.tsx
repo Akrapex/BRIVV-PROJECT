@@ -10,7 +10,6 @@ function TopNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   let path = useLocation();
-  console.log(path.pathname);
 
   if (path.pathname === "/properties") {
     isVisible = false;
@@ -22,79 +21,80 @@ function TopNav() {
 
   return (
     <>
-      <div className="sticky top-0 z-50 py-3 px-4 md:px-16 flex items-center justify-between bg-white border-[#E7EDF3]">
-        {/* Logo */}
-        <div className="flex items-center space-x-4">
-          <img src={logo} alt="" className="w-12 md:w-14" />
-          {"Brivv"}
-        </div>
-
-        
-        <div className="flex items-center gap-4">
-          {/* Desktop Nav  */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Link to={"/dashboard"}>Dashboard</Link>
-            <Link to={"/messages"}>message</Link>
-
-            <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
-              <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
-              <IoMdNotificationsOutline size={22} />
-            </span>
-
-            <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
-              <GoQuestion size={22} />
-            </span>
-
-            <span className="relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full overflow-hidden">
-              <img src="https://i.pravatar.cc/40" className="w-full h-full" />
-            </span>
+      {/* HEADER (same structure style as PropertiesHeader) */}
+      <header className="w-full bg-white border-b border-tertiary sticky top-0 z-50 shadow-2xl">
+        <div className="flex items-center justify-between px-4 md:px-8 lg:px-16 py-3">
+          {/* Logo */}
+          <div className="flex items-center space-x-4">
+            <img src={logo} alt="" className="w-12 md:w-14" />
+            {"Brivv"}
           </div>
 
-          {/* Mobile Toggle */}
-          <button onClick={toggleMenu} className="lg:hidden">
-            {isOpen ? (
-              <X size={24} color="#6B8E23" />
-            ) : (
-              <Menu size={28} color="#6B8E23" />
-            )}
-          </button>
+          {/* Right Section */}
+          <div className="flex items-center gap-4">
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex items-center space-x-3">
+              <Link to={"/dashboard"}>Dashboard</Link>
+              <Link to={"/messages"}>message</Link>
+
+              <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
+                <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
+                <IoMdNotificationsOutline size={22} />
+              </span>
+
+              <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
+                <GoQuestion size={22} />
+              </span>
+
+              <span className="relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full overflow-hidden">
+                <img src="https://i.pravatar.cc/40" className="w-full h-full" />
+              </span>
+            </div>
+
+            {/* Mobile Toggle (same pattern as PropertiesHeader) */}
+            <button onClick={toggleMenu} className="lg:hidden">
+              {isOpen ? (
+                <X size={24} color="#6B8E23" />
+              ) : (
+                <Menu size={28} color="#6B8E23" />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Mobile Menu  */}
-      {isOpen && (
-        <div className="md:hidden px-4 pb-4 bg-white border-t border-[#E7EDF3]">
-          <nav className="flex flex-col items-center justify-center gap-8 text-base font-semibold py-4">
-            <Link to={"/dashboard"} onClick={toggleMenu}>
-              Dashboard
-            </Link>
+        {/* MOBILE MENU (PropertiesHeader-style block) */}
+        {isOpen && (
+          <div className="lg:hidden px-4 pb-4">
+            <nav className="flex flex-col items-center mx-auto gap-6 text-lg font-semibold py-4">
+              <Link to={"/dashboard"} onClick={toggleMenu}>
+                Dashboard
+              </Link>
 
-            <Link to={"/messages"} onClick={toggleMenu}>
-              message
-            </Link>
+              <Link to={"/messages"} onClick={toggleMenu}>
+                message
+              </Link>
 
-            
-            <span className="flex items-center gap-2">
-              <IoMdNotificationsOutline size={22} />
-              Notifications
-            </span>
+              <span className="flex items-center gap-2">
+                <IoMdNotificationsOutline size={22} />
+                Notifications
+              </span>
 
-            <span className="flex items-center gap-2">
-              <GoQuestion size={22} />
-              Help
-            </span>
+              <span className="flex items-center gap-2">
+                <GoQuestion size={22} />
+                Help
+              </span>
 
-            {/* Profile */}
-            <span className="flex items-center gap-2">
-              <img
-                src="https://i.pravatar.cc/40"
-                className="w-8 h-8 rounded-full"
-              />
-              Profile
-            </span>
-          </nav>
-        </div>
-      )}
+              <span className="flex items-center gap-2">
+                <img
+                  src="https://i.pravatar.cc/40"
+                  className="w-8 h-8 rounded-full"
+                />
+                Profile
+              </span>
+            </nav>
+          </div>
+        )}
+      </header>
 
       <div>
         <Outlet />
