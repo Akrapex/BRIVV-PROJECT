@@ -72,7 +72,7 @@ export default function SideNav() {
     "flex items-center gap-4 px-4 py-3 font-semibold w-full hover:bg-[#6B8E23]/10 rounded-xl text-[#4C739A] transition-all duration-300";
 
   return (
-    <aside className="sticky top-0 h-screen w-64 shadow-sm bg-white flex flex-col justify-between">
+    <aside className="sticky top-0 h-screen w-64 shadow-sm bg-white  hidden lg:flex flex-col justify-between ">
       {/* Logo */}
       <div>
         <div className="flex items-center gap-3 px-6 py-6">

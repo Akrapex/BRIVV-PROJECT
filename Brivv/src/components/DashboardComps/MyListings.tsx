@@ -8,7 +8,7 @@ const properyToList =
 
 function MyListings() {
   return (
-    <section>
+    <section className="lg:px-0 px-4">
       <header className="my-6 flex items-center gap-2 ">
         <div className="md:flex justify-between gap-10 flex-row ">
           <h1 className="text-[24px] font-bold text-[#0D141B]">My Listings</h1>
