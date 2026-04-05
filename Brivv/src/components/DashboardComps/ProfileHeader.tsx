@@ -8,7 +8,7 @@ import { CiLogout } from "react-icons/ci";
 import { GoQuestion } from "react-icons/go";
 import { useState } from "react";
 import { useAuth } from "../../Contexts/AuthContext";
-import { LayoutGrid, Link, Menu, X } from "lucide-react";
+import { LayoutGrid, Menu, X } from "lucide-react";
 
 function ProfileHeader() {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
@@ -104,7 +104,7 @@ function ProfileHeader() {
         onClick={toggleMenu}
       >
         <div
-          className={`fixed top-0 left-0 h-full w-70 bg-white shadow-xl transition-transform duration-300 ease-in-out px-4 py-16 ${
+          className={`fixed top-0 left-0 h-full w-[280px] bg-white shadow-xl transition-transform duration-300 ease-in-out px-4 py-16 ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()} 
@@ -122,34 +122,25 @@ function ProfileHeader() {
           {/* Menu Items */}
           <nav className="flex flex-col gap-6 text-lg font-semibold text-[#4C739A]">
             <div className="flex flex-col gap-4 border-b border-[#E7EDF3] pb-4">
-              <Link
-                href="/dashboard"
-                className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]"
-              >
+              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
                 <AiOutlineDashboard size={22} />
                 Dashboard
-              </Link>
-              <Link
-                href="/utility"
-                className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]"
-              >
+              </span>
+              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
                 <LayoutGrid size={22} />
                 Utility
-              </Link>
-              <Link
-                href="/properties"
-                className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]"
-              >
+              </span>
+              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
                 <IoMdBusiness size={22} />
                 Property
-              </Link>
-              <Link href="/setting" className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
+              </span>
+              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
                 <AiOutlineSetting size={22} />
                 Settings
-              </Link>
+              </span>
             </div>
 
-            {/* Added Logout here for convenience */}
+           
             <span
               onClick={handleSignOut}
               className="flex items-center gap-2 cursor-pointer text-red-500"
