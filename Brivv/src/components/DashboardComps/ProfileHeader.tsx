@@ -9,6 +9,7 @@ import { GoQuestion } from "react-icons/go";
 import { useState } from "react";
 import { useAuth } from "../../Contexts/AuthContext";
 import { LayoutGrid, Menu, X } from "lucide-react";
+import { Link } from "react-router";
 
 function ProfileHeader() {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
@@ -107,7 +108,7 @@ function ProfileHeader() {
           className={`fixed top-0 left-0 h-full w-[280px] bg-white shadow-xl transition-transform duration-300 ease-in-out px-4 py-16 ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
-          onClick={(e) => e.stopPropagation()} 
+          onClick={(e) => e.stopPropagation()}
         >
           {/* Search inside side menu */}
           <form className="mb-8 px-4 flex items-center gap-3 bg-[#E7EDF3] rounded-lg">
@@ -122,25 +123,27 @@ function ProfileHeader() {
           {/* Menu Items */}
           <nav className="flex flex-col gap-6 text-lg font-semibold text-[#4C739A]">
             <div className="flex flex-col gap-4 border-b border-[#E7EDF3] pb-4">
-              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
+              <Link
+                to="/dashboard"
+                className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]"
+              >
                 <AiOutlineDashboard size={22} />
                 Dashboard
-              </span>
-              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
+              </Link>
+              <Link to="/utility" className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
                 <LayoutGrid size={22} />
                 Utility
-              </span>
-              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
+              </Link>
+              <Link to="/properties" className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
                 <IoMdBusiness size={22} />
                 Property
-              </span>
-              <span className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
+              </Link>
+              <Link to="/setting" className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
                 <AiOutlineSetting size={22} />
                 Settings
-              </span>
+              </Link>
             </div>
 
-           
             <span
               onClick={handleSignOut}
               className="flex items-center gap-2 cursor-pointer text-red-500"
