@@ -1,11 +1,14 @@
-import { AiOutlineSearch } from "react-icons/ai";
-import { IoMdNotificationsOutline } from "react-icons/io";
+import {
+  AiOutlineDashboard,
+  AiOutlineSearch,
+  AiOutlineSetting,
+} from "react-icons/ai";
+import { IoMdBusiness, IoMdNotificationsOutline } from "react-icons/io";
 import { CiLogout } from "react-icons/ci";
 import { GoQuestion } from "react-icons/go";
 import { useState } from "react";
 import { useAuth } from "../../Contexts/AuthContext";
-import { Menu, X } from "lucide-react";
-import logo from "/images/logo.png";
+import { LayoutGrid, Link, Menu, X } from "lucide-react";
 
 function ProfileHeader() {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
@@ -22,8 +25,23 @@ function ProfileHeader() {
 
   return (
     <header className="w-full sticky top-0 z-50 bg-white border-b border-[#E7EDF3]">
-      <div className="flex items-center justify-between px-4 md:px-8 lg:px-20 py-3">
-        <img src={logo} alt="logo" className="w-20 block md:hidden" />
+      <div className="flex items-center px-4 md:px-8 lg:px-20 py-3">
+        <div className="flex items-center lg:hidden py-2 w-full">
+          <div className="flex items-center justify-between w-full text-[#4C739A]">
+            <button onClick={toggleMenu} className="z-[60]">
+              {isOpen ? (
+                <X size={26} color="#6B8E23" />
+              ) : (
+                <Menu size={28} color="#6B8E23" />
+              )}
+            </button>
+
+            <div className="flex items-center gap-4 cursor-pointer">
+              <IoMdNotificationsOutline size={20} />
+              <GoQuestion size={20} />
+            </div>
+          </div>
+        </div>
 
         <form className="hidden lg:flex px-4 items-center gap-3 bg-[#E7EDF3] rounded-lg">
           <AiOutlineSearch color="#4C739A" />
@@ -35,7 +53,6 @@ function ProfileHeader() {
         </form>
 
         <div className="flex items-center gap-4 ml-auto">
-          {/* Desktop icons */}
           <div className="hidden lg:flex items-center gap-4 relative">
             <span className="relative flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
               <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
@@ -43,18 +60,21 @@ function ProfileHeader() {
             </span>
 
             <span className="flex items-center justify-center w-10 h-10 bg-[#E7EDF3] rounded-lg cursor-pointer">
+              <i className="block absolute top-2 right-2.5 w-2 h-2 border-2 border-white bg-[#EF4444]"></i>
               <GoQuestion size={22} />
             </span>
 
-            {/* Profile */}
             <span
               onClick={() => setShowDropdown((prev) => !prev)}
               className="relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full overflow-hidden"
             >
-              <img src="https://i.pravatar.cc/40" className="w-full h-full" />
+              <img
+                src="https://i.pravatar.cc/40"
+                className="w-full h-full"
+                alt="profile"
+              />
             </span>
 
-            {/* Dropdown */}
             <div
               className={`absolute right-0 top-12 ${
                 showDropdown
@@ -73,53 +93,73 @@ function ProfileHeader() {
               </p>
             </div>
           </div>
-
-          {/* Mobile Toggle */}
-          <button onClick={toggleMenu} className="lg:hidden">
-            {isOpen ? (
-              <X size={26} color="#6B8E23" />
-            ) : (
-              <Menu size={28} color="#6B8E23" />
-            )}
-          </button>
         </div>
       </div>
 
-      {/* MOBILE MENU ( */}
-      {isOpen && (
-        <div className="lg:hidden px-4 pb-4 border-t border-[#E7EDF3] bg-white">
-          {/* Search */}
-          <form className="mt-4 mb-6 px-4 flex items-center gap-3 bg-[#E7EDF3] rounded-lg">
+      {/* MOBILE SIDEBAR MENU (Sliding from left) */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 lg:hidden ${
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={toggleMenu}
+      >
+        <div
+          className={`fixed top-0 left-0 h-full w-70 bg-white shadow-xl transition-transform duration-300 ease-in-out px-4 py-16 ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+          onClick={(e) => e.stopPropagation()} 
+        >
+          {/* Search inside side menu */}
+          <form className="mb-8 px-4 flex items-center gap-3 bg-[#E7EDF3] rounded-lg">
             <AiOutlineSearch color="#4C739A" />
             <input
               type="text"
-              placeholder="Search properties, guides..."
+              placeholder="Search..."
               className="py-3 focus:outline-0 w-full placeholder:text-[#4C739A] bg-transparent"
             />
           </form>
 
           {/* Menu Items */}
-          <nav className="flex flex-col items-center gap-6 text-lg font-semibold">
-            <span className="flex items-center gap-2">
-              <IoMdNotificationsOutline size={22} />
-              Notifications
-            </span>
+          <nav className="flex flex-col gap-6 text-lg font-semibold text-[#4C739A]">
+            <div className="flex flex-col gap-4 border-b border-[#E7EDF3] pb-4">
+              <Link
+                href="/dashboard"
+                className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]"
+              >
+                <AiOutlineDashboard size={22} />
+                Dashboard
+              </Link>
+              <Link
+                href="/utility"
+                className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]"
+              >
+                <LayoutGrid size={22} />
+                Utility
+              </Link>
+              <Link
+                href="/properties"
+                className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]"
+              >
+                <IoMdBusiness size={22} />
+                Property
+              </Link>
+              <Link href="/setting" className="flex items-center gap-2 cursor-pointer hover:text-[#6B8E23]">
+                <AiOutlineSetting size={22} />
+                Settings
+              </Link>
+            </div>
 
-            <span className="flex items-center gap-2">
-              <GoQuestion size={22} />
-              Help
-            </span>
-
+            {/* Added Logout here for convenience */}
             <span
               onClick={handleSignOut}
-              className="flex items-center gap-2 cursor-pointer"
+              className="flex items-center gap-2 cursor-pointer text-red-500"
             >
               <CiLogout size={22} />
               Log Out
             </span>
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }
