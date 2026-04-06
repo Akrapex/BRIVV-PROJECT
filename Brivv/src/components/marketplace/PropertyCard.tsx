@@ -37,8 +37,8 @@ const PropertyCard = ({ property }: Props) => {
           <p className="text-lg font-bold">{property.title}</p>
           <p className="text-sm text-[#64748B] ">{property.location}</p>
           <hr className="m-3 border border-slate-200" />
-          <div className="text-sm text-gray-500 flex gap-4 justify-between w-full ">
-            <div className="flex space-x-3 grow items-center">
+          <div className="text-sm text-gray-500 md:flex gap-4 justify-between w-full ">
+            <div className="flex space-x-3 grow items-center w-full md:w-auto">
               <div className="flex justify-around items-center space-x-1 ">
                 <MdOutlineKingBed /> <span>{property.beds}</span>
               </div>
@@ -50,12 +50,12 @@ const PropertyCard = ({ property }: Props) => {
                 <span>{property.size}</span>
               </div>
             </div>
-            <div className="space-x-2">
-              <button className="bg-slate-300  text-gray-500 font-medium px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-all ease-in-outn duration-300 hover:bg-slate-200">
-                <TbListDetails />
+            <div className="space-x-2 flex justify-center items-center mt-2 md:mt-0">
+              <button className="bg-slate-300  text-gray-500 font-medium px-4 py-2 rounded-xl  group-hover:opacity-100 transition-all ease-in-out duration-300 hover:bg-slate-200 grow flex  justify-around items-center">
+                 <TbListDetails />
               </button>
-              <button className="bg-[#6B8E23] text-white font-medium px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-all ease-in-outn duration-300 hover:bg-[#6B8E23cc]">
-                <LuSendHorizontal />
+              <button className="bg-[#6B8E23] text-white font-medium px-4 py-2 rounded-xl group-hover:opacity-100 transition-all ease-in-outn duration-300 hover:bg-[#6B8E23cc] grow flex  justify-around items-center">
+                <span className="md:hidden">Contact Agent</span><LuSendHorizontal />
               </button>
             </div>
           </div>
