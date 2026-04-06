@@ -1,7 +1,7 @@
-import {  BiSearch } from "react-icons/bi";
+import { AiOutlineSearch } from "react-icons/ai";
 import { RxCaretDown } from "react-icons/rx";
 
-const  HeroSearch = () =>{
+const HeroSearch = () => {
   return (
     <section className="bg-white pt-5 md:px-20 px-10 box-border">
       <div className="  wrapper">
@@ -40,6 +40,6 @@ const  HeroSearch = () =>{
       </div>
     </section>
   );
-}
+};
 
-export default  HeroSearch
+export default HeroSearch;
