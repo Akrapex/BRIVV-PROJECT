@@ -87,7 +87,7 @@ export default function SideNav() {
         </div>
 
         {/* Navigation */}
-        <nav className="mt-4 grow flex flex-col space-y-1 px-4">
+        <nav className="mt-4 grow flex flex-col space-y-1 px-4 ">
           {/* Navlist */}
           {sideNavData.map((data, index) => {
             const Icon = data.icon;
@@ -128,7 +128,7 @@ export default function SideNav() {
                     className={`flex pl-5.75 mt-2 min-0 h-0 overflow-hidden transition-all duration-300 ${collapseMenu ? "max-h-fit min-h-fit h-65" : ""}`}
                   >
                     <span className="block w-0.5 bg-[#CFDBE7]"></span>
-                    <div className="text-[13px] ml-2.5 space-y-2">
+                    <div className="text-[13px] ml-2.5 space-y-2 ">
                       {data.subItems?.map((item) => (
                         <NavLink
                           key={item.path}

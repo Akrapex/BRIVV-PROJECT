@@ -1,9 +1,9 @@
-import {  BiSearch } from "react-icons/bi";
+import { AiOutlineSearch } from "react-icons/ai";
 import { RxCaretDown } from "react-icons/rx";
 
-const  HeroSearch = () =>{
+const HeroSearch = () => {
   return (
-    <section className="bg-white pt-5 md:px-20 px-10">
+    <section className="bg-white pt-5 md:px-20 px-10 ">
       <div className="  wrapper">
         {/* Heading */}
         <h1 className="text-3xl font-bold text-gray-900">
@@ -14,22 +14,15 @@ const  HeroSearch = () =>{
           Explore 24,000+ properties for sale and rent
         </p>
 
-        {/* Search Bar */}
-        <div className="flex items-center mt-6 bg-gray-100 rounded-lg px-2">
-          <div className="flex items-center gap-3 px-4 flex-1">
-            <BiSearch className="text-gray-400 hidden md:block" size={20} />
-            <input
-              type="text"
-              placeholder="Search by city, neighborhood, or ZIP"
-              className="bg-transparent w-full outline-none py-6 rounded-xl text-gray-600"
-            />
-          </div>
-
-          <button className="bg-primary text-white p-4 md:px-8 md:py-4 font-bold text-base rounded-full md:rounded-lg">
-           <span className="hidden md:inline-block">Search</span><BiSearch className="text-white md:hidden" size={20} />
-          </button>
-        </div>
-
+        {/* Search bar */}
+        <form className="hidden lg:flex px-4 items-center gap-3  rounded-lg bg-red-600">
+          <AiOutlineSearch color="#4C739A" />
+          <input
+            type="text"
+            placeholder="Search properties, guides..."
+            className="py-3 focus:outline-0 w-50 placeholder:text-[#4C739A] bg-transparent"
+          />
+        </form>
         {/* Filters */}
         <div className="m-4 flex items-center space-x-3">
           <div className="flex items-center space-x-2 px-4 py-2 bg-gray-200 w-fit my-4 rounded-xl">
@@ -40,6 +33,6 @@ const  HeroSearch = () =>{
       </div>
     </section>
   );
-}
+};
 
-export default  HeroSearch
+export default HeroSearch;
