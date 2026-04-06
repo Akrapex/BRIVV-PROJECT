@@ -22,7 +22,7 @@ function TopNav() {
   return (
     <>
       
-      <header className="w-full bg-white border-b border-tertiary sticky top-0 z-999">
+      <header className="max-w-screen bg-white border-b border-tertiary sticky top-0 z-999">
         <div className="flex items-center justify-between px-4 md:px-8 lg:px-16 py-3 bg-white">
           {/* Logo */}
           <div className="flex items-center space-x-4">

@@ -3,7 +3,7 @@ import { RxCaretDown } from "react-icons/rx";
 
 const  HeroSearch = () =>{
   return (
-    <section className="bg-white pt-5 md:px-20 px-10">
+    <section className="bg-white pt-5 md:px-20 px-10 box-border">
       <div className="  wrapper">
         {/* Heading */}
         <h1 className="text-3xl font-bold text-gray-900">
@@ -15,13 +15,13 @@ const  HeroSearch = () =>{
         </p>
 
         {/* Search Bar */}
-        <div className="flex items-center mt-6 bg-gray-100 rounded-lg px-2">
+       <div className="flex items-center box-border mt-6 bg-gray-100 rounded-lg px-2 w-full lg:w-[90vw] grow-0 shrink-0 ">
           <div className="flex items-center gap-3 px-4 flex-1">
             <BiSearch className="text-gray-400 hidden md:block" size={20} />
             <input
               type="text"
               placeholder="Search by city, neighborhood, or ZIP"
-              className="bg-transparent w-full outline-none py-6 rounded-xl text-gray-600"
+              className="bg-transparent  outline-none py-6 rounded-xl text-gray-600"
             />
           </div>
 

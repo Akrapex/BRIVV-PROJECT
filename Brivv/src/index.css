@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-  @apply mx-auto lg:w-[1760px] w-full  p-2;
+  @apply mx-auto lg:max-w-screen w-full box-border  p-2;
 }
 
 @theme {

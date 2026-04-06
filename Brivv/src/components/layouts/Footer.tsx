@@ -3,8 +3,8 @@ const Footer = () => {
     <footer className="bg-white  p-10">
       <div className="wrapper mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm text-gray-600">
         <div>
-          <img src="/images/Logo-.png" alt="" className="w-[216px]" />
-          <p className="leading-[23px] w-[216px] text-sm text-[#64748B] pt-4">
+          <img src="/images/Logo-.png" alt="" className="w-54" />
+          <p className="leading-5.75 w-54 text-sm text-[#64748B] pt-4">
             Making home finding a joyful experience for everyone, everywhere.
           </p>
         </div>
