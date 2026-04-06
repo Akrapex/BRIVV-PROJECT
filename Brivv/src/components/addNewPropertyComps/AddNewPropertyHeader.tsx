@@ -5,7 +5,7 @@ interface PropertyTypes {
 
 function AddNewPropertyHeader({ heading, paragraph }: PropertyTypes) {
   return (
-    <div>
+    <div className="">
       <h1 className="text-[32px] font-extrabold leading-10 text-[#0D1B0D]">
         {heading}
       </h1>

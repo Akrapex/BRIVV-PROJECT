@@ -1,8 +1,6 @@
 import type { Property } from "../constant/properties";
 import { MdOutlineKingBed } from "react-icons/md";
 import { MdBathtub } from "react-icons/md";
-import { TbListDetails } from "react-icons/tb";
-import { LuSendHorizontal } from "react-icons/lu";
 
 interface Props {
   property: Property;
@@ -10,7 +8,7 @@ interface Props {
 
 const PropertyCard = ({ property }: Props) => {
   return (
-    <div className="bg-white  overflow-hidden rounded-xl hover:border border-[#6B8E23]  shadow-sm  hover:shadow-lg transition-all group duration-500 ease-in-out">
+    <div className="bg-white  overflow-hidden rounded-xl shadow-sm  hover:shadow-lg transition-all group duration-500 ease-in-out">
       <div className="relative ">
         <img
           src={property.image}
@@ -49,14 +47,6 @@ const PropertyCard = ({ property }: Props) => {
               <div className="flex ">
                 <span>{property.size}</span>
               </div>
-            </div>
-            <div className="space-x-2 flex justify-center items-center mt-2 md:mt-0">
-              <button className="bg-slate-300  text-gray-500 font-medium px-4 py-2 rounded-xl  group-hover:opacity-100 transition-all ease-in-out duration-300 hover:bg-slate-200 grow flex  justify-around items-center">
-                 <TbListDetails />
-              </button>
-              <button className="bg-[#6B8E23] text-white font-medium px-4 py-2 rounded-xl group-hover:opacity-100 transition-all ease-in-outn duration-300 hover:bg-[#6B8E23cc] grow flex  justify-around items-center">
-                <span className="md:hidden">Contact Agent</span><LuSendHorizontal />
-              </button>
             </div>
           </div>
         </div>

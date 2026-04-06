@@ -1,0 +1,84 @@
+import { useState } from "react";
+import Header from "./Header";
+import ProfileCard from "./ProfileCard";
+import ContactDetails from "./CardDetails";
+import { notificationsData } from "./personalInfoData";
+import NotificationSettings from "./NotificationSettings";
+import PaymentMethods from "./PaymentMethods";
+import { paymentMethods } from "./personalInfoData";
+import SecurityNotice from "./SecurityNotice";
+import { useAuth } from "../../Contexts/AuthContext";
+import SettingsFooter from "../SettingsFooter";
+
+export interface UserData {
+  fullName: string;
+  email?: string;
+  phone?: string;
+  propertyAlerts?: boolean;
+  educationalNewsletter?: boolean;
+  billingInvoices?: boolean;
+  dateJoined?: string;
+}
+
+const PersonalInformation = () => {
+  const { user } = useAuth();
+  const date = user?.created_at;
+  const dateJoined = date
+    ? new Date(date).toLocaleDateString("en-us", {
+        month: "long",
+        year: "numeric",
+      })
+    : "";
+
+  const [formData, setFormData] = useState<UserData>({
+    fullName: user?.user_metadata.full_name,
+    email: user?.email,
+    phone: "555-0123",
+    propertyAlerts: true,
+    educationalNewsletter: true,
+    billingInvoices: false,
+  });
+
+  return (
+    <div className="min-h-screen w-full bg-white p-6 md:p-10 font-sans text-slate-900">
+      <div className="w-full mx-auto">
+        {/* Header Section */}
+        <Header />
+
+        {/* Profile Card */}
+        <ProfileCard
+          fullName={formData.fullName}
+          email={formData.email}
+          dateJoined={dateJoined}
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
+          {/* Contact Details Section */}
+          <ContactDetails
+            fullName={formData.fullName}
+            email={formData.email}
+            phone={formData.phone}
+          />
+
+          {/* Notifications Section */}
+          <NotificationSettings
+            notifications={notificationsData}
+            formData={formData}
+            setFormData={setFormData}
+          />
+        </div>
+
+        {/* Payment Methods Section */}
+        <PaymentMethods paymentMethods={paymentMethods} />
+
+        {/* Security Banner */}
+        <SecurityNotice />
+
+        {/* Footer Copyright */}
+        <SettingsFooter />
+      </div>
+    </div>
+  );
+};
+
+export default PersonalInformation;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProgressBar from "./components/addNewPropertyComps/ProgressBar";
 import PropertiesHeader from "./components/addNewPropertyComps/PropertiesHeader";
 import StepNavigation from "./components/addNewPropertyComps/StepNavigation";
@@ -25,13 +25,22 @@ export default function Properties() {
   const navigate = useNavigate();
   const range = (step / steps.length) * 100;
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    containerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [step]);
+
   const handleNextStep = () => {
     setStep((prev) => Math.min(prev + 1, steps.length));
   };
 
   const handlePrevStep = () => {
     if (step === 1) {
-      navigate("/profile", { replace: true });
+      navigate("/dashboard", { replace: true });
       return;
     }
 
@@ -41,10 +50,10 @@ export default function Properties() {
   };
 
   return (
-    <section className="bg-[#f7f8f6] min-h-screen">
+    <section ref={containerRef} className="bg-[#f7f8f6] min-h-screen">
       <PropertiesHeader />
 
-      <main className="px-30 py-4">
+      <main className="wrapper py-4">
         <ProgressBar currentStep={step} steps={steps} range={range} />
 
         <div>{steps[step - 1].component}</div>

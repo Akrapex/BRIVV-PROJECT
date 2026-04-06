@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 
 
 const Header = () => {
@@ -7,10 +8,10 @@ const Header = () => {
         <h1 className="text-xl font-bold text-green-600">PropMarket</h1>
 
         <nav className="hidden md:flex gap-8 text-gray-600 font-medium">
-          <a href="#">Buy</a>
-          <a href="#">Rent</a>
-          <a href="#">Lease</a>
-          <a href="#">Education</a>
+          <Link to="/buy">Buy</Link>
+          <Link to="/rent">Rent</Link>
+          <Link to="/lease">Lease</Link>
+          <Link to="/education">Education</Link>
         </nav>
 
         <div className="flex items-center gap-4">
