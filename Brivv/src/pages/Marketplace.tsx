@@ -10,7 +10,7 @@ const Marketplace = () => {
     <>
       <main className="bg-[#F7F8F6] w-screen ">
         <HeroSearch />
-        <div className="mx-auto box-border border md:w-[90%] p-10 flex gap-8 ">
+        <div className="mx-auto box-border md:w-[90%] p-10 flex gap-8 ">
           <FiltersSidebar />
           <div className="flex-1">
             <PropertyGrid />

@@ -1,4 +1,5 @@
 import { AiOutlineSearch } from "react-icons/ai";
+import { BiSearch } from "react-icons/bi";
 import { RxCaretDown } from "react-icons/rx";
 
 const HeroSearch = () => {
