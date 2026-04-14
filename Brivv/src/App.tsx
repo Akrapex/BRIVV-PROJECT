@@ -9,8 +9,6 @@ import PersonalInfo from "./components/Personal-info/PersonalInfo";
 import Security from "./pages/Dashboard/Security";
 import Privacy from "./pages/Dashboard/Privacy";
 import PropertyDetails from "./pages/PropertyProfile";
-
-import SplashScreen from "./pages/SplashScreen";
 import Properties from "./Properties";
 import AuthPage from "./pages/AuthPage";
 import ConfirmEmail from "./components/Auth/ConfirmEmail";
@@ -22,13 +20,14 @@ import PublicRoute from "./components/PublicRoute";
 import Utilities from "./pages/Dashboard/Utilites";
 import NotificationPreferences from "./pages/Dashboard/NotificationPreferences";
 import PaymentMethods from "./pages/Dashboard/PaymentMethods";
+import HomeScreen from "./pages/SplashScreen";
 
 // import PersonalInfo from './pages/PersonalInfo'
 function App() {
   const [active, setActive] = useState<"login" | "register">("login");
   return (
     <Routes>
-      <Route index element={<SplashScreen />} />
+      <Route index element={<HomeScreen />} />
       <Route path="/" element={<TopNav />}>
         <Route path="/messages" element={<Messages />} />
         <Route path="/discover" element={<PropertyDetails />} />
