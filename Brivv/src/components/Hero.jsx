@@ -52,7 +52,7 @@ const Hero = () => {
         </div>
 
         <div className="relative">
-          <img src={HeroSection} alt="Hero Image" className="w-[96] mt-5" />
+          <img src={HeroSection} alt="Hero Image" className="w-full mt-5" />
         </div>
       </div>
     </>
