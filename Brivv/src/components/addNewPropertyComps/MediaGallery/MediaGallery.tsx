@@ -1,5 +1,6 @@
 import AddNewPropertyHeader from "../AddNewPropertyHeader";
-import sampleCoverPhoto from "../../../assets/Map Placeholder.png";
+
+const sampleCoverPhoto = "/images/Map Placeholder.png";
 import TipsCard from "../TipsCard";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 import { HiOutlineBadgeCheck } from "react-icons/hi";

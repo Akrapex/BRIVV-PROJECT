@@ -1,21 +1,19 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
-import Iphone from "../assets/iphone_blur.png"
+
+const Iphone = "/images/iphone_blur.png";
 
 const Showcase = () => {
   return (
     <section className="bg-white text-gray-800 py-20 px-6 relative overflow-hidden">
-      
       {/* Decorative Blobs */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400 rounded-3xl blur-2xl opacity-80"></div>
       <div className="absolute bottom-10 left-2/3 lg:right-30  w-30 h-30 bg-green-300 rounded-3xl blur-2xl opacity-70"></div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        
         {/* Phone Mockup */}
         <div className="flex justify-center relative">
           <div className="">
-            
             <div className="relative w-[260px] h-[520px] rounded-[30px] overflow-hidden">
               <img
                 src={Iphone}

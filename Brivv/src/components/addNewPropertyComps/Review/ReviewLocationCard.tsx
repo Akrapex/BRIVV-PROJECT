@@ -1,5 +1,6 @@
 import { IoLocationOutline } from "react-icons/io5";
-import mapPlaceHolder from "../../../assets/Map Placeholder.png";
+
+const mapPlaceHolder = "/images/Map Placeholder.png";
 
 function ReviewLocationCard() {
   return (

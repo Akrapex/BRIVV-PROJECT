@@ -1,7 +1,8 @@
 import { CiLocationOn } from "react-icons/ci";
 import { IoSearchSharp } from "react-icons/io5";
 import PropertyCard from "../PropertyCard";
-import mapPlaceHolder from "../../../assets/Map Placeholder.png";
+
+const mapPlaceHolder = "/images/Map Placeholder.png";
 
 function LocationAndMap() {
   const element = (

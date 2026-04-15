@@ -8,28 +8,28 @@ const properties = [
     title: "Bamboo Heights Penthouse",
     author: "@eco_realty",
     views: "12.4k",
-    image: "../src/assets/Reel Card 1.png",
+    image: "/images/Reel Card 1.png",
   },
   {
     id: 2,
     title: "Off-grid Forest Sanctuary",
     author: "@sustainable_sam",
     views: "8.2k",
-    image: "../src/assets/Reel Card 2.png",
+    image: "/images/Reel Card 2.png",
   },
   {
     id: 3,
     title: "Modular Living 101",
     author: "@green_living",
     views: "25k",
-    image: "../src/assets/Reel Card 3.png",
+    image: "/images/Reel Card 3.png",
   },
   {
     id: 4,
     title: "Urban Oasis Garden",
     author: "@nature_arch",
     views: "4.1k",
-    image: "../src/assets/Reel Card 4.png",
+    image: "/images/Reel Card 4.png",
   },
 ];
 
@@ -56,10 +56,7 @@ export default function PropertyReels() {
       {/* Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {properties.map((item) => (
-          <div
-            key={item.id}
-            className="relative overflow-hidden group"
-          >
+          <div key={item.id} className="relative overflow-hidden group">
             <img
               src={item.image}
               alt={item.title}

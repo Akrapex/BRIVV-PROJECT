@@ -1,4 +1,4 @@
-import sampleImage from "../../assets/Container.png";
+const sampleImage = "/images/Container.png";
 
 function UtilityViewings() {
   return (

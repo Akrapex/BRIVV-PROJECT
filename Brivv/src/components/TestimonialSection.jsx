@@ -7,19 +7,19 @@ export default function TestimonialSection() {
       name: "Michael Adebayo",
       role: "Moving Professional",
       text: `"Brivv made my relocation so much easier. The video tours meant I didn't have to travel across town for every viewing."`,
-      image: "../src/assets/Michael_pic.png",
+      image: "/images/Michael_pic.png",
     },
     {
       name: "Titi Johnson",
       role: "Freelance Editor",
       text: `"The utility payment feature is a game changer. I never forget a bill now, it's all automated in one dashboard."`,
-      image: "../src/assets/Titi-pic.png",
+      image: "/images/Titi-pic.png",
     },
     {
       name: "Chidi Okafor",
       role: "Software Engineer",
       text: `"The smart matching actually works. I found a great apartment and the landlord was verified, which gave me peace of mind."`,
-      image: "../src/assets/chidi_pic.png",
+      image: "/images/chidi_pic.png",
     },
   ];
 
@@ -77,4 +77,3 @@ export default function TestimonialSection() {
     </section>
   );
 }
-

@@ -2,7 +2,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { TfiRulerAlt2 } from "react-icons/tfi";
 import { LuShieldCheck } from "react-icons/lu";
 import { MdOutlineBed, MdOutlineBathtub } from "react-icons/md";
-import mapPlaceHolder from "../../../assets/Map Placeholder.png";
+
+const mapPlaceHolder = "/images/Map Placeholder.png";
 
 function PropertyReviewCard() {
   return (
