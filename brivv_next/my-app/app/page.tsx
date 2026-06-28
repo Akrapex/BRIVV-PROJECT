@@ -34,6 +34,7 @@ import {
   Flame,
   Trash2,
 } from "lucide-react";
+import Link from "next/link";
 
 // ── COLOUR TOKENS ──────────────────────────────────────────────
 const C = {
@@ -232,7 +233,7 @@ export default function BrivvLandingPage() {
             <Button variant="ghost" style={{ fontSize: 14 }}>
               Sign In
             </Button>
-            <Button
+            <Link href="/auth/register"><Button
               style={{
                 backgroundColor: C.lime,
                 color: C.black,
@@ -242,7 +243,7 @@ export default function BrivvLandingPage() {
               }}
             >
               Get Started
-            </Button>
+            </Button></Link>
           </div>
         </div>
       </nav>
