@@ -14,6 +14,20 @@ export type ProfileData = {
   address: string;
 };
 
+export function isProfileComplete(profile: ProfileData | null | undefined) {
+  if (!profile) return false;
+
+  return Boolean(
+    profile.full_name?.trim() &&
+      profile.phone?.trim() &&
+      profile.gender?.trim() &&
+      profile.state?.trim() &&
+      profile.LocalGovernment?.trim() &&
+      profile.country?.trim() &&
+      profile.address?.trim(),
+  );
+}
+
 /**
  * Upload a single file to the Supabase storage bucket and return its public URL.
  * The filename is randomized to avoid collisions and preserve the upload extension.
@@ -51,6 +65,13 @@ export async function upsertUserProfile(profile: ProfileData) {
   }
 
   return data;
+}
+
+/**
+ * Fetch the profile row for the currently authenticated user.
+ */
+export async function getUserProfile(userId: string) {
+  return supabase.from("profiles").select("*").eq("id", userId).maybeSingle();
 }
 
 /**

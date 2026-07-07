@@ -11,22 +11,34 @@ import {
   RegisterSchema,
   signInWithEmailPassword,
 } from "@/lib/services/authService";
+import {
+  getUserProfile,
+  isProfileComplete,
+} from "@/lib/services/profileService";
 import { useAuth } from "@/lib/store/auth";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
+const getSafeRedirectPath = (next: string | null) => {
+  if (!next || !next.startsWith("/") || next.startsWith("//")) {
+    return "/dashboard";
+  }
+
+  return next;
+};
+
 const LoginForm = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const loginWithUser = useAuth((state) => state.loginWithUser);
+  const loginWithProfile = useAuth((state) => state.loginWithProfile);
   const {
     control,
     handleSubmit,
     formState: { isSubmitting },
   } = useForm<z.infer<typeof RegisterSchema>>({
-    resolver: zodResolver(RegisterSchema as any),
+    resolver: zodResolver(RegisterSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -38,16 +50,51 @@ const LoginForm = () => {
       const { data: authData, error } = await signInWithEmailPassword(data);
 
       if (error) {
+        if (error.message.toLowerCase().includes("email not confirmed")) {
+          router.replace(
+            `/auth/verify-email?email=${encodeURIComponent(data.email)}`,
+          );
+          return;
+        }
+
         toast.error(error.message || "Unable to sign in right now.");
         return;
       }
 
       if (authData.session && authData.user) {
-        // Populate the Zustand store with real Supabase user data
-        loginWithUser(authData.user);
+        const isEmailVerified =
+          Boolean(authData.user.email_confirmed_at) ||
+          Boolean(authData.user.confirmed_at);
+
+        if (!isEmailVerified) {
+          router.replace(
+            `/auth/verify-email?email=${encodeURIComponent(
+              authData.user.email ?? data.email,
+            )}`,
+          );
+          return;
+        }
+
+        const { data: profile, error: profileError } = await getUserProfile(
+          authData.user.id,
+        );
+
+        if (profileError) {
+          toast.error(
+            profileError.message || "Unable to load your profile details.",
+          );
+          return;
+        }
+
+        if (!isProfileComplete(profile)) {
+          toast.info("Please complete your profile to continue.");
+          router.replace("/auth/profile-setup");
+          return;
+        }
+
+        loginWithProfile(authData.user, profile);
         toast.success("Signed in successfully.");
-        // Redirect to the originally requested page or dashboard
-        const next = searchParams.get("next") ?? "/dashboard";
+        const next = getSafeRedirectPath(searchParams.get("next"));
         router.replace(next);
       } else {
         toast.error("Unable to sign in. Please try again.");
@@ -146,7 +193,7 @@ const LoginForm = () => {
       </Button>
 
       <p className="text-sm text-neutral-500">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link
           href="/auth/register"
           className="text-neutral-900 underline underline-offset-4 font-medium hover:text-neutral-700"

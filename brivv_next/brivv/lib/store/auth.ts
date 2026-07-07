@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 import type { User } from "@supabase/supabase-js";
 import type { AppUser } from "@/lib/mock/types";
 import { DEMO_USER, USERS } from "@/lib/mock/users";
+import type { ProfileData } from "@/lib/services/profileService";
 
 type Role = AppUser["role"];
 
@@ -10,6 +11,8 @@ interface AuthState {
   user: AppUser | null;
   /** Map a real Supabase User object into the AppUser shape and persist it */
   loginWithUser: (supabaseUser: User) => void;
+  /** Map the user's profiles table row into the AppUser shape and persist it */
+  loginWithProfile: (supabaseUser: User, profile: ProfileData) => void;
   /** Legacy helper — kept for backward compatibility */
   login: (email: string, role?: Role) => void;
   logout: () => void;
@@ -43,6 +46,25 @@ export const useAuth = create<AuthState>()(
           role: ((meta.role as Role | undefined) ?? "seeker") as Role,
           phone: meta.phone as string | undefined,
           location: meta.location as string | undefined,
+          joined: supabaseUser.created_at,
+        };
+        set({ user: appUser });
+      },
+
+      loginWithProfile: (supabaseUser, profile) => {
+        const appUser: AppUser = {
+          id: supabaseUser.id,
+          name:
+            profile.full_name ||
+            supabaseUser.email?.split("@")[0] ||
+            "User",
+          email: supabaseUser.email ?? "",
+          avatar:
+            profile.avatar_url ||
+            `https://i.pravatar.cc/200?u=${supabaseUser.id}`,
+          role: "seeker",
+          phone: profile.phone,
+          location: [profile.state, profile.country].filter(Boolean).join(", "),
           joined: supabaseUser.created_at,
         };
         set({ user: appUser });

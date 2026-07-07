@@ -3,6 +3,11 @@ import z from "zod";
 
 const supabase = createClient();
 
+const getProfileSetupRedirectUrl = () =>
+  `${window.location.origin}/auth/callback?next=${encodeURIComponent(
+    "/auth/profile-setup",
+  )}`;
+
 export type SignInPayload = {
   email: string;
   password: string;
@@ -46,8 +51,7 @@ export async function signUpWithEmailPassword({
     email,
     password,
     options: {
-      emailRedirectTo:
-        redirectTo ?? `${window.location.origin}/auth/profile-setup`,
+      emailRedirectTo: redirectTo ?? getProfileSetupRedirectUrl(),
     },
   });
 }
@@ -57,7 +61,7 @@ export async function resendVerificationEmail(email: string) {
     type: "signup",
     email,
     options: {
-      emailRedirectTo: `${window.location.origin}/auth/profile-setup`,
+      emailRedirectTo: getProfileSetupRedirectUrl(),
     },
   });
 }

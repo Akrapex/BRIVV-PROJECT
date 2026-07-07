@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import type { User } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Controller, useForm } from "react-hook-form";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { getCurrentUser } from "@/lib/services/authService";
 import { upsertUserProfile } from "@/lib/services/profileService";
+import { useAuth } from "@/lib/store/auth";
 import { Loader2, UserRound } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -26,7 +28,9 @@ const profileSchema = z.object({
 
 export default function ProfileSetupPage() {
   const router = useRouter();
+  const loginWithProfile = useAuth((state) => state.loginWithProfile);
   const [userId, setUserId] = useState<string | null>(null);
+  const [authUser, setAuthUser] = useState<User | null>(null);
   const [isLoadingUser, setIsLoadingUser] = useState(true);
 
   const {
@@ -54,6 +58,7 @@ export default function ProfileSetupPage() {
         return;
       }
       setUserId(data.user.id);
+      setAuthUser(data.user);
       setIsLoadingUser(false);
     };
 
@@ -61,13 +66,13 @@ export default function ProfileSetupPage() {
   }, [router]);
 
   const onSubmit = async (values: z.infer<typeof profileSchema>) => {
-    if (!userId) {
+    if (!userId || !authUser) {
       toast.error("Your session is not ready yet. Please sign in again.");
       return;
     }
 
     try {
-      await upsertUserProfile({
+      const profilePayload = {
         id: userId,
         full_name: values.full_name,
         phone: values.phone,
@@ -77,7 +82,9 @@ export default function ProfileSetupPage() {
         LocalGovernment: values.LocalGovernment,
         country: values.country,
         address: values.address,
-      });
+      };
+      const savedProfiles = await upsertUserProfile(profilePayload);
+      loginWithProfile(authUser, savedProfiles?.[0] ?? profilePayload);
 
       toast.success("Profile completed successfully.");
       router.replace("/dashboard");

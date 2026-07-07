@@ -12,6 +12,7 @@ export default function VerifyEmailPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get("email") ?? "";
+  const verificationError = searchParams.get("error");
   const [isResending, setIsResending] = useState(false);
 
   const handleResend = async () => {
@@ -59,6 +60,11 @@ export default function VerifyEmailPage() {
           </span>
           . Open it to continue setting up your profile.
         </p>
+        {verificationError && (
+          <p className="text-sm font-medium text-red-600">
+            {verificationError}
+          </p>
+        )}
       </div>
 
       <div className="space-y-3 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
