@@ -1,7 +1,10 @@
 import { createClient } from "@/lib/supabase/client";
 import z from "zod";
 
-const supabase = createClient();
+// Resolve the client lazily on each call. `createClient()` memoizes internally,
+// so this stays cheap while avoiding client creation at module-import time
+// (which would run during build/prerender before env vars are available).
+const supabase = () => createClient();
 
 const getProfileSetupRedirectUrl = () =>
   `${window.location.origin}/auth/callback?next=${encodeURIComponent(
@@ -32,7 +35,7 @@ export async function signInWithEmailPassword({
   email,
   password,
 }: SignInPayload) {
-  return supabase.auth.signInWithPassword({
+  return supabase().auth.signInWithPassword({
     email,
     password,
   });
@@ -47,7 +50,7 @@ export async function signUpWithEmailPassword({
   password,
   redirectTo,
 }: SignUpPayload) {
-  return supabase.auth.signUp({
+  return supabase().auth.signUp({
     email,
     password,
     options: {
@@ -57,7 +60,7 @@ export async function signUpWithEmailPassword({
 }
 
 export async function resendVerificationEmail(email: string) {
-  return supabase.auth.resend({
+  return supabase().auth.resend({
     type: "signup",
     email,
     options: {
@@ -71,7 +74,7 @@ export async function resendVerificationEmail(email: string) {
  * This is a reusable helper for client-side Google login.
  */
 export async function signInWithGoogle() {
-  return supabase.auth.signInWithOAuth({
+  return supabase().auth.signInWithOAuth({
     provider: "google",
     options: {
       redirectTo: `${window.location.origin}/auth/callback`,
@@ -84,7 +87,7 @@ export async function signInWithGoogle() {
  * Used by the auth callback route after Google sign-in.
  */
 export async function exchangeOAuthCodeForSession(code: string) {
-  return supabase.auth.exchangeCodeForSession(code);
+  return supabase().auth.exchangeCodeForSession(code);
 }
 
 /**
@@ -92,14 +95,14 @@ export async function exchangeOAuthCodeForSession(code: string) {
  * Returns the user payload and any auth error.
  */
 export async function getCurrentUser() {
-  return supabase.auth.getUser();
+  return supabase().auth.getUser();
 }
 
 /**
  * Sign out the currently authenticated user.
  */
 export async function signOutUser() {
-  return supabase.auth.signOut();
+  return supabase().auth.signOut();
 }
 
 /**
@@ -107,5 +110,5 @@ export async function signOutUser() {
  * Prefer this over getUser() in client components for a fast, non-network read.
  */
 export async function getSession() {
-  return supabase.auth.getSession();
+  return supabase().auth.getSession();
 }

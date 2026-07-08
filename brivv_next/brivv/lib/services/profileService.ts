@@ -1,6 +1,8 @@
 import { createClient } from "@/lib/supabase/client";
 
-const supabase = createClient();
+// Lazy client resolution (memoized in createClient) so importing this module
+// during build/prerender doesn't require Supabase env vars to be present.
+const supabase = () => createClient();
 
 export type ProfileData = {
   id: string;
@@ -36,8 +38,8 @@ export async function uploadAvatar(file: File) {
   const fileExtension = file.name.split(".").pop() || "png";
   const fileName = `${crypto.randomUUID()}.${fileExtension}`;
 
-  const { error: uploadError } = await supabase.storage
-    .from("avatars")
+  const { error: uploadError } = await supabase()
+    .storage.from("avatars")
     .upload(fileName, file);
 
   if (uploadError) {
@@ -46,7 +48,7 @@ export async function uploadAvatar(file: File) {
 
   const {
     data: { publicUrl },
-  } = supabase.storage.from("avatars").getPublicUrl(fileName);
+  } = supabase().storage.from("avatars").getPublicUrl(fileName);
 
   return publicUrl;
 }
@@ -55,7 +57,7 @@ export async function uploadAvatar(file: File) {
  * Create or update the profile row for the currently authenticated user.
  */
 export async function upsertUserProfile(profile: ProfileData) {
-  const { data, error } = await supabase
+  const { data, error } = await supabase()
     .from("profiles")
     .upsert([profile])
     .select();
@@ -71,7 +73,7 @@ export async function upsertUserProfile(profile: ProfileData) {
  * Fetch the profile row for the currently authenticated user.
  */
 export async function getUserProfile(userId: string) {
-  return supabase.from("profiles").select("*").eq("id", userId).maybeSingle();
+  return supabase().from("profiles").select("*").eq("id", userId).maybeSingle();
 }
 
 /**
