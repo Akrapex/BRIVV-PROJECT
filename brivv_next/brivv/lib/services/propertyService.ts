@@ -1,6 +1,8 @@
 import { createClient } from "@/lib/supabase/client";
 
-const supabase = createClient();
+// Lazy client resolution (memoized in createClient) so importing this module
+// during build/prerender doesn't require Supabase env vars to be present.
+const supabase = () => createClient();
 
 export type PropertyFormData = {
   title?: string;
@@ -34,7 +36,7 @@ export type PropertyImageRow = {
 export async function createProperty(
   propertyData: PropertyFormData & { owner_id: string },
 ) {
-  return supabase.from("properties").insert([propertyData]).select();
+  return supabase().from("properties").insert([propertyData]).select();
 }
 
 /**
@@ -44,16 +46,16 @@ export async function uploadPropertyImage(file: File, propertyId: string) {
   const fileExtension = file.name.split(".").pop() || "png";
   const fileName = `${propertyId}/${crypto.randomUUID()}.${fileExtension}`;
 
-  const { data, error } = await supabase.storage
-    .from("PROPERTIES")
+  const { data, error } = await supabase()
+    .storage.from("PROPERTIES")
     .upload(fileName, file);
 
   if (error) {
     throw error;
   }
 
-  const { data: publicUrl } = supabase.storage
-    .from("PROPERTIES")
+  const { data: publicUrl } = supabase()
+    .storage.from("PROPERTIES")
     .getPublicUrl(data.path);
 
   return publicUrl.publicUrl;
@@ -63,7 +65,7 @@ export async function uploadPropertyImage(file: File, propertyId: string) {
  * Insert uploaded image rows for a property.
  */
 export async function insertPropertyImages(rows: PropertyImageRow[]) {
-  return supabase.from("property_images").insert(rows);
+  return supabase().from("property_images").insert(rows);
 }
 
 /**
@@ -73,7 +75,7 @@ export async function addPropertyLocation(
   propertyId: string,
   locationData: PropertyLocationData,
 ) {
-  return supabase.from("property_locations").insert({
+  return supabase().from("property_locations").insert({
     ...locationData,
     property_id: propertyId,
   });
@@ -86,7 +88,7 @@ export async function updateProperty(
   propertyId: string,
   updates: Partial<PropertyFormData>,
 ) {
-  return supabase
+  return supabase()
     .from("properties")
     .update(updates)
     .eq("id", propertyId)
@@ -97,5 +99,5 @@ export async function updateProperty(
  * Delete a property row by property ID.
  */
 export async function deleteProperty(propertyId: string) {
-  return supabase.from("properties").delete().eq("id", propertyId);
+  return supabase().from("properties").delete().eq("id", propertyId);
 }
