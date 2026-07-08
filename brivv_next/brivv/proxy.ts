@@ -7,7 +7,7 @@ const PROTECTED_PREFIXES = ["/dashboard"];
 // Routes only accessible to signed-out users
 const AUTH_ONLY_PREFIXES = ["/auth/login", "/auth/register"];
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // We need to mutate the response so Supabase can refresh expired tokens
   let supabaseResponse = NextResponse.next({ request });
 
