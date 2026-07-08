@@ -67,25 +67,10 @@ export default function VerifyEmailPage() {
         )}
       </div>
 
-      <div className="space-y-3 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
+      <div className="space-y-3  bg-white p-5 ">
         <Button
           type="button"
           className="w-full flex items-center justify-center h-12 bg-[#23A136] text-white font-semibold hover:bg-[#334800] rounded-md text-base"
-          onClick={() =>
-            window.open(
-              "https://mail.google.com",
-              "_blank",
-              "noopener,noreferrer",
-            )
-          }
-        >
-          Open email app
-        </Button>
-
-        <Button
-          type="button"
-          variant="outline"
-          className="w-full flex items-center justify-center h-12 bg-white text-neutral-900 font-semibold hover:bg-neutral-50 rounded-md text-base"
           onClick={handleResend}
           disabled={isResending}
         >
@@ -99,14 +84,14 @@ export default function VerifyEmailPage() {
           )}
         </Button>
 
-        <Button
+        {/* <Button
           type="button"
           variant="ghost"
           className="w-full h-10 text-sm font-medium text-neutral-600"
           onClick={() => router.push("/auth/profile-setup")}
         >
           Continue to profile setup
-        </Button>
+        </Button> */}
       </div>
 
       <div className="space-y-2 text-center text-sm text-neutral-500">

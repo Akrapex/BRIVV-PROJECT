@@ -22,7 +22,7 @@ export function Logo({
         B
       </span>
       <span className={cn("font-display font-extrabold tracking-tight", text)}>
-        Brivv
+        AKRAPEX
       </span>
     </>
   );

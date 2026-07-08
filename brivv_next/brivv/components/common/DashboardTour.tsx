@@ -31,7 +31,7 @@ export default function DashboardTour() {
 
   const steps: TourStep[] = [
     {
-      title: "Welcome to BRIVV!",
+      title: "Welcome to AKRAPEX!",
       description: "Let's take a quick 1-minute guided tour of your new dashboard to help you find and lease your next dream home.",
       icon: <Sparkles className="h-10 w-10 text-primary animate-pulse" />,
       badge: "Getting Started",

@@ -30,30 +30,40 @@ const LoginForm = () => {
     },
   });
 
-  const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
-    try {
-      const { data: authData, error } = await signUpWithEmailPassword(data);
+ const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
+  try {
+    const appUrl =
+      process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
-      if (error) {
-        toast.error(
-          error.message || "Unable to create your account right now.",
-        );
-        return;
-      }
+    const redirectTo = `${appUrl}/auth/callback?next=${encodeURIComponent(
+      "/auth/profile-setup",
+    )}`;
 
-      toast.success("Verification link sent. Please check your inbox.");
-      router.replace(
-        `/auth/verify-email?email=${encodeURIComponent(data.email)}`,
+    const { data: authData, error } = await signUpWithEmailPassword({
+      ...data,
+      redirectTo,
+    });
+
+    if (error) {
+      toast.error(
+        error.message || "Unable to create your account right now.",
       );
-    } catch (error) {
-      const message =
-        error instanceof Error
-          ? error.message
-          : "Unable to create your account right now.";
-      toast.error(message);
+      return;
     }
-  };
 
+    toast.success("Verification link sent. Please check your inbox.");
+    router.replace(
+      `/auth/verify-email?email=${encodeURIComponent(data.email)}`,
+    );
+  } catch (error) {
+    const message =
+      error instanceof Error
+        ? error.message
+        : "Unable to create your account right now.";
+
+    toast.error(message);
+  }
+};
   return (
     <div className="w-full max-w-md space-y-6 h-full ">
       <div className="space-y-2">

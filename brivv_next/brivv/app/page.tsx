@@ -281,7 +281,7 @@ function WhyAkrapex() {
       <div className="rounded-md border border-border bg-card p-6 sm:p-10 shadow-soft">
         <div className="mb-6 max-w-2xl">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
-            Why choose Brivv
+            Why choose Akrapex
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             We built the real estate platform Nigerians deserve.

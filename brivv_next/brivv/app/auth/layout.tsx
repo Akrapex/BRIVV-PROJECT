@@ -76,7 +76,7 @@ export default function AuthLayout({
               <div className="absolute left-8 right-8 bottom-8 rounded-[1.5rem] border border-white/30 h-fit bg-white p-6 text-neutral-900 shadow-2xl backdrop-blur-xl sm:left-10 sm:right-10 sm:top-10 lg:max-w-xl">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#446000]">
-                    BRIVV
+                    AKRAPEX
                   </p>
                   <div className="flex gap-2">
                     {testimonialItems.map((_, index) => (

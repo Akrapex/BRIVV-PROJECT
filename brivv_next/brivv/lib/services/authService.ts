@@ -50,6 +50,7 @@ export async function signUpWithEmailPassword({
   password,
   redirectTo,
 }: SignUpPayload) {
+  console.log("Service redirectTo:", redirectTo);
   return supabase().auth.signUp({
     email,
     password,
